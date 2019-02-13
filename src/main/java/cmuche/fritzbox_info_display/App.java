@@ -20,8 +20,7 @@ public class App extends Application
     Credentials credentials = Credentials.fromParameters(args);
     appController = new AppController(credentials);
 
-    launch(args);
-
+    launch();
   }
 
   @Override
