@@ -33,9 +33,13 @@ public class AppController
           Thread.sleep(100000);
         }
       }
-      catch (Exception ex)
+      catch (InterruptedException ex)
       {
         //okay
+      }
+      catch(Exception ex)
+      {
+        ex.printStackTrace();
       }
     });
 
