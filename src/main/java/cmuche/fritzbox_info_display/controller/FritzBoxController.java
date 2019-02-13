@@ -12,8 +12,6 @@ import java.util.Map;
 
 public class FritzBoxController
 {
-
-
   private FritzConnection connection;
 
   public FritzBoxController(Credentials credentials) throws Exception
