@@ -7,7 +7,7 @@
 ### Screen
 7" TFT Screen
 
-## AVM TR-064 Documentation
+## AVM TR-064
 
 ### Library
 https://github.com/mirthas/FritzTR064
