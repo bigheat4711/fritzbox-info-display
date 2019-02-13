@@ -44,11 +44,9 @@ public class AppController
   private void updateData() throws Exception
   {
     FritzBoxController fritzBoxController = new FritzBoxController(credentials);
-    DataController dataController = new DataController();
-    DataResponse data = dataController.collectData(fritzBoxController);
+    DataController dataController = new DataController(fritzBoxController);
+    DataResponse data = dataController.collectData();
     viewController.displayData(data);
-
-    MapUtils.debugPrint(System.out, "response", fritzBoxController.doRequest(FbService.OnTel, FbAction.GetCallList));
   }
 
   public void start(ViewController viewController)
