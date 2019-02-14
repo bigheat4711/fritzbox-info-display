@@ -46,7 +46,7 @@ public class DataController
       String callerNumber = ParseTool.parseNullableString(callerString);
       CallType callType = ParseTool.parseCallType(typeString);
       PhoneNumber internal = new PhoneNumber(ParseTool.parseSip(calledString));
-      PhoneNumber external = callerNumber == null ? null : new PhoneNumber(callerString);
+      PhoneNumber external = callerNumber == null ? null : new PhoneNumber(ParseTool.parseSip(callerString));
       Date date = ParseTool.parseDate(dateString);
       int duration = ParseTool.parseDuration(durationString);
       String device = ParseTool.parseNullableString(deviceString);
