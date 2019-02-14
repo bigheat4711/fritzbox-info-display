@@ -13,9 +13,9 @@ https://avm.de/service/schnittstellen/
 #### Caller List
 https://avm.de/fileadmin/user_upload/Global/Service/Schnittstellen/x_contactSCPD.pdf
 
-## German city codes
+## City codes
 
-### Database
+### Database for Germany
 https://www.bundesnetzagentur.de/SharedDocs/Downloads/DE/Sachgebiete/Telekommunikation/Unternehmen_Institutionen/Nummerierung/Rufnummern/ONRufnr/Vorwahlverzeichnis_ONBzip.html
 
 ## Screenshots
