@@ -2,6 +2,9 @@ package cmuche.fritzbox_info_display.tools;
 
 import cmuche.fritzbox_info_display.enums.CallType;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -25,5 +28,20 @@ public class ParseTool
   public static CallType parseCallType(String input)
   {
     return callTypeMap.get(input);
+  }
+
+  public static Date parseDate(String input)
+  {
+    try
+    {
+      SimpleDateFormat parser = new SimpleDateFormat("dd.MM.yy HH:mm");
+      Date date = parser.parse(input);
+      return date;
+    }
+    catch (ParseException e)
+    {
+      e.printStackTrace();
+      return null;
+    }
   }
 }

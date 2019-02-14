@@ -10,6 +10,7 @@ import cmuche.fritzbox_info_display.tools.ParseTool;
 import cmuche.fritzbox_info_display.tools.XmlTool;
 import org.w3c.dom.Document;
 
+import java.util.Date;
 import java.util.Map;
 
 public class DataController
@@ -40,10 +41,12 @@ public class DataController
       CallType callType = ParseTool.parseCallType(typeString);
       PhoneNumber internal = new PhoneNumber(ParseTool.parseSip(calledString));
       PhoneNumber external = new PhoneNumber(callerString);
+      Date date = ParseTool.parseDate(dateString);
 
       System.out.println(callType);
       System.out.println(internal);
       System.out.println(external);
+      System.out.println(date);
       System.out.println();
     });
 
