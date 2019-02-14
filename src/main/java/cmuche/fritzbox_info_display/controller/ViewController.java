@@ -5,6 +5,8 @@ import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
+import java.util.Date;
+
 public class ViewController
 {
   @FXML
@@ -15,11 +17,15 @@ public class ViewController
 
   public void displayData(DataResponse data)
   {
-    Platform.runLater(() ->
-    {
-      lblTime.setText("Foo");
-      lblDate.setText("Bar");
-    });
+
   }
 
+  public void displayTime(Date date)
+  {
+    Platform.runLater(() ->
+    {
+      lblTime.setText(String.format("%tR", date));
+      lblDate.setText(String.format("%tA, %td. %tB %tY", date, date, date, date));
+    });
+  }
 }
