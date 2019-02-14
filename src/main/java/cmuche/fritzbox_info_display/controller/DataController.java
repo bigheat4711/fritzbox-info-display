@@ -1,5 +1,6 @@
 package cmuche.fritzbox_info_display.controller;
 
+import cmuche.fritzbox_info_display.enums.CallType;
 import cmuche.fritzbox_info_display.enums.FbAction;
 import cmuche.fritzbox_info_display.enums.FbService;
 import cmuche.fritzbox_info_display.model.DataResponse;
@@ -36,14 +37,14 @@ public class DataController
       String dateString = XmlTool.getNodeContent(node, "Date");
       String durationString = XmlTool.getNodeContent(node, "Duration");
 
-      String called = ParseTool.parseSip(calledString);
-      String caller = callerString;
+      CallType callType = ParseTool.parseCallType(typeString);
+      PhoneNumber internal = new PhoneNumber(ParseTool.parseSip(calledString));
+      PhoneNumber external = new PhoneNumber(callerString);
 
-      PhoneNumber internal = new PhoneNumber(called);
-      PhoneNumber external = new PhoneNumber(caller);
-
+      System.out.println(callType);
       System.out.println(internal);
       System.out.println(external);
+      System.out.println();
     });
 
     return null;
