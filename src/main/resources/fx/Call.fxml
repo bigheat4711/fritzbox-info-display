@@ -35,8 +35,23 @@
         </VBox>
         <VBox prefHeight="55.0" prefWidth="379.0" HBox.hgrow="NEVER">
           <children>
-            <Label fx:id="lblExternal" font="$x3" styleClass="external" text="0000 000000" />
             <HBox prefHeight="100.0" prefWidth="200.0">
+              <children>
+                <Label fx:id="lblExternal" alignment="TOP_LEFT" font="$x3" prefWidth="134.0" styleClass="external" text="0000 000000" HBox.hgrow="ALWAYS" />
+                <Label fx:id="lblDuration" alignment="TOP_RIGHT" contentDisplay="LEFT" prefWidth="50.0" styleClass="duration" text="00X" textAlignment="RIGHT">
+                  <font>
+                    <Font name="System Bold" size="16.0" fx:id="x1" />
+                  </font>
+                  <HBox.margin>
+                    <Insets fx:id="x2" />
+                  </HBox.margin>
+                </Label>
+              </children>
+              <VBox.margin>
+                <Insets right="5.0" fx:id="x5" />
+              </VBox.margin>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0" VBox.margin="$x5">
               <children>
                 <ImageView fx:id="imgInfoPhone" fitHeight="12.0" fitWidth="12.0" pickOnBounds="true" preserveRatio="true">
                   <image>
@@ -46,12 +61,12 @@
                     <Insets right="2.0" top="2.0" fx:id="x4" />
                   </HBox.margin>
                 </ImageView>
-                <Label fx:id="lblInternal" styleClass="internal" text="00000 (XXX)">
+                <Label fx:id="lblInternal" styleClass="internal" text="00000 (XXX)" HBox.hgrow="ALWAYS">
                   <font>
                     <Font size="12.0" />
                   </font>
                   <HBox.margin>
-                    <Insets right="5.0" />
+                    <Insets right="5.0" fx:id="x5" />
                   </HBox.margin>
                 </Label>
                 <ImageView fx:id="imgInfoCity" fitHeight="12.0" fitWidth="12.0" pickOnBounds="true" preserveRatio="true" HBox.margin="$x4">
@@ -59,25 +74,13 @@
                     <Image url="@../icons/InfoCity.png" />
                   </image>
                 </ImageView>
-                <Label id="lblInternal" fx:id="lblCity" styleClass="city" text="XXXXXXX">
+                <Label id="lblInternal" fx:id="lblCity" styleClass="city" text="XXXXXXX" HBox.hgrow="ALWAYS">
                   <font>
                     <Font name="System Italic" size="12.0" />
                   </font>
                 </Label>
               </children>
             </HBox>
-          </children>
-        </VBox>
-        <VBox minWidth="40.0" prefHeight="200.0" prefWidth="100.0">
-          <children>
-            <Label fx:id="lblDuration" alignment="TOP_RIGHT" prefWidth="50.0" styleClass="duration" text="00X" textAlignment="RIGHT">
-              <font>
-                <Font name="System Bold" size="16.0" fx:id="x1" />
-              </font>
-              <VBox.margin>
-                <Insets right="5.0" />
-              </VBox.margin>
-            </Label>
           </children>
         </VBox>
       </children>
