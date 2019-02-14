@@ -11,7 +11,6 @@ public class CityCode
     this.city = city;
   }
 
-
   public String getCode()
   {
     return code;

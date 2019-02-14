@@ -7,8 +7,8 @@ import java.util.Date;
 public class Call
 {
   private CallType type;
-  private String numberInternal;
-  private String numberExternal;
+  private PhoneNumber internal;
+  private PhoneNumber external;
   private String device;
   private Date date;
 }
