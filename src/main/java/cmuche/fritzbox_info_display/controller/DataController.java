@@ -26,12 +26,16 @@ public class DataController
     this.fritzBoxController = fritzBoxController;
   }
 
+
   public DataResponse collectData() throws Exception
   {
     DataResponse dataResponse = new DataResponse();
 
     List<Call> calls = collectCallList();
     dataResponse.setCalls(calls);
+
+    int connectedDevices = collectConnectedDevices();
+    dataResponse.setConnectedDevices(connectedDevices);
 
     Map<String, String> info = fritzBoxController.doRequest(FbService.IpConnection, FbAction.GetInfo);
     String connectionStatusString = info.get("NewConnectionStatus");
@@ -44,6 +48,10 @@ public class DataController
     return dataResponse;
   }
 
+  private int collectConnectedDevices()
+  {
+
+  }
 
   private List<Call> collectCallList() throws Exception
   {

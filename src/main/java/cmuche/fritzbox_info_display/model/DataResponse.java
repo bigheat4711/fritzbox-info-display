@@ -9,6 +9,7 @@ public class DataResponse
   private List<Call> calls;
   private String externalIp;
   private ConnectionStatus connectionStatus;
+  private int connectedDevices;
 
   public List<Call> getCalls()
   {
@@ -38,5 +39,15 @@ public class DataResponse
   public void setConnectionStatus(ConnectionStatus connectionStatus)
   {
     this.connectionStatus = connectionStatus;
+  }
+
+  public int getConnectedDevices()
+  {
+    return connectedDevices;
+  }
+
+  public void setConnectedDevices(int connectedDevices)
+  {
+    this.connectedDevices = connectedDevices;
   }
 }
