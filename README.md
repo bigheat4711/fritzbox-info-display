@@ -1,12 +1,5 @@
 # FRITZ!Box Info Display
 
-## Hardware
-
-### Raspberry PI
-
-### Screen
-7" TFT Screen
-
 ## AVM TR-064
 
 ### Library
@@ -24,3 +17,14 @@ https://avm.de/fileadmin/user_upload/Global/Service/Schnittstellen/x_contactSCPD
 
 ### Database
 https://www.bundesnetzagentur.de/SharedDocs/Downloads/DE/Sachgebiete/Telekommunikation/Unternehmen_Institutionen/Nummerierung/Rufnummern/ONRufnr/Vorwahlverzeichnis_ONBzip.html
+
+## Screenshots
+![](screenshots/screenshot1.png)
+![](screenshots/screenshot2.png)
+
+## Hardware
+
+### Raspberry PI
+
+### Screen
+7" TFT Screen
