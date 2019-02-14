@@ -52,7 +52,7 @@ public class CityCodeTool
       e.printStackTrace();
     }
 
-    codes.add(new CityCode("01570", "E-Plus"));
+    /*codes.add(new CityCode("01570", "E-Plus"));
     codes.add(new CityCode("01573", "E-Plus"));
     codes.add(new CityCode("01575", "E-Plus"));
     codes.add(new CityCode("01577", "E-Plus"));
@@ -80,7 +80,7 @@ public class CityCodeTool
     codes.add(new CityCode("0160", "Deutsche Telekom"));
     codes.add(new CityCode("0170", "Deutsche Telekom"));
     codes.add(new CityCode("0171", "Deutsche Telekom"));
-    codes.add(new CityCode("0175", "Deutsche Telekom"));
+    codes.add(new CityCode("0175", "Deutsche Telekom"));*/
   }
 
   public static CityCode getCityCodeForNumber(String number)
