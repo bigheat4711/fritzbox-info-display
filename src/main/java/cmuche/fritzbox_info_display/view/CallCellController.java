@@ -2,6 +2,7 @@ package cmuche.fritzbox_info_display.view;
 
 import cmuche.fritzbox_info_display.enums.CallType;
 import cmuche.fritzbox_info_display.model.Call;
+import cmuche.fritzbox_info_display.tools.FormatTool;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -43,7 +44,7 @@ public class CallCellController
     lblDate.setText(String.format("%td. %tb", call.getDate(), call.getDate()));
     lblTime.setText(String.format("%tR", call.getDate()));
 
-    if (call.getDuration() > 0) lblDuration.setText(call.getDuration() + "s");
+    if (call.getDuration() > 0) lblDuration.setText(FormatTool.formatDuration(call.getDuration()));
     else lblDuration.setVisible(false);
 
     if (call.getExternal() == null) lblExternal.setText("Unbekannt");
