@@ -2,17 +2,13 @@ package cmuche.fritzbox_info_display.controller;
 
 import cmuche.fritzbox_info_display.enums.FbAction;
 import cmuche.fritzbox_info_display.enums.FbService;
-import cmuche.fritzbox_info_display.interfaces.XmlAction;
 import cmuche.fritzbox_info_display.model.DataResponse;
+import cmuche.fritzbox_info_display.model.PhoneNumber;
 import cmuche.fritzbox_info_display.tools.NetworkTool;
+import cmuche.fritzbox_info_display.tools.ParseTool;
 import cmuche.fritzbox_info_display.tools.XmlTool;
 import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
 
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
 import java.util.Map;
 
 public class DataController
@@ -39,6 +35,15 @@ public class DataController
       String deviceString = XmlTool.getNodeContent(node, "Device");
       String dateString = XmlTool.getNodeContent(node, "Date");
       String durationString = XmlTool.getNodeContent(node, "Duration");
+
+      String called = ParseTool.parseSip(calledString);
+      String caller = callerString;
+
+      PhoneNumber internal = new PhoneNumber(called);
+      PhoneNumber external = new PhoneNumber(caller);
+
+      System.out.println(internal);
+      System.out.println(external);
     });
 
     return null;

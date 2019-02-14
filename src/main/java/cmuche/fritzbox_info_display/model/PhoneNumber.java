@@ -12,4 +12,10 @@ public class PhoneNumber
     this.number = number;
     cityCode = CityCodeTool.getCityCodeForNumber(number);
   }
+
+  @Override
+  public String toString()
+  {
+    return number + ((cityCode != null) ? " [" + cityCode + "]" : "");
+  }
 }
