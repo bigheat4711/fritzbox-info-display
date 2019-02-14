@@ -15,7 +15,7 @@ public class ViewController
   @FXML
   private Label lblDate;
 
-  public void displayData(DataResponse data)
+  public void displayData(DataResponse dataResponse)
   {
 
   }

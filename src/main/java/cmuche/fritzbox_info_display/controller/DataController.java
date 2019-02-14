@@ -11,7 +11,9 @@ import cmuche.fritzbox_info_display.tools.ParseTool;
 import cmuche.fritzbox_info_display.tools.XmlTool;
 import org.w3c.dom.Document;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Map;
 
 public class DataController
@@ -25,6 +27,8 @@ public class DataController
 
   public DataResponse collectData() throws Exception
   {
+    List<Call> calls = new ArrayList<>();
+
     Map<String, String> callListRequest = fritzBoxController.doRequest(FbService.OnTel, FbAction.GetCallList);
     String callListUrl = callListRequest.get("NewCallListURL");
     String callListXml = NetworkTool.getFileContents(callListUrl);
@@ -48,8 +52,11 @@ public class DataController
 
       Call call = new Call(callType, internal, external, duration, device, date);
       System.out.println(call);
+      calls.add(call);
     });
 
-    return null;
+    DataResponse dataResponse = new DataResponse(calls);
+
+    return dataResponse;
   }
 }
