@@ -44,8 +44,15 @@ public class DataController
       String durationString = XmlTool.getNodeContent(node, "Duration");
 
       String callerNumber = ParseTool.parseNullableString(callerString);
-      
       CallType callType = ParseTool.parseCallType(typeString);
+
+      //special treatment for TAM (device='er')
+      if (deviceString.equals("er"))
+      {
+        deviceString = "AB";
+        callType = CallType.Tam;
+      }
+
       PhoneNumber internal = new PhoneNumber(ParseTool.parseSip(calledString));
       PhoneNumber external = callerNumber == null ? null : new PhoneNumber(callerString);
       Date date = ParseTool.parseDate(dateString);
