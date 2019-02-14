@@ -60,7 +60,7 @@ public class CallCellController
       lblCity.setMinHeight(0);
     }
 
-    String internalString = (call.getType() == CallType.Outbound ? "Von" : "Auf") + " " + call.getInternal().getNumber();
+    String internalString = call.getInternal().getNumber();
     if (call.getDevice() != null) internalString += " (" + call.getDevice() + ")";
     lblInternal.setText(internalString);
   }

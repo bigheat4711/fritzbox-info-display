@@ -30,12 +30,12 @@
 
 .call-item .internal
 {
-  -fx-text-fill: #6f81b6;
+  -fx-text-fill: #DDD;
 }
 
 .call-item .city
 {
-  -fx-text-fill: #DDD;
+  -fx-text-fill: #6f81b6;
 }
 
 .call-item .date

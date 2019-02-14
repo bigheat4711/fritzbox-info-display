@@ -10,7 +10,7 @@
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" padding="$x2" prefHeight="60.999977929684974" prefWidth="300.0" styleClass="call-item" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="cmuche.fritzbox_info_display.view.CallCellController">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.999977929684974" prefWidth="300.0" styleClass="call-item" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="cmuche.fritzbox_info_display.view.CallCellController">
   <children>
     <HBox prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
       <children>
@@ -28,31 +28,31 @@
             </Label>
             <Label fx:id="lblTime" styleClass="time" text="Label">
               <font>
-                <Font name="System Bold" size="20.0" />
+                <Font name="System Bold" size="18.0" fx:id="x3" />
               </font>
             </Label>
           </children>
         </VBox>
         <VBox prefHeight="55.0" prefWidth="379.0" HBox.hgrow="NEVER">
           <children>
-            <Label fx:id="lblExternal" styleClass="external" text="Label">
-              <font>
-                <Font name="System Bold" size="18.0" />
-              </font>
-            </Label>
-            <Label id="lblInternal" fx:id="lblCity" styleClass="city" text="Label">
-              <font>
-                <Font name="System Italic" size="12.0" />
-              </font>
-            </Label>
-            <Label fx:id="lblInternal" styleClass="internal" text="Label">
-              <font>
-                <Font size="12.0" />
-              </font>
-              <VBox.margin>
-                <Insets fx:id="x2" />
-              </VBox.margin>
-            </Label>
+            <Label fx:id="lblExternal" font="$x3" styleClass="external" text="Label" />
+            <HBox prefHeight="100.0" prefWidth="200.0">
+              <children>
+                <Label fx:id="lblInternal" styleClass="internal" text="Label">
+                  <font>
+                    <Font size="12.0" />
+                  </font>
+                  <HBox.margin>
+                    <Insets right="5.0" />
+                  </HBox.margin>
+                </Label>
+                <Label id="lblInternal" fx:id="lblCity" styleClass="city" text="Label">
+                  <font>
+                    <Font name="System Italic" size="12.0" />
+                  </font>
+                </Label>
+              </children>
+            </HBox>
           </children>
         </VBox>
         <VBox minWidth="40.0" prefHeight="200.0" prefWidth="100.0">
@@ -70,6 +70,9 @@
       </children>
     </HBox>
   </children>
+  <padding>
+    <Insets fx:id="x2" />
+  </padding>
   <stylesheets>
     <URL value="@style.css" />
   </stylesheets>
