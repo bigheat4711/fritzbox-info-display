@@ -2,7 +2,8 @@ package cmuche.fritzbox_info_display.enums;
 
 public enum FbAction implements NamedEnum
 {
-  GetCallList("GetCallList");
+  GetCallList("GetCallList"),
+  GetInfo("GetInfo");
 
   private String id;
 

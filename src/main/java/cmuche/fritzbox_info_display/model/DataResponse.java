@@ -4,10 +4,37 @@ import java.util.List;
 
 public class DataResponse
 {
-  public List<Call> calls;
+  private List<Call> calls;
+  private String externalIp;
+  private String connectionStatus;
 
-  public DataResponse(List<Call> calls)
+  public List<Call> getCalls()
+  {
+    return calls;
+  }
+
+  public void setCalls(List<Call> calls)
   {
     this.calls = calls;
+  }
+
+  public String getExternalIp()
+  {
+    return externalIp;
+  }
+
+  public void setExternalIp(String externalIp)
+  {
+    this.externalIp = externalIp;
+  }
+
+  public String getConnectionStatus()
+  {
+    return connectionStatus;
+  }
+
+  public void setConnectionStatus(String connectionStatus)
+  {
+    this.connectionStatus = connectionStatus;
   }
 }

@@ -27,6 +27,24 @@ public class DataController
 
   public DataResponse collectData() throws Exception
   {
+    DataResponse dataResponse = new DataResponse();
+
+    List<Call> calls = collectCallList();
+    dataResponse.setCalls(calls);
+
+    Map<String, String> info = fritzBoxController.doRequest(FbService.IpConnection, FbAction.GetInfo);
+    String connectionStatus = info.get("NewConnectionStatus");
+    String externalIp = ParseTool.parseNullableString(info.get("NewExternalIPAddress"));
+
+    dataResponse.setExternalIp(externalIp);
+    dataResponse.setConnectionStatus(connectionStatus);
+
+    return dataResponse;
+  }
+
+
+  private List<Call> collectCallList() throws Exception
+  {
     List<Call> calls = new ArrayList<>();
 
     Map<String, String> callListRequest = fritzBoxController.doRequest(FbService.OnTel, FbAction.GetCallList);
@@ -63,9 +81,6 @@ public class DataController
       System.out.println(call);
       calls.add(call);
     });
-
-    DataResponse dataResponse = new DataResponse(calls);
-
-    return dataResponse;
+    return calls;
   }
 }

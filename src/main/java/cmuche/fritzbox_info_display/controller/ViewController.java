@@ -20,14 +20,28 @@ public class ViewController
   @FXML
   private ListView lstCalls;
 
+  @FXML
+  private Label lblConnectionStatus;
+
+  @FXML
+  private Label lblExternalIp;
+
   public void displayData(DataResponse dataResponse)
   {
     Platform.runLater(() ->
     {
+      lblConnectionStatus.setText(dataResponse.getConnectionStatus());
+      lblExternalIp.setText(dataResponse.getExternalIp());
+
+
       lstCalls.getItems().clear();
-      for (Call call : dataResponse.calls)
+      int callCount = 0;
+      int callMax = 7;
+      for (Call call : dataResponse.getCalls())
       {
+        if (callCount >= callMax) break;
         lstCalls.getItems().add(call);
+        callCount++;
       }
     });
   }
