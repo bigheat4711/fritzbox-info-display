@@ -28,4 +28,34 @@ public class Call
   {
     return String.format("%s call on %tF %tR took %d second(s): Internal: %s, External: %s", type, date, date, duration, internal, external);
   }
+
+  public CallType getType()
+  {
+    return type;
+  }
+
+  public PhoneNumber getInternal()
+  {
+    return internal;
+  }
+
+  public PhoneNumber getExternal()
+  {
+    return external;
+  }
+
+  public int getDuration()
+  {
+    return duration;
+  }
+
+  public String getDevice()
+  {
+    return device;
+  }
+
+  public Date getDate()
+  {
+    return date;
+  }
 }
