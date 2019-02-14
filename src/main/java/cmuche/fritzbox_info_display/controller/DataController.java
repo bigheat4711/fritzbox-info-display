@@ -43,9 +43,11 @@ public class DataController
       String dateString = XmlTool.getNodeContent(node, "Date");
       String durationString = XmlTool.getNodeContent(node, "Duration");
 
+      String callerNumber = ParseTool.parseNullableString(callerString);
+      
       CallType callType = ParseTool.parseCallType(typeString);
       PhoneNumber internal = new PhoneNumber(ParseTool.parseSip(calledString));
-      PhoneNumber external = new PhoneNumber(callerString);
+      PhoneNumber external = callerNumber == null ? null : new PhoneNumber(callerString);
       Date date = ParseTool.parseDate(dateString);
       int duration = ParseTool.parseDuration(durationString);
       String device = ParseTool.parseNullableString(deviceString);
