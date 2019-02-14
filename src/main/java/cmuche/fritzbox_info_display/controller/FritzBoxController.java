@@ -22,9 +22,14 @@ public class FritzBoxController
 
   public Map<String, String> doRequest(FbService fbService, FbAction fbAction) throws Exception
   {
+    return doRequest(fbService, fbAction, null);
+  }
+
+  public Map<String, String> doRequest(FbService fbService, FbAction fbAction, Map<String, Object> args) throws Exception
+  {
     Service service = connection.getService(fbService.getId());
     Action action = service.getAction(fbAction.getId());
-    Response response = action.execute();
+    Response response = action.execute(args);
 
     return response.getData();
   }
