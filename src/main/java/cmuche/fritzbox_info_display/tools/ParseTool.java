@@ -49,6 +49,7 @@ public class ParseTool
   {
     String[] parts = input.split(":");
     int duration = Integer.parseInt(parts[0]) * 60 + Integer.parseInt(parts[1]);
+    if (duration <= 1) return 0;
     return duration;
   }
 
