@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="300.0" styleClass="call-item" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="cmuche.fritzbox_info_display.view.CallCellController">
+  <children>
+    <HBox prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <children>
+        <ImageView fitHeight="36.0" fitWidth="48.000001430511475" pickOnBounds="true" preserveRatio="true" />
+        <VBox minWidth="62.0" prefHeight="36.0" prefWidth="62.0" HBox.hgrow="ALWAYS">
+          <children>
+            <Label fx:id="lblDate" styleClass="date" text="Label">
+              <font>
+                <Font size="14.0" />
+              </font>
+            </Label>
+            <Label fx:id="lblTime" styleClass="time" text="Label">
+              <font>
+                <Font name="System Bold" size="18.0" />
+              </font>
+            </Label>
+          </children>
+        </VBox>
+        <VBox prefHeight="55.0" prefWidth="379.0" HBox.hgrow="NEVER">
+          <children>
+            <Label fx:id="lblExternal" styleClass="external" text="Label">
+              <font>
+                <Font name="System Bold" size="16.0" fx:id="x1" />
+              </font>
+            </Label>
+            <Label id="lblInternal" fx:id="lblCity" styleClass="city" text="Label">
+              <font>
+                <Font name="System Italic" size="12.0" />
+              </font>
+            </Label>
+          </children>
+        </VBox>
+        <VBox minWidth="50.0" prefHeight="200.0" prefWidth="100.0">
+          <children>
+            <Label fx:id="lblDuration" font="$x1" styleClass="duration" text="Label" />
+          </children>
+        </VBox>
+      </children>
+    </HBox>
+  </children>
+  <stylesheets>
+    <URL value="@style.css" />
+  </stylesheets>
+</AnchorPane>

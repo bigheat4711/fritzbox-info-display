@@ -1,6 +1,11 @@
+.main, .list
+{
+  -fx-background-color: #111;
+}
+
 .datetime
 {
-  -fx-background-color: #222;
+  -fx-background-color: #1f2433;
 }
 
 .datetime .time
@@ -11,4 +16,40 @@
 .datetime .date
 {
   -fx-text-fill: #EEE;
+}
+
+.call-item
+{
+  -fx-background-color: #111;
+}
+
+.call-item .external
+{
+  -fx-text-fill: #EEE;
+}
+
+.call-item .city
+{
+  -fx-text-fill: #DDD;
+}
+
+.call-item .date
+{
+  -fx-text-fill: #8ca0db;
+}
+
+.call-item .time
+{
+  -fx-text-fill: #8ca0db;
+}
+
+.call-item .duration
+{
+  -fx-text-fill: #3d445c;
+}
+
+.list-cell
+{
+  -fx-padding: 0px;
+  -fx-background-color: #111;
 }
