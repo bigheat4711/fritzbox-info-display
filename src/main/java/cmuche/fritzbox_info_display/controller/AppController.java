@@ -2,11 +2,13 @@ package cmuche.fritzbox_info_display.controller;
 
 import cmuche.fritzbox_info_display.enums.FbAction;
 import cmuche.fritzbox_info_display.enums.FbService;
+import cmuche.fritzbox_info_display.model.Call;
 import cmuche.fritzbox_info_display.model.Credentials;
 import cmuche.fritzbox_info_display.model.DataResponse;
-import org.apache.commons.collections4.MapUtils;
 
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 public class AppController
 {
@@ -80,6 +82,14 @@ public class AppController
     DataController dataController = new DataController(fritzBoxController);
     DataResponse data = dataController.collectData();
     viewController.displayData(data);
+  }
+
+  public void redial(Call call) throws Exception
+  {
+    FritzBoxController fritzBoxController = new FritzBoxController(credentials);
+    Map<String, Object> args = new HashMap<>();
+    args.put("NewX_AVM-DE_PhoneNumber", call.getExternal().getNumber());
+    fritzBoxController.doRequest(FbService.Voip, FbAction.DialNumber, args);
   }
 
   public void start(ViewController viewController)
