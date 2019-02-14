@@ -1,13 +1,27 @@
 package cmuche.fritzbox_info_display.view;
 
+import cmuche.fritzbox_info_display.enums.CallType;
 import cmuche.fritzbox_info_display.model.Call;
+import javafx.embed.swing.SwingFXUtils;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
+
+import javax.imageio.ImageIO;
+import javax.swing.*;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
 
 public class CallCellController
 {
   @FXML
+  private ImageView imgType;
+
+  @FXML
   private Label lblExternal;
+
+  @FXML
+  private Label lblInternal;
 
   @FXML
   private Label lblCity;
@@ -21,8 +35,11 @@ public class CallCellController
   @FXML
   private Label lblDuration;
 
-  public void setCall(Call call)
+  public void setCall(Call call) throws IOException
   {
+    BufferedImage image = ImageIO.read(CallCellController.class.getClassLoader().getResourceAsStream("icons/Call" + call.getType().name() + ".png"));
+    imgType.setImage(SwingFXUtils.toFXImage(image, null));
+
     lblDate.setText(String.format("%td. %tb", call.getDate(), call.getDate()));
     lblTime.setText(String.format("%tR", call.getDate()));
 
@@ -36,6 +53,14 @@ public class CallCellController
       if (call.getExternal().getCityCode() != null) lblCity.setText(call.getExternal().getCityCode().getCity());
     }
 
-    if (call.getExternal() == null || call.getExternal().getCityCode() == null) lblCity.setVisible(false);
+    if (call.getExternal() == null || call.getExternal().getCityCode() == null){
+      lblCity.setVisible(false);
+      lblCity.setMaxHeight(0);
+      lblCity.setMinHeight(0);
+    }
+
+    String internalString = (call.getType() == CallType.Outbound ? "Von" : "Auf") + " " + call.getInternal().getNumber();
+    if (call.getDevice() != null) internalString += " (" + call.getDevice() + ")";
+    lblInternal.setText(internalString);
   }
 }

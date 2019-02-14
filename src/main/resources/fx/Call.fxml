@@ -3,17 +3,22 @@
 <?import java.lang.*?>
 <?import java.net.*?>
 <?import java.util.*?>
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="300.0" styleClass="call-item" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="cmuche.fritzbox_info_display.view.CallCellController">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" padding="$x2" prefHeight="61.999977929684974" prefWidth="300.0" styleClass="call-item" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="cmuche.fritzbox_info_display.view.CallCellController">
   <children>
     <HBox prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
       <children>
-        <ImageView fitHeight="36.0" fitWidth="48.000001430511475" pickOnBounds="true" preserveRatio="true" />
+        <ImageView fx:id="imgType" fitHeight="36.0" fitWidth="48.000001430511475" pickOnBounds="true" preserveRatio="true">
+          <HBox.margin>
+            <Insets bottom="5.0" left="5.0" right="10.0" top="5.0" />
+          </HBox.margin>
+        </ImageView>
         <VBox minWidth="62.0" prefHeight="36.0" prefWidth="62.0" HBox.hgrow="ALWAYS">
           <children>
             <Label fx:id="lblDate" styleClass="date" text="Label">
@@ -40,11 +45,23 @@
                 <Font name="System Italic" size="12.0" />
               </font>
             </Label>
+            <Label fx:id="lblInternal" styleClass="internal" text="Label">
+              <font>
+                <Font size="11.0" />
+              </font>
+              <VBox.margin>
+                <Insets fx:id="x2" />
+              </VBox.margin>
+            </Label>
           </children>
         </VBox>
         <VBox minWidth="50.0" prefHeight="200.0" prefWidth="100.0">
           <children>
-            <Label fx:id="lblDuration" font="$x1" styleClass="duration" text="Label" />
+            <Label fx:id="lblDuration" alignment="TOP_RIGHT" font="$x1" prefWidth="50.0" styleClass="duration" text="Label" textAlignment="RIGHT">
+              <VBox.margin>
+                <Insets right="5.0" />
+              </VBox.margin>
+            </Label>
           </children>
         </VBox>
       </children>

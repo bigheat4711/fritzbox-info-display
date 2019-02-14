@@ -28,6 +28,11 @@
   -fx-text-fill: #EEE;
 }
 
+.call-item .internal
+{
+  -fx-text-fill: #60709e;
+}
+
 .call-item .city
 {
   -fx-text-fill: #DDD;
