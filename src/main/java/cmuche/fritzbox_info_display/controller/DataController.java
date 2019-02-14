@@ -66,6 +66,7 @@ public class DataController
       HostInterface iface = HostInterface.getById(ifaceString);
 
       Host host = new Host(name, ip, mac, iface);
+      System.out.println(host);
       hosts.add(host);
     }
 

@@ -17,6 +17,12 @@ public class Host
     this.iface = iface;
   }
 
+  @Override
+  public String toString()
+  {
+    return name + " @" + ip + " (" + iface.getId() + ")";
+  }
+
   public String getName()
   {
     return name;
