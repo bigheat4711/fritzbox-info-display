@@ -10,7 +10,7 @@
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.999977929684974" prefWidth="300.0" styleClass="call-item" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="cmuche.fritzbox_info_display.view.CallCellController">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="53.999977929684974" prefWidth="300.0" styleClass="call-item" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="cmuche.fritzbox_info_display.view.CallCellController">
   <children>
     <HBox prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
       <children>
@@ -19,14 +19,14 @@
             <Insets bottom="5.0" left="5.0" right="10.0" top="5.0" />
           </HBox.margin>
         </ImageView>
-        <VBox minWidth="62.0" prefHeight="36.0" prefWidth="62.0" HBox.hgrow="ALWAYS">
+        <VBox minWidth="55.0" prefHeight="36.0" prefWidth="62.0" HBox.hgrow="ALWAYS">
           <children>
-            <Label fx:id="lblDate" styleClass="date" text="Label">
+            <Label fx:id="lblDate" styleClass="date" text="00. XXX">
               <font>
                 <Font size="14.0" />
               </font>
             </Label>
-            <Label fx:id="lblTime" styleClass="time" text="Label">
+            <Label fx:id="lblTime" styleClass="time" text="00:00">
               <font>
                 <Font name="System Bold" size="18.0" fx:id="x3" />
               </font>
@@ -35,10 +35,10 @@
         </VBox>
         <VBox prefHeight="55.0" prefWidth="379.0" HBox.hgrow="NEVER">
           <children>
-            <Label fx:id="lblExternal" font="$x3" styleClass="external" text="Label" />
+            <Label fx:id="lblExternal" font="$x3" styleClass="external" text="0000 000000" />
             <HBox prefHeight="100.0" prefWidth="200.0">
               <children>
-                <Label fx:id="lblInternal" styleClass="internal" text="Label">
+                <Label fx:id="lblInternal" styleClass="internal" text="00000 (XXX)">
                   <font>
                     <Font size="12.0" />
                   </font>
@@ -46,7 +46,7 @@
                     <Insets right="5.0" />
                   </HBox.margin>
                 </Label>
-                <Label id="lblInternal" fx:id="lblCity" styleClass="city" text="Label">
+                <Label id="lblInternal" fx:id="lblCity" styleClass="city" text="XXXXXXX">
                   <font>
                     <Font name="System Italic" size="12.0" />
                   </font>
@@ -57,7 +57,7 @@
         </VBox>
         <VBox minWidth="40.0" prefHeight="200.0" prefWidth="100.0">
           <children>
-            <Label fx:id="lblDuration" alignment="TOP_RIGHT" prefWidth="50.0" styleClass="duration" text="Label" textAlignment="RIGHT">
+            <Label fx:id="lblDuration" alignment="TOP_RIGHT" prefWidth="50.0" styleClass="duration" text="00X" textAlignment="RIGHT">
               <font>
                 <Font name="System Bold" size="16.0" fx:id="x1" />
               </font>

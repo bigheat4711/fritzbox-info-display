@@ -54,11 +54,7 @@ public class CallCellController
       if (call.getExternal().getCityCode() != null) lblCity.setText(call.getExternal().getCityCode().getCity());
     }
 
-    if (call.getExternal() == null || call.getExternal().getCityCode() == null){
-      lblCity.setVisible(false);
-      lblCity.setMaxHeight(0);
-      lblCity.setMinHeight(0);
-    }
+    if (call.getExternal() == null || call.getExternal().getCityCode() == null) lblCity.setVisible(false);
 
     String internalString = call.getInternal().getNumber();
     if (call.getDevice() != null) internalString += " (" + call.getDevice() + ")";
