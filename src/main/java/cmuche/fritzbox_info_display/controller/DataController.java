@@ -3,6 +3,7 @@ package cmuche.fritzbox_info_display.controller;
 import cmuche.fritzbox_info_display.enums.CallType;
 import cmuche.fritzbox_info_display.enums.FbAction;
 import cmuche.fritzbox_info_display.enums.FbService;
+import cmuche.fritzbox_info_display.model.Call;
 import cmuche.fritzbox_info_display.model.DataResponse;
 import cmuche.fritzbox_info_display.model.PhoneNumber;
 import cmuche.fritzbox_info_display.tools.NetworkTool;
@@ -43,13 +44,10 @@ public class DataController
       PhoneNumber external = new PhoneNumber(callerString);
       Date date = ParseTool.parseDate(dateString);
       int duration = ParseTool.parseDuration(durationString);
+      String device = ParseTool.parseNullableString(deviceString);
 
-      System.out.println(callType);
-      System.out.println(internal);
-      System.out.println(external);
-      System.out.println(date);
-      System.out.println(duration);
-      System.out.println();
+      Call call = new Call(callType, internal, external, duration, device, date);
+      System.out.println(call);
     });
 
     return null;

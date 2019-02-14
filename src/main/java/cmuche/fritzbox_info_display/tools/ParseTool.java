@@ -51,4 +51,11 @@ public class ParseTool
     int duration = Integer.parseInt(parts[0]) * 60 + Integer.parseInt(parts[1]);
     return duration;
   }
+
+  public static String parseNullableString(String input)
+  {
+    if (input == null) return null;
+    if (input.isEmpty()) return null;
+    return input;
+  }
 }
