@@ -44,4 +44,11 @@ public class ParseTool
       return null;
     }
   }
+
+  public static int parseDuration(String input)
+  {
+    String[] parts = input.split(":");
+    int duration = Integer.parseInt(parts[0]) * 60 + Integer.parseInt(parts[1]);
+    return duration;
+  }
 }

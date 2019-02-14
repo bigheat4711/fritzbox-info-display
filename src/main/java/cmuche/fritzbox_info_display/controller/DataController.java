@@ -42,11 +42,13 @@ public class DataController
       PhoneNumber internal = new PhoneNumber(ParseTool.parseSip(calledString));
       PhoneNumber external = new PhoneNumber(callerString);
       Date date = ParseTool.parseDate(dateString);
+      int duration = ParseTool.parseDuration(durationString);
 
       System.out.println(callType);
       System.out.println(internal);
       System.out.println(external);
       System.out.println(date);
+      System.out.println(duration);
       System.out.println();
     });
 
