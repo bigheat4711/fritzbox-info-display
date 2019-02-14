@@ -1,6 +1,7 @@
 package cmuche.fritzbox_info_display.controller;
 
 import cmuche.fritzbox_info_display.enums.CallType;
+import cmuche.fritzbox_info_display.enums.ConnectionStatus;
 import cmuche.fritzbox_info_display.enums.FbAction;
 import cmuche.fritzbox_info_display.enums.FbService;
 import cmuche.fritzbox_info_display.model.Call;
@@ -33,7 +34,8 @@ public class DataController
     dataResponse.setCalls(calls);
 
     Map<String, String> info = fritzBoxController.doRequest(FbService.IpConnection, FbAction.GetInfo);
-    String connectionStatus = info.get("NewConnectionStatus");
+    String connectionStatusString = info.get("NewConnectionStatus");
+    ConnectionStatus connectionStatus = ParseTool.parseConnectionStatus(connectionStatusString);
     String externalIp = ParseTool.parseNullableString(info.get("NewExternalIPAddress"));
 
     dataResponse.setExternalIp(externalIp);

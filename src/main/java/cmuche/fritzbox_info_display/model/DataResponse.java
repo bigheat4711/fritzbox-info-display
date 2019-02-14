@@ -1,12 +1,14 @@
 package cmuche.fritzbox_info_display.model;
 
+import cmuche.fritzbox_info_display.enums.ConnectionStatus;
+
 import java.util.List;
 
 public class DataResponse
 {
   private List<Call> calls;
   private String externalIp;
-  private String connectionStatus;
+  private ConnectionStatus connectionStatus;
 
   public List<Call> getCalls()
   {
@@ -28,12 +30,12 @@ public class DataResponse
     this.externalIp = externalIp;
   }
 
-  public String getConnectionStatus()
+  public ConnectionStatus getConnectionStatus()
   {
     return connectionStatus;
   }
 
-  public void setConnectionStatus(String connectionStatus)
+  public void setConnectionStatus(ConnectionStatus connectionStatus)
   {
     this.connectionStatus = connectionStatus;
   }

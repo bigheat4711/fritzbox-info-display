@@ -30,7 +30,7 @@ public class ViewController
   {
     Platform.runLater(() ->
     {
-      lblConnectionStatus.setText(dataResponse.getConnectionStatus());
+      lblConnectionStatus.setText(dataResponse.getConnectionStatus().getDisplay());
       lblExternalIp.setText(dataResponse.getExternalIp());
 
 

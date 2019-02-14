@@ -1,6 +1,7 @@
 package cmuche.fritzbox_info_display.tools;
 
 import cmuche.fritzbox_info_display.enums.CallType;
+import cmuche.fritzbox_info_display.enums.ConnectionStatus;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -58,5 +59,10 @@ public class ParseTool
     if (input == null) return null;
     if (input.isEmpty()) return null;
     return input;
+  }
+
+  public static ConnectionStatus parseConnectionStatus(String input)
+  {
+    return ConnectionStatus.valueOf(input);
   }
 }
