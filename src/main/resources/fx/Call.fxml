@@ -38,6 +38,14 @@
             <Label fx:id="lblExternal" font="$x3" styleClass="external" text="0000 000000" />
             <HBox prefHeight="100.0" prefWidth="200.0">
               <children>
+                <ImageView fx:id="imgInfoPhone" fitHeight="12.0" fitWidth="12.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                    <Image url="@../icons/InfoPhone.png" />
+                  </image>
+                  <HBox.margin>
+                    <Insets right="2.0" top="2.0" fx:id="x4" />
+                  </HBox.margin>
+                </ImageView>
                 <Label fx:id="lblInternal" styleClass="internal" text="00000 (XXX)">
                   <font>
                     <Font size="12.0" />
@@ -46,6 +54,11 @@
                     <Insets right="5.0" />
                   </HBox.margin>
                 </Label>
+                <ImageView fx:id="imgInfoCity" fitHeight="12.0" fitWidth="12.0" pickOnBounds="true" preserveRatio="true" HBox.margin="$x4">
+                  <image>
+                    <Image url="@../icons/InfoCity.png" />
+                  </image>
+                </ImageView>
                 <Label id="lblInternal" fx:id="lblCity" styleClass="city" text="XXXXXXX">
                   <font>
                     <Font name="System Italic" size="12.0" />

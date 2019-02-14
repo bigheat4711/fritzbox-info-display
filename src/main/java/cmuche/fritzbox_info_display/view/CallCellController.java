@@ -36,6 +36,9 @@ public class CallCellController
   @FXML
   private Label lblDuration;
 
+  @FXML
+  private ImageView imgInfoCity;
+
   public void setCall(Call call) throws IOException
   {
     BufferedImage image = ImageIO.read(CallCellController.class.getClassLoader().getResourceAsStream("icons/Call" + call.getType().name() + ".png"));
@@ -54,7 +57,11 @@ public class CallCellController
       if (call.getExternal().getCityCode() != null) lblCity.setText(call.getExternal().getCityCode().getCity());
     }
 
-    if (call.getExternal() == null || call.getExternal().getCityCode() == null) lblCity.setVisible(false);
+    if (call.getExternal() == null || call.getExternal().getCityCode() == null)
+    {
+      imgInfoCity.setVisible(false);
+      lblCity.setVisible(false);
+    }
 
     String internalString = call.getInternal().getNumber();
     if (call.getDevice() != null) internalString += " (" + call.getDevice() + ")";
