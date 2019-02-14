@@ -24,7 +24,8 @@ https://www.bundesnetzagentur.de/SharedDocs/Downloads/DE/Sachgebiete/Telekommuni
 
 ## Hardware
 
-### Raspberry PI
+### Raspberry Pi
+Raspberry Pi 3 B+: https://amzn.to/2Grxi8N
 
 ### Screen
-3.5" TFT LCD Screen: https://amzn.to/2Ebqkmi
+3.5" SPI Screen: https://amzn.to/2Ebqkmi
