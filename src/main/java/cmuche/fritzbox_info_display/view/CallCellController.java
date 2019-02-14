@@ -1,6 +1,5 @@
 package cmuche.fritzbox_info_display.view;
 
-import cmuche.fritzbox_info_display.enums.CallType;
 import cmuche.fritzbox_info_display.model.Call;
 import cmuche.fritzbox_info_display.tools.FormatTool;
 import javafx.embed.swing.SwingFXUtils;
@@ -9,7 +8,6 @@ import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 
 import javax.imageio.ImageIO;
-import javax.swing.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 
