@@ -2,7 +2,6 @@ package cmuche.fritzbox_info_display.controller;
 
 import cmuche.fritzbox_info_display.model.DataResponse;
 import javafx.application.Platform;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
