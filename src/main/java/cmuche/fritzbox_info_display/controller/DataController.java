@@ -45,19 +45,19 @@ public class DataController
 
       String callerNumber = ParseTool.parseNullableString(callerString);
       CallType callType = ParseTool.parseCallType(typeString);
-
-      //special treatment for TAM (device='er')
-      if (deviceString.equals("er"))
-      {
-        deviceString = "AB";
-        callType = CallType.Tam;
-      }
-
       PhoneNumber internal = new PhoneNumber(ParseTool.parseSip(calledString));
       PhoneNumber external = callerNumber == null ? null : new PhoneNumber(callerString);
       Date date = ParseTool.parseDate(dateString);
       int duration = ParseTool.parseDuration(durationString);
       String device = ParseTool.parseNullableString(deviceString);
+
+      //special treatment for TAM (device='er')
+      if (deviceString.equals("er"))
+      {
+        duration = 0;
+        device = null;
+        callType = CallType.Tam;
+      }
 
       Call call = new Call(callType, internal, external, duration, device, date);
       System.out.println(call);
