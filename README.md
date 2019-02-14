@@ -27,4 +27,4 @@ https://www.bundesnetzagentur.de/SharedDocs/Downloads/DE/Sachgebiete/Telekommuni
 ### Raspberry PI
 
 ### Screen
-7" TFT Screen
+3.5" TFT LCD Screen: https://amzn.to/2Ebqkmi
