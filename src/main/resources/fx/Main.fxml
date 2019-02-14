@@ -75,7 +75,32 @@
                         <Image url="@../icons/InfoIp.png" />
                      </image>
                   </ImageView>
-                  <Label fx:id="lblExternalIp" text="XXX" />
+                  <Label fx:id="lblExternalIp" text="XXX">
+                     <HBox.margin>
+                        <Insets right="20.0" />
+                     </HBox.margin></Label>
+                  <ImageView fitHeight="12.0" fitWidth="12.0" layoutX="15.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/InfoEthernet.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets right="2.0" top="2.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <Label fx:id="lblHostsEthernet" layoutX="29.0" layoutY="10.0" text="00">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <ImageView fitHeight="12.0" fitWidth="12.0" layoutX="97.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/InfoWifi.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets right="2.0" top="2.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <Label fx:id="lblHostsWifi" layoutX="109.0" layoutY="10.0" text="00" />
                </children>
                <VBox.margin>
                   <Insets />

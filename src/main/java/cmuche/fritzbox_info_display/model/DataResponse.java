@@ -7,9 +7,9 @@ import java.util.List;
 public class DataResponse
 {
   private List<Call> calls;
+  private List<Host> hosts;
   private String externalIp;
   private ConnectionStatus connectionStatus;
-  private int connectedDevices;
 
   public List<Call> getCalls()
   {
@@ -41,13 +41,13 @@ public class DataResponse
     this.connectionStatus = connectionStatus;
   }
 
-  public int getConnectedDevices()
+  public List<Host> getHosts()
   {
-    return connectedDevices;
+    return hosts;
   }
 
-  public void setConnectedDevices(int connectedDevices)
+  public void setHosts(List<Host> hosts)
   {
-    this.connectedDevices = connectedDevices;
+    this.hosts = hosts;
   }
 }

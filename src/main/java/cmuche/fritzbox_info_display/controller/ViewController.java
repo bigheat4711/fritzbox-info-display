@@ -1,5 +1,6 @@
 package cmuche.fritzbox_info_display.controller;
 
+import cmuche.fritzbox_info_display.enums.HostInterface;
 import cmuche.fritzbox_info_display.model.Call;
 import cmuche.fritzbox_info_display.model.DataResponse;
 import javafx.application.Platform;
@@ -26,6 +27,12 @@ public class ViewController
   @FXML
   private Label lblExternalIp;
 
+  @FXML
+  private Label lblHostsEthernet;
+
+  @FXML
+  private Label lblHostsWifi;
+
   public void displayData(DataResponse dataResponse)
   {
     Platform.runLater(() ->
@@ -33,6 +40,11 @@ public class ViewController
       lblConnectionStatus.setText(dataResponse.getConnectionStatus().getDisplay());
       lblExternalIp.setText(dataResponse.getExternalIp());
 
+      int countHostsEthernet = (int) dataResponse.getHosts().stream().filter(x -> x.getIface() == HostInterface.Ethernet).count();
+      int countHostsWifi = (int) dataResponse.getHosts().stream().filter(x -> x.getIface() == HostInterface.WiFi).count();
+
+      lblHostsEthernet.setText(String.valueOf(countHostsEthernet));
+      lblHostsWifi.setText(String.valueOf(countHostsWifi));
 
       lstCalls.getItems().clear();
       int callCount = 0;

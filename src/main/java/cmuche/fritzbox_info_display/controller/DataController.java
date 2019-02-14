@@ -1,21 +1,16 @@
 package cmuche.fritzbox_info_display.controller;
 
-import cmuche.fritzbox_info_display.enums.CallType;
-import cmuche.fritzbox_info_display.enums.ConnectionStatus;
-import cmuche.fritzbox_info_display.enums.FbAction;
-import cmuche.fritzbox_info_display.enums.FbService;
+import cmuche.fritzbox_info_display.enums.*;
 import cmuche.fritzbox_info_display.model.Call;
 import cmuche.fritzbox_info_display.model.DataResponse;
+import cmuche.fritzbox_info_display.model.Host;
 import cmuche.fritzbox_info_display.model.PhoneNumber;
 import cmuche.fritzbox_info_display.tools.NetworkTool;
 import cmuche.fritzbox_info_display.tools.ParseTool;
 import cmuche.fritzbox_info_display.tools.XmlTool;
 import org.w3c.dom.Document;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class DataController
 {
@@ -34,8 +29,8 @@ public class DataController
     List<Call> calls = collectCallList();
     dataResponse.setCalls(calls);
 
-    int connectedDevices = collectConnectedDevices();
-    dataResponse.setConnectedDevices(connectedDevices);
+    List<Host> hosts = collectHosts();
+    dataResponse.setHosts(hosts);
 
     Map<String, String> info = fritzBoxController.doRequest(FbService.IpConnection, FbAction.GetInfo);
     String connectionStatusString = info.get("NewConnectionStatus");
@@ -48,9 +43,33 @@ public class DataController
     return dataResponse;
   }
 
-  private int collectConnectedDevices()
+  private List<Host> collectHosts() throws Exception
   {
+    List<Host> hosts = new ArrayList<>();
 
+    Map<String, String> hostsCountResult = fritzBoxController.doRequest(FbService.Hosts, FbAction.GetHostsCount);
+    int countHosts = Integer.parseInt(hostsCountResult.get("NewHostNumberOfEntries"));
+
+    for (int i = 0; i < countHosts; i++)
+    {
+      Map<String, Object> args = new HashMap<>();
+      args.put("NewIndex", i);
+      Map<String, String> hostInfo = fritzBoxController.doRequest(FbService.Hosts, FbAction.GetHostInfo, args);
+
+      boolean active = hostInfo.get("NewActive").equals("1");
+      if (!active) continue;
+
+      String name = hostInfo.get("NewHostName");
+      String mac = hostInfo.get("NewMACAddress");
+      String ip = hostInfo.get("NewIPAddress");
+      String ifaceString = hostInfo.get("NewInterfaceType");
+      HostInterface iface = HostInterface.getById(ifaceString);
+
+      Host host = new Host(name, ip, mac, iface);
+      hosts.add(host);
+    }
+
+    return hosts;
   }
 
   private List<Call> collectCallList() throws Exception
