@@ -13,7 +13,7 @@ https://avm.de/service/schnittstellen/
 #### Caller List
 https://avm.de/fileadmin/user_upload/Global/Service/Schnittstellen/x_contactSCPD.pdf
 
-## City Codes
+## German city codes
 
 ### Database
 https://www.bundesnetzagentur.de/SharedDocs/Downloads/DE/Sachgebiete/Telekommunikation/Unternehmen_Institutionen/Nummerierung/Rufnummern/ONRufnr/Vorwahlverzeichnis_ONBzip.html
