@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.*?>
+<?import java.net.*?>
 <?import javafx.geometry.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
@@ -10,13 +11,13 @@
 
 <AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="320.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="cmuche.fritzbox_info_display.controller.ViewController">
   <children>
-    <VBox prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+    <VBox prefHeight="200.0" prefWidth="100.0" style="&#10;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
       <children>
-        <VBox prefHeight="0.0" prefWidth="100.0" spacing="0.0" VBox.vgrow="NEVER">
+        <VBox prefHeight="0.0" prefWidth="100.0" spacing="0.0" styleClass="datetime" VBox.vgrow="NEVER">
           <children>
-            <HBox alignment="CENTER" prefHeight="0.0" prefWidth="-1.0">
+            <HBox alignment="CENTER" prefHeight="0.0" prefWidth="-1.0" style="">
               <children>
-                <Label fx:id="lblTime" alignment="TOP_LEFT" minWidth="-1.0" text="--:--" textAlignment="CENTER">
+                <Label fx:id="lblTime" alignment="TOP_LEFT" minWidth="-1.0" style="" styleClass="time" text="--:--" textAlignment="CENTER">
                   <font>
                     <Font name="System Bold" size="30.0" />
                   </font>
@@ -25,7 +26,7 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="0.0" prefWidth="200.0">
               <children>
-                <Label fx:id="lblDate" text="--" textAlignment="CENTER">
+                <Label fx:id="lblDate" styleClass="date" text="--" textAlignment="CENTER">
                   <font>
                     <Font size="14.0" />
                   </font>
@@ -37,7 +38,7 @@
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
           </padding>
         </VBox>
-        <TableView fx:id="tblCalls" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+        <TableView fx:id="tblCalls" focusTraversable="false" prefHeight="200.0" prefWidth="200.0" visible="true" VBox.vgrow="ALWAYS">
           <columns>
             <TableColumn editable="false" prefWidth="20.0" resizable="false" sortable="false" text="" visible="true" fx:id="tblCallsImage" />
             <TableColumn editable="false" prefWidth="75.0" resizable="false" sortable="false" text="Intern" fx:id="tblCallsInt" />
@@ -47,4 +48,7 @@
       </children>
     </VBox>
   </children>
+  <stylesheets>
+    <URL value="@style.css" />
+  </stylesheets>
 </AnchorPane>

@@ -1,0 +1,14 @@
+.datetime
+{
+  -fx-background-color: #222;
+}
+
+.datetime .time
+{
+  -fx-text-fill: #FFF;
+}
+
+.datetime .date
+{
+  -fx-text-fill: #EEE;
+}
