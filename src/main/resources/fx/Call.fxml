@@ -10,7 +10,7 @@
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" padding="$x2" prefHeight="61.999977929684974" prefWidth="300.0" styleClass="call-item" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="cmuche.fritzbox_info_display.view.CallCellController">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" padding="$x2" prefHeight="60.999977929684974" prefWidth="300.0" styleClass="call-item" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="cmuche.fritzbox_info_display.view.CallCellController">
   <children>
     <HBox prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
       <children>
@@ -28,7 +28,7 @@
             </Label>
             <Label fx:id="lblTime" styleClass="time" text="Label">
               <font>
-                <Font name="System Bold" size="18.0" />
+                <Font name="System Bold" size="20.0" />
               </font>
             </Label>
           </children>
@@ -37,7 +37,7 @@
           <children>
             <Label fx:id="lblExternal" styleClass="external" text="Label">
               <font>
-                <Font name="System Bold" size="16.0" fx:id="x1" />
+                <Font name="System Bold" size="18.0" />
               </font>
             </Label>
             <Label id="lblInternal" fx:id="lblCity" styleClass="city" text="Label">
@@ -47,7 +47,7 @@
             </Label>
             <Label fx:id="lblInternal" styleClass="internal" text="Label">
               <font>
-                <Font size="11.0" />
+                <Font size="12.0" />
               </font>
               <VBox.margin>
                 <Insets fx:id="x2" />
@@ -55,9 +55,12 @@
             </Label>
           </children>
         </VBox>
-        <VBox minWidth="50.0" prefHeight="200.0" prefWidth="100.0">
+        <VBox minWidth="40.0" prefHeight="200.0" prefWidth="100.0">
           <children>
-            <Label fx:id="lblDuration" alignment="TOP_RIGHT" font="$x1" prefWidth="50.0" styleClass="duration" text="Label" textAlignment="RIGHT">
+            <Label fx:id="lblDuration" alignment="TOP_RIGHT" prefWidth="50.0" styleClass="duration" text="Label" textAlignment="RIGHT">
+              <font>
+                <Font name="System Bold" size="16.0" fx:id="x1" />
+              </font>
               <VBox.margin>
                 <Insets right="5.0" />
               </VBox.margin>

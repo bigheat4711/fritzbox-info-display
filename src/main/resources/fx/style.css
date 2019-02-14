@@ -30,7 +30,7 @@
 
 .call-item .internal
 {
-  -fx-text-fill: #60709e;
+  -fx-text-fill: #6f81b6;
 }
 
 .call-item .city
@@ -50,7 +50,7 @@
 
 .call-item .duration
 {
-  -fx-text-fill: #3d445c;
+  -fx-text-fill: #545c7d;
 }
 
 .list-cell
