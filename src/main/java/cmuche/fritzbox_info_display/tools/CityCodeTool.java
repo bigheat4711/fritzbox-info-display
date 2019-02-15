@@ -1,15 +1,15 @@
 package cmuche.fritzbox_info_display.tools;
 
+import cmuche.fritzbox_info_display.App;
 import cmuche.fritzbox_info_display.model.CityCode;
-import org.apache.commons.io.FileUtils;
 
-import java.io.File;
-import java.io.IOException;
+import java.net.URI;
 import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class CityCodeTool
 {
@@ -23,10 +23,14 @@ public class CityCodeTool
 
   private static void loadList()
   {
-    URL url = CityCodeTool.class.getClassLoader().getResource("NVONB.INTERNET.20190212.ONB.csv");
     try
     {
-      List<String> lines = FileUtils.readLines(new File(url.getFile()), "UTF-8");
+      URL resource = App.class.getClassLoader().getResource("NVONB.INTERNET.20190212.ONB.csv");
+      URI uri = resource.toURI();
+      Path path = Paths.get(uri);
+      byte[] bytes = Files.readAllBytes(path);
+      String[] lines = new String(bytes).split("\r\n");
+
       boolean firstLine = true;
       for (String line : lines)
       {
@@ -47,7 +51,7 @@ public class CityCodeTool
         codes.add(cityCode);
       }
     }
-    catch (IOException e)
+    catch (Exception e)
     {
       e.printStackTrace();
     }
