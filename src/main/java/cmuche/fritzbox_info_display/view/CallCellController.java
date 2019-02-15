@@ -1,11 +1,20 @@
 package cmuche.fritzbox_info_display.view;
 
+import cmuche.fritzbox_info_display.controller.ViewController;
 import cmuche.fritzbox_info_display.model.Call;
 import cmuche.fritzbox_info_display.tools.FormatTool;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
@@ -37,8 +46,12 @@ public class CallCellController
   @FXML
   private ImageView imgInfoCity;
 
+  private Call call;
+
   public void setCall(Call call) throws IOException
   {
+    this.call = call;
+
     BufferedImage image = ImageIO.read(CallCellController.class.getClassLoader().getResourceAsStream("icons/Call" + call.getType().name() + ".png"));
     imgType.setImage(SwingFXUtils.toFXImage(image, null));
 
@@ -64,5 +77,20 @@ public class CallCellController
     String internalString = call.getInternal().getNumber();
     if (call.getDevice() != null) internalString += " (" + call.getDevice() + ")";
     lblInternal.setText(internalString);
+  }
+
+  @FXML
+  private void clickCall(MouseEvent event) throws IOException
+  {
+    FXMLLoader loader = new FXMLLoader(ViewController.class.getClassLoader().getResource("fx/CallModal.fxml"));
+    Parent root = loader.load();
+    Stage stg = new Stage();
+    stg.setScene(new Scene(root));
+    stg.initModality(Modality.WINDOW_MODAL);
+    stg.initStyle(StageStyle.UNDECORATED);
+    stg.setX(((Node) event.getSource()).getScene().getWindow().getX()+30);
+    stg.setY(((Node) event.getSource()).getScene().getWindow().getY()+50);
+    stg.initOwner(((Node) event.getSource()).getScene().getWindow());
+    stg.show();
   }
 }
