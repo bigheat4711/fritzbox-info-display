@@ -3,7 +3,10 @@
 ![](repo/photo_small.jpg)
 
 ## Usage
-``java -jar fritzbox_info_display-App.jar <Fritz!Box address> <username> <password> [live]``
+``
+export DISPLAY=:0
+java -jar fritzbox_info_display-App.jar <Fritz!Box address> <username> <password> [live]
+``
 
 ## AVM TR-064
 
