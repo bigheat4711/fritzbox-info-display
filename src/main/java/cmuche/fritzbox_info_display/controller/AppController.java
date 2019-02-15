@@ -33,7 +33,7 @@ public class AppController
         while (isRunning)
         {
           updateData();
-          Thread.sleep(10000);
+          Thread.sleep(60000);
         }
       }
       catch (InterruptedException ex)
