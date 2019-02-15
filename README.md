@@ -24,10 +24,10 @@ https://www.bundesnetzagentur.de/SharedDocs/Downloads/DE/Sachgebiete/Telekommuni
 
 ## Hardware
 
-![](repo/IMG_0695.JPG)
-
 ### Raspberry Pi
 Raspberry Pi 3 B+: https://amzn.to/2Grxi8N
 
-### Screen
-3.5" SPI Screen: https://amzn.to/2Ebqkmi
+### Touchscreen
+3.5" SPI Touchscreen: https://amzn.to/2Ebqkmi
+
+![](repo/IMG_0695.JPG)
