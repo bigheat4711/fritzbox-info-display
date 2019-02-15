@@ -1,5 +1,8 @@
 # FRITZ!Box Info Display
 
+## Usage
+``java -jar fritzbox_info_display-App.jar <Fritz!Box address> <username> <password> [live]``
+
 ## AVM TR-064
 
 ### Library
