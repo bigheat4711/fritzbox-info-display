@@ -4,7 +4,10 @@ public enum FbAction implements NamedEnum
 {
   GetCallList("GetCallList"),
   DialNumber("X_AVM-DE_DialNumber"),
-  DialHangup("X_AVM-DE_DialHangup");
+  DialHangup("X_AVM-DE_DialHangup"),
+  GetInfo("GetInfo"),
+  GetHostsCount("GetHostNumberOfEntries"),
+  GetHostInfo("GetGenericHostEntry");
 
   private String id;
 

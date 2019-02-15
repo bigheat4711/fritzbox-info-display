@@ -6,6 +6,7 @@ import cmuche.fritzbox_info_display.model.Credentials;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Cursor;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -15,8 +16,12 @@ public class App extends Application
   private static ViewController viewController;
   private static AppController appController;
 
+  private static boolean isLive;
+
   public static void main(String[] args) throws Exception
   {
+    isLive = args.length >= 4 && args[3].equals("live");
+
     Credentials credentials = Credentials.fromParameters(args);
     appController = new AppController(credentials);
 
@@ -41,7 +46,15 @@ public class App extends Application
 
     Stage stg = new Stage();
     stg.setTitle("FRITZ!Box Info Display");
-    stg.setScene(new Scene(root));
+    Scene scn = new Scene(root);
+
+    if (isLive)
+    {
+      scn.setCursor(Cursor.NONE);
+      stg.setFullScreen(true);
+    }
+
+    stg.setScene(scn);
     stg.show();
   }
 }

@@ -5,6 +5,9 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
@@ -20,7 +23,7 @@
               <children>
                 <Label fx:id="lblTime" alignment="TOP_LEFT" minWidth="-1.0" style="" styleClass="time" text="--:--" textAlignment="CENTER">
                   <font>
-                    <Font name="System Bold" size="30.0" />
+                    <Font name="Roboto Bold" size="30.0" />
                   </font>
                 </Label>
               </children>
@@ -45,9 +48,81 @@
               <cellFactory>
                 <CallCellFactory fxmlSource="@Call.fxml" />
               </cellFactory>
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
             </ListView>
           </children>
         </VBox>
+            <HBox prefHeight="12.0" prefWidth="200.0" styleClass="info-bar" VBox.vgrow="NEVER">
+               <children>
+                  <ImageView fitHeight="12.0" fitWidth="12.0" pickOnBounds="true" preserveRatio="true">
+                     <HBox.margin>
+                        <Insets left="5.0" right="2.0" top="2.0" />
+                     </HBox.margin>
+                     <image>
+                        <Image url="@../icons/InfoConnection.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="lblConnectionStatus" text="XXX">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Roboto Regular" size="12.0" />
+                     </font></Label>
+                  <ImageView fitHeight="12.0" fitWidth="12.0" pickOnBounds="true" preserveRatio="true">
+                     <HBox.margin>
+                        <Insets right="2.0" top="2.0" />
+                     </HBox.margin>
+                     <image>
+                        <Image url="@../icons/InfoIp.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="lblExternalIp" text="XXX">
+                     <HBox.margin>
+                        <Insets right="20.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Roboto Regular" size="12.0" />
+                     </font></Label>
+                  <ImageView fitHeight="12.0" fitWidth="12.0" layoutX="15.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/InfoEthernet.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets right="2.0" top="2.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <Label fx:id="lblHostsEthernet" layoutX="29.0" layoutY="10.0" text="00">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Roboto Regular" size="12.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="12.0" fitWidth="12.0" layoutX="97.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/InfoWifi.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets right="2.0" top="2.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <Label fx:id="lblHostsWifi" layoutX="109.0" layoutY="10.0" text="00">
+                     <font>
+                        <Font name="Roboto Regular" size="12.0" />
+                     </font></Label>
+                  <ProgressIndicator fx:id="pgiLoading" prefHeight="12.0" prefWidth="12.0">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </ProgressIndicator>
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin></HBox>
       </children>
     </VBox>
   </children>

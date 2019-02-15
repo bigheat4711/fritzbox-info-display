@@ -8,6 +8,16 @@
   -fx-background-color: #1f2433;
 }
 
+.info-bar
+{
+  -fx-background-color: #2e3447;
+}
+
+.info-bar *
+{
+  -fx-text-fill: #BBB;
+}
+
 .datetime .time
 {
   -fx-text-fill: #FFF;

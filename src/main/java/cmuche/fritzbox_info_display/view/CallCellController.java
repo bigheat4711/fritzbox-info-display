@@ -3,13 +3,13 @@ package cmuche.fritzbox_info_display.view;
 import cmuche.fritzbox_info_display.controller.ViewController;
 import cmuche.fritzbox_info_display.model.Call;
 import cmuche.fritzbox_info_display.tools.FormatTool;
-import javafx.embed.swing.SwingFXUtils;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Modality;
@@ -51,9 +51,7 @@ public class CallCellController
   public void setCall(Call call) throws IOException
   {
     this.call = call;
-
-    BufferedImage image = ImageIO.read(CallCellController.class.getClassLoader().getResourceAsStream("icons/Call" + call.getType().name() + ".png"));
-    imgType.setImage(SwingFXUtils.toFXImage(image, null));
+    imgType.setImage(new Image(CallCellController.class.getClassLoader().getResourceAsStream("icons/Call" + call.getType().name() + ".png")));
 
     lblDate.setText(String.format("%td. %tb", call.getDate(), call.getDate()));
     lblTime.setText(String.format("%tR", call.getDate()));
