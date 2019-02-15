@@ -22,7 +22,7 @@
               <children>
                 <Label fx:id="lblTime" alignment="TOP_LEFT" minWidth="-1.0" style="" styleClass="time" text="--:--" textAlignment="CENTER">
                   <font>
-                    <Font name="System Bold" size="30.0" />
+                    <Font name="Roboto Bold" size="30.0" />
                   </font>
                 </Label>
               </children>
@@ -66,7 +66,10 @@
                   <Label fx:id="lblConnectionStatus" text="XXX">
                      <HBox.margin>
                         <Insets right="10.0" />
-                     </HBox.margin></Label>
+                     </HBox.margin>
+                     <font>
+                        <Font name="Roboto Regular" size="12.0" />
+                     </font></Label>
                   <ImageView fitHeight="12.0" fitWidth="12.0" pickOnBounds="true" preserveRatio="true">
                      <HBox.margin>
                         <Insets right="2.0" top="2.0" />
@@ -78,7 +81,10 @@
                   <Label fx:id="lblExternalIp" text="XXX">
                      <HBox.margin>
                         <Insets right="20.0" />
-                     </HBox.margin></Label>
+                     </HBox.margin>
+                     <font>
+                        <Font name="Roboto Regular" size="12.0" />
+                     </font></Label>
                   <ImageView fitHeight="12.0" fitWidth="12.0" layoutX="15.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../icons/InfoEthernet.png" />
@@ -91,6 +97,9 @@
                      <HBox.margin>
                         <Insets right="10.0" />
                      </HBox.margin>
+                     <font>
+                        <Font name="Roboto Regular" size="12.0" />
+                     </font>
                   </Label>
                   <ImageView fitHeight="12.0" fitWidth="12.0" layoutX="97.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -100,7 +109,10 @@
                         <Insets right="2.0" top="2.0" />
                      </HBox.margin>
                   </ImageView>
-                  <Label fx:id="lblHostsWifi" layoutX="109.0" layoutY="10.0" text="00" />
+                  <Label fx:id="lblHostsWifi" layoutX="109.0" layoutY="10.0" text="00">
+                     <font>
+                        <Font name="Roboto Regular" size="12.0" />
+                     </font></Label>
                </children>
                <VBox.margin>
                   <Insets />
