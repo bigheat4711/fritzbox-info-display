@@ -16,6 +16,12 @@ https://avm.de/service/schnittstellen/
 #### Caller List
 https://avm.de/fileadmin/user_upload/Global/Service/Schnittstellen/x_contactSCPD.pdf
 
+#### WAN PPP (Connection info)
+https://avm.de/fileadmin/user_upload/Global/Service/Schnittstellen/wanpppconnSCPD.pdf
+
+#### Connected hosts
+https://avm.de/fileadmin/user_upload/Global/Service/Schnittstellen/hostsSCPD.pdf
+
 ## City codes
 
 ### Database for Germany
