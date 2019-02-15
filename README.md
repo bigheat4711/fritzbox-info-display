@@ -39,6 +39,9 @@ Raspberry Pi 3 B+: https://amzn.to/2Grxi8N
 ### Touchscreen
 3.5" SPI Touchscreen: https://amzn.to/2Ebqkmi
 
+Rotate the touch mapping:
+https://github.com/goodtft/LCD-show/issues/49
+
 ### Prerequisites
 
 #### Roboto Font
