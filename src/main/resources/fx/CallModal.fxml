@@ -1,19 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.*?>
-<?import java.util.*?>
+<?import java.net.*?>
+<?import java.net.URL?>
+<?import javafx.geometry.*?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressIndicator?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.paint.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane fx:controller="cmuche.fritzbox_info_display.view.CallModalController" id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="420.0" prefWidth="260.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="420.0" prefWidth="260.0" styleClass="call-modal, call-item" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="cmuche.fritzbox_info_display.view.CallModalController">
   <children>
     <VBox prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
       <children>
-        <Pane prefHeight="286.0" prefWidth="260.0" VBox.vgrow="ALWAYS" />
-        <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="260.0" text="Rückruf" />
-        <Button mnemonicParsing="false" onMouseClicked="#clickCancel" prefHeight="50.0" prefWidth="260.0" text="Abbrechen" />
+        <VBox prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS">
+          <children>
+            <Label fx:id="lblExternal" alignment="CENTER" contentDisplay="CENTER" prefWidth="260.0" styleClass="external" text="0000 000000" textAlignment="CENTER">
+              <font>
+                <Font name="Roboto Bold" size="22.0" />
+              </font>
+              <VBox.margin>
+                <Insets bottom="20.0" />
+              </VBox.margin>
+            </Label>
+            <Label fx:id="lblDate" alignment="CENTER" prefWidth="260.0" styleClass="date" text="00. XXX">
+              <font>
+                <Font name="Roboto Regular" size="14.0" />
+              </font>
+            </Label>
+            <Label fx:id="lblTime" alignment="CENTER" prefWidth="260.0" styleClass="time" text="00:00">
+              <font>
+                <Font name="Roboto Bold" size="18.0" />
+              </font>
+            </Label>
+          </children>
+          <padding>
+            <Insets top="30.0" />
+          </padding>
+        </VBox>
+        <ProgressIndicator fx:id="pgiDialing" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" progress="-1.0">
+          <VBox.margin>
+            <Insets bottom="10.0" />
+          </VBox.margin>
+        </ProgressIndicator>
+        <Button id="btnRedial" fx:id="btnCancelRedial" minHeight="80.0" mnemonicParsing="false" onMouseClicked="#clickCancelRedial" prefHeight="80.0" prefWidth="260.0" styleClass="cancel-redial" text="Rückruf abbrechen">
+          <font>
+            <Font name="Roboto Bold" size="16.0" fx:id="x1" />
+          </font>
+        </Button>
+        <Button fx:id="btnRedial" font="$x1" minHeight="80.0" mnemonicParsing="false" onMouseClicked="#clickRedial" prefHeight="80.0" prefWidth="260.0" styleClass="redial" text="Rückruf" />
+        <Button font="$x1" minHeight="80.0" mnemonicParsing="false" onMouseClicked="#clickCancel" prefHeight="80.0" prefWidth="260.0" styleClass="cancel" text="Okay" />
       </children>
     </VBox>
   </children>
+  <stylesheets>
+    <URL value="@style.css" />
+  </stylesheets>
 </AnchorPane>

@@ -28,6 +28,16 @@ public class App extends Application
     launch();
   }
 
+  public static AppController getAppController()
+  {
+    return appController;
+  }
+
+  public static boolean isLive()
+  {
+    return isLive;
+  }
+
   @Override
   public void stop()
   {

@@ -33,6 +33,34 @@
   -fx-background-color: #111;
 }
 
+.call-modal
+{
+  -fx-background-color: #222;
+  -fx-border-width: 3;
+  -fx-border-color: #888;
+}
+
+.call-modal .button.redial
+{
+  -fx-background-color: #736c32;
+  -fx-text-fill: #EEE;
+  -fx-background-radius: 0;
+}
+
+.call-modal .button.cancel-redial
+{
+  -fx-background-color: #732122;
+  -fx-text-fill: #EEE;
+  -fx-background-radius: 0;
+}
+
+.call-modal .button.cancel
+{
+  -fx-background-color: #2d7323;
+  -fx-text-fill: #EEE;
+  -fx-background-radius: 0;
+}
+
 .call-item .external
 {
   -fx-text-fill: #EEE;

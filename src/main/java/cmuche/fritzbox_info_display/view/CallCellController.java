@@ -1,10 +1,12 @@
 package cmuche.fritzbox_info_display.view;
 
+import cmuche.fritzbox_info_display.App;
 import cmuche.fritzbox_info_display.controller.ViewController;
 import cmuche.fritzbox_info_display.model.Call;
 import cmuche.fritzbox_info_display.tools.FormatTool;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Cursor;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -46,7 +48,7 @@ public class CallCellController
 
   private Call call;
 
-  public void setCall(Call call) throws IOException
+  public void setCall(Call call)
   {
     this.call = call;
     imgType.setImage(new Image(CallCellController.class.getClassLoader().getResourceAsStream("icons/Call" + call.getType().name() + ".png")));
@@ -81,11 +83,23 @@ public class CallCellController
     FXMLLoader loader = new FXMLLoader(ViewController.class.getClassLoader().getResource("fx/CallModal.fxml"));
     Parent root = loader.load();
     Stage stg = new Stage();
-    stg.setScene(new Scene(root));
+    Scene scn = new Scene(root);
+
+    if (App.isLive())
+    {
+      scn.setCursor(Cursor.NONE);
+    }
+
+    stg.setScene(scn);
+
+    CallModalController contr = loader.getController();
+    contr.setCall(call);
+
+
     stg.initModality(Modality.WINDOW_MODAL);
     stg.initStyle(StageStyle.UNDECORATED);
-    stg.setX(((Node) event.getSource()).getScene().getWindow().getX()+30);
-    stg.setY(((Node) event.getSource()).getScene().getWindow().getY()+50);
+    stg.setX(((Node) event.getSource()).getScene().getWindow().getX() + 30);
+    stg.setY(((Node) event.getSource()).getScene().getWindow().getY() + 30);
     stg.initOwner(((Node) event.getSource()).getScene().getWindow());
     stg.show();
   }

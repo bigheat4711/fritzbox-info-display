@@ -94,6 +94,12 @@ public class AppController
     fritzBoxController.doRequest(FbService.Voip, FbAction.DialNumber, args);
   }
 
+  public void cancelRedial() throws Exception
+  {
+    FritzBoxController fritzBoxController = new FritzBoxController(credentials);
+    fritzBoxController.doRequest(FbService.Voip, FbAction.DialHangup);
+  }
+
   public void start(ViewController viewController)
   {
     this.viewController = viewController;
