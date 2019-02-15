@@ -1,5 +1,7 @@
 # FRITZ!Box Info Display
 
+![](repo/photo_small.jpg)
+
 ## Usage
 ``java -jar fritzbox_info_display-App.jar <Fritz!Box address> <username> <password> [live]``
 
@@ -29,7 +31,6 @@ https://www.bundesnetzagentur.de/SharedDocs/Downloads/DE/Sachgebiete/Telekommuni
 
 ## Screenshots
 ![](repo/screenshot1.png)
-![](repo/screenshot2.png)
 
 ## Hardware
 
@@ -50,4 +51,4 @@ https://github.com/goodtft/LCD-show/issues/49
 #### Java JDK 8 with JavaFX
 Use this script: https://stackoverflow.com/questions/36961054/can-javafx-be-used-on-raspberry-pi
 
-![](repo/IMG_0695.JPG)
+![](repo/photo.jpg)
