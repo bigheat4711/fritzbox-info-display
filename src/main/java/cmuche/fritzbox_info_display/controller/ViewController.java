@@ -7,6 +7,7 @@ import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.control.ProgressIndicator;
 
 import java.util.Date;
 
@@ -32,6 +33,9 @@ public class ViewController
 
   @FXML
   private Label lblHostsWifi;
+
+  @FXML
+  private ProgressIndicator pgiLoading;
 
   public void displayData(DataResponse dataResponse)
   {
@@ -65,5 +69,10 @@ public class ViewController
       lblTime.setText(String.format("%tR", date));
       lblDate.setText(String.format("%tA, %td. %tB %tY", date, date, date, date));
     });
+  }
+
+  public void displayLoading(boolean isLoading)
+  {
+    Platform.runLater(() -> pgiLoading.setVisible(isLoading));
   }
 }
