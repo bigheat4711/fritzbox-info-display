@@ -30,4 +30,12 @@ Raspberry Pi 3 B+: https://amzn.to/2Grxi8N
 ### Touchscreen
 3.5" SPI Touchscreen: https://amzn.to/2Ebqkmi
 
+### Prerequisites
+
+#### Roboto Font
+``sudo apt-get install font-roboto``
+
+#### Java JDK 8 with JavaFX
+Use this script: https://stackoverflow.com/questions/36961054/can-javafx-be-used-on-raspberry-pi
+
 ![](repo/IMG_0695.JPG)
