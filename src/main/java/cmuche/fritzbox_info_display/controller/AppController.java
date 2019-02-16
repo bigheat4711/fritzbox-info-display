@@ -35,7 +35,7 @@ public class AppController
         while (isRunning)
         {
           updateData();
-          Thread.sleep(60000);
+          Thread.sleep(10 * 60 * 1000);
         }
       }
       catch (InterruptedException ex)
@@ -55,7 +55,7 @@ public class AppController
         while (isRunning)
         {
           updateTime();
-          Thread.sleep(1000);
+          Thread.sleep(60 * 1000);
         }
       }
       catch (InterruptedException ex)
