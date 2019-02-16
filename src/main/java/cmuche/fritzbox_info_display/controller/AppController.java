@@ -12,6 +12,9 @@ import java.util.Map;
 
 public class AppController
 {
+  private final int INTERVAL_DATA = 10 * 60 * 1000;
+  private final int INTERVAL_TIME = 60 * 1000;
+  
   private Credentials credentials;
   private FritzBoxController fritzBoxController;
 
@@ -49,7 +52,7 @@ public class AppController
           viewController.displayLoading(false);
           try
           {
-            Thread.sleep(10 * 60 * 1000);
+            Thread.sleep(INTERVAL_DATA);
           }
           catch (InterruptedException e)
           {
@@ -66,7 +69,7 @@ public class AppController
         while (isRunning)
         {
           updateTime();
-          Thread.sleep(60 * 1000);
+          Thread.sleep(INTERVAL_TIME);
         }
       }
       catch (InterruptedException ex)
