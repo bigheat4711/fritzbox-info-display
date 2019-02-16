@@ -13,6 +13,7 @@ import java.util.Map;
 public class AppController
 {
   private Credentials credentials;
+  private FritzBoxController fritzBoxController;
 
   private ViewController viewController;
 
@@ -23,6 +24,7 @@ public class AppController
   public AppController(Credentials credentials) throws Exception
   {
     this.credentials = credentials;
+    fritzBoxController = new FritzBoxController(credentials);
     setupThreads();
   }
 
@@ -78,17 +80,13 @@ public class AppController
 
   private void updateData() throws Exception
   {
-    viewController.displayLoading(true);
-    FritzBoxController fritzBoxController = new FritzBoxController(credentials);
     DataController dataController = new DataController(fritzBoxController);
     DataResponse data = dataController.collectData();
     viewController.displayData(data);
-    viewController.displayLoading(false);
   }
 
   public void redial(Call call) throws Exception
   {
-    FritzBoxController fritzBoxController = new FritzBoxController(credentials);
     Map<String, Object> args = new HashMap<>();
     args.put("NewX_AVM-DE_PhoneNumber", call.getExternal().getNumber());
     fritzBoxController.doRequest(FbService.Voip, FbAction.DialNumber, args);
@@ -96,7 +94,6 @@ public class AppController
 
   public void cancelRedial() throws Exception
   {
-    FritzBoxController fritzBoxController = new FritzBoxController(credentials);
     fritzBoxController.doRequest(FbService.Voip, FbAction.DialHangup);
   }
 
