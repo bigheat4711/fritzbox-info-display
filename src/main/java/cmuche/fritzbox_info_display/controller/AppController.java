@@ -36,17 +36,25 @@ public class AppController
       {
         try
         {
+          viewController.displayLoading(true);
           updateData();
-          Thread.sleep(10 * 60 * 1000);
-
-        }
-        catch (InterruptedException ex)
-        {
-          //okay
         }
         catch (Exception ex)
         {
+          //TODO report error
           ex.printStackTrace();
+        }
+        finally
+        {
+          viewController.displayLoading(false);
+          try
+          {
+            Thread.sleep(10 * 60 * 1000);
+          }
+          catch (InterruptedException e)
+          {
+            return;
+          }
         }
       }
     });
