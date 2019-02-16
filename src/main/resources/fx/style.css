@@ -28,6 +28,16 @@
   -fx-text-fill: #EEE;
 }
 
+.error
+{
+  -fx-background-color: #601c20;
+}
+
+.error *
+{
+  -fx-text-fill: #EEE;
+}
+
 .call-item
 {
   -fx-background-color: #111;

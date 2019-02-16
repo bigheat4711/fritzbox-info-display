@@ -8,11 +8,21 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.ProgressIndicator;
+import javafx.scene.layout.VBox;
 
 import java.util.Date;
 
 public class ViewController
 {
+  @FXML
+  private VBox boxError;
+
+  @FXML
+  private Label lblErrorName;
+
+  @FXML
+  private Label lblErrorDescription;
+
   @FXML
   private Label lblTime;
 
@@ -37,10 +47,22 @@ public class ViewController
   @FXML
   private ProgressIndicator pgiLoading;
 
+  @FXML
+  public void initialize()
+  {
+    boxError.setMinHeight(0);
+    boxError.setPrefHeight(0);
+    boxError.setVisible(false);
+  }
+
   public void displayData(DataResponse dataResponse)
   {
     Platform.runLater(() ->
     {
+      boxError.setMinHeight(0);
+      boxError.setPrefHeight(0);
+      boxError.setVisible(false);
+
       lblConnectionStatus.setText(dataResponse.getConnectionStatus().getDisplay());
       lblExternalIp.setText(dataResponse.getExternalIp());
 
@@ -74,5 +96,18 @@ public class ViewController
   public void displayLoading(boolean isLoading)
   {
     Platform.runLater(() -> pgiLoading.setVisible(isLoading));
+  }
+
+  public void diplayError(Exception exception)
+  {
+    Platform.runLater(() ->
+    {
+      lstCalls.getItems().clear();
+      boxError.setMinHeight(45);
+      boxError.setPrefHeight(45);
+      boxError.setVisible(true);
+      lblErrorName.setText(exception.getClass().getName());
+      lblErrorDescription.setText(exception.getMessage());
+    });
   }
 }

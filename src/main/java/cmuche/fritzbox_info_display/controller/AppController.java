@@ -44,7 +44,7 @@ public class AppController
         }
         catch (Exception ex)
         {
-          //TODO report error
+          viewController.diplayError(ex);
           ex.printStackTrace();
         }
         finally
