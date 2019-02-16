@@ -32,21 +32,22 @@ public class AppController
   {
     updateDataThread = new Thread(() ->
     {
-      try
+      while (isRunning)
       {
-        while (isRunning)
+        try
         {
           updateData();
           Thread.sleep(10 * 60 * 1000);
+
         }
-      }
-      catch (InterruptedException ex)
-      {
-        //okay
-      }
-      catch (Exception ex)
-      {
-        ex.printStackTrace();
+        catch (InterruptedException ex)
+        {
+          //okay
+        }
+        catch (Exception ex)
+        {
+          ex.printStackTrace();
+        }
       }
     });
 
