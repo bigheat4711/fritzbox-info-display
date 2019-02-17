@@ -6,7 +6,7 @@
 
 ### Build
 
-    mvn clean install
+    mvn [clean] install
 
 ### Run
     export DISPLAY=:0
