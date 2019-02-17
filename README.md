@@ -5,7 +5,7 @@
 ## Features
 - Shows the recent calls, marked as _Inbound_, _Outbound_, _Missed_ or _TAM_
 - Lets you redial a number
-- Recognizes and displays the corresponding city for an area code
+- Recognizes and displays the corresponding city by the area code of a phone number
 - Shows the current internet connection status
 - Shows how many devices/hosts are active in the network, separated by LAN or WiFi
 - Show how many DECT phones are connected and set up
