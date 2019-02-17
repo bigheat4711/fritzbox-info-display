@@ -1,10 +1,7 @@
 package cmuche.fritzbox_info_display.controller;
 
 import cmuche.fritzbox_info_display.enums.*;
-import cmuche.fritzbox_info_display.model.Call;
-import cmuche.fritzbox_info_display.model.DataResponse;
-import cmuche.fritzbox_info_display.model.Host;
-import cmuche.fritzbox_info_display.model.PhoneNumber;
+import cmuche.fritzbox_info_display.model.*;
 import cmuche.fritzbox_info_display.tools.NetworkTool;
 import cmuche.fritzbox_info_display.tools.ParseTool;
 import cmuche.fritzbox_info_display.tools.XmlTool;
@@ -32,6 +29,9 @@ public class DataController
     List<Host> hosts = collectHosts();
     dataResponse.setHosts(hosts);
 
+    List<Phone> phones = collectPhones();
+    dataResponse.setPhones(phones);
+
     Map<String, String> info = fritzBoxController.doRequest(FbService.IpConnection, FbAction.GetInfo);
     String connectionStatusString = info.get("NewConnectionStatus");
     ConnectionStatus connectionStatus = ParseTool.parseConnectionStatus(connectionStatusString);
@@ -57,7 +57,8 @@ public class DataController
       Map<String, String> hostInfo = fritzBoxController.doRequest(FbService.Hosts, FbAction.GetHostInfo, args);
 
       boolean active = hostInfo.get("NewActive").equals("1");
-      if (!active) continue;
+      if (!active)
+        continue;
 
       String name = hostInfo.get("NewHostName");
       String mac = hostInfo.get("NewMACAddress");
@@ -70,6 +71,28 @@ public class DataController
     }
 
     return hosts;
+  }
+
+  private List<Phone> collectPhones() throws Exception
+  {
+    List<Phone> phones = new ArrayList<>();
+
+    Map<String, String> dectIdsResult = fritzBoxController.doRequest(FbService.OnTel, FbAction.GetDectHandsetList);
+    String dectIdList = dectIdsResult.get("NewDectIDList");
+    String[] dectIds = dectIdList.split(",");
+
+    for (String id : dectIds)
+    {
+      Map<String, Object> args = new HashMap<>();
+      args.put("NewDectID", Integer.valueOf(id));
+      Map<String, String> handsetInfoResult = fritzBoxController.doRequest(FbService.OnTel, FbAction.GetDectHandsetInfo, args);
+
+      String name = handsetInfoResult.get("NewHandsetName");
+      Phone phone = new Phone(name);
+      phones.add(phone);
+    }
+
+    return phones;
   }
 
   private List<Call> collectCallList() throws Exception

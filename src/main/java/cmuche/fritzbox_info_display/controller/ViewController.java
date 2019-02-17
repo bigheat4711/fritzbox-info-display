@@ -45,6 +45,9 @@ public class ViewController
   private Label lblHostsWifi;
 
   @FXML
+  private Label lblPhones;
+
+  @FXML
   private ProgressIndicator pgiLoading;
 
   @FXML
@@ -68,9 +71,11 @@ public class ViewController
 
       int countHostsEthernet = (int) dataResponse.getHosts().stream().filter(x -> x.getIface() == HostInterface.Ethernet).count();
       int countHostsWifi = (int) dataResponse.getHosts().stream().filter(x -> x.getIface() == HostInterface.WiFi).count();
+      int countPhones = (int) dataResponse.getPhones().stream().count();
 
       lblHostsEthernet.setText(String.valueOf(countHostsEthernet));
       lblHostsWifi.setText(String.valueOf(countHostsWifi));
+      lblPhones.setText(String.valueOf(countPhones));
 
       lstCalls.getItems().clear();
       int callCount = 0;

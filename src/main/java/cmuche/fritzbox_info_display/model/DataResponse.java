@@ -8,6 +8,7 @@ public class DataResponse
 {
   private List<Call> calls;
   private List<Host> hosts;
+  private List<Phone> phones;
   private String externalIp;
   private ConnectionStatus connectionStatus;
 
@@ -49,5 +50,15 @@ public class DataResponse
   public void setHosts(List<Host> hosts)
   {
     this.hosts = hosts;
+  }
+
+  public List<Phone> getPhones()
+  {
+    return phones;
+  }
+
+  public void setPhones(List<Phone> phones)
+  {
+    this.phones = phones;
   }
 }

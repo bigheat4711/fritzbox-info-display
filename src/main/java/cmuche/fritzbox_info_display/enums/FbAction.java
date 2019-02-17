@@ -7,7 +7,10 @@ public enum FbAction implements NamedEnum
   DialHangup("X_AVM-DE_DialHangup"),
   GetInfo("GetInfo"),
   GetHostsCount("GetHostNumberOfEntries"),
-  GetHostInfo("GetGenericHostEntry");
+  GetHostInfo("GetGenericHostEntry"),
+  GetDectHandsetList("GetDECTHandsetList"),
+  GetDectHandsetInfo("GetDECTHandsetInfo"),
+  GetNumberOfEntries("GetNumberOfEntries");
 
   private String id;
 
