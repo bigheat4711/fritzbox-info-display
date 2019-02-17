@@ -9,7 +9,7 @@
     mvn [clean] install
 
 ### Run
-To define that the application should be displayed on the SPI LCD Screen, set the display environment variable to ``:0``.
+To set the SPI LCD Screen as the default screen of the application, set the display environment variable to ``:0``.
 
     export DISPLAY=:0
     java -jar fritzbox_info_display-App.jar <Fritz!Box address> <username> <password> [live]
