@@ -28,9 +28,6 @@ public class CallModalController
   @FXML
   private Button btnCancelRedial;
 
-  @FXML
-  private ProgressIndicator pgiDialing;
-
   private boolean isDialing = false;
 
   private Call call;
@@ -40,7 +37,6 @@ public class CallModalController
     this.call = call;
 
     btnCancelRedial.setVisible(false);
-    pgiDialing.setVisible(false);
 
     lblDate.setText(String.format("%td. %tb", call.getDate(), call.getDate()));
     lblTime.setText(String.format("%tR", call.getDate()));
@@ -63,9 +59,9 @@ public class CallModalController
       try
       {
         isDialing = true;
-        pgiDialing.setVisible(true);
+        btnRedial.setDisable(true);
         App.getAppController().redial(call);
-        pgiDialing.setVisible(false);
+        btnRedial.setDisable(false);
         btnRedial.setVisible(false);
         btnRedial.setMinHeight(0);
         btnRedial.setPrefHeight(0);
@@ -91,9 +87,9 @@ public class CallModalController
       try
       {
         isDialing = true;
-        pgiDialing.setVisible(true);
+        btnCancelRedial.setDisable(true);
         App.getAppController().cancelRedial();
-        pgiDialing.setVisible(false);
+        btnCancelRedial.setDisable(false);
         btnCancelRedial.setVisible(false);
         btnCancelRedial.setMinHeight(0);
         btnCancelRedial.setPrefHeight(0);
