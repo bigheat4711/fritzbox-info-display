@@ -66,7 +66,6 @@ public class DataController
       HostInterface iface = HostInterface.getById(ifaceString);
 
       Host host = new Host(name, ip, mac, iface);
-      System.out.println(host);
       hosts.add(host);
     }
 
@@ -108,7 +107,6 @@ public class DataController
       }
 
       Call call = new Call(callType, internal, external, duration, device, date);
-      System.out.println(call);
       calls.add(call);
     });
     return calls;
