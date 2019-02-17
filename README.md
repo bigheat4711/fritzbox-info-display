@@ -4,8 +4,15 @@
 
 ## Usage
 
+### Build
+
+    mvn clean install
+
+### Run
     export DISPLAY=:0
     java -jar fritzbox_info_display-App.jar <Fritz!Box address> <username> <password> [live]
+    
+_The Fritz!Box default username is __admin__._
 
 ## AVM TR-064
 
