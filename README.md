@@ -12,7 +12,8 @@
     export DISPLAY=:0
     java -jar fritzbox_info_display-App.jar <Fritz!Box address> <username> <password> [live]
     
-_The Fritz!Box default username is __admin__._
+The Fritz!Box default username is ``admin``.
+Instead of using the IP address you can just use ``fritz.box``.
 
 ## AVM TR-064
 
