@@ -7,7 +7,7 @@
 - Lets you redial a number
 - Recognizes and displays the corresponding city by the area code of a phone number
 - Shows the current internet connection status
-- Shows how many devices/hosts are active in the network, separated by LAN or WiFi
+- Shows how many devices/hosts are active in the network, separated by LAN or 802.11
 - Show how many DECT phones are connected and set up
 
 ## Usage
