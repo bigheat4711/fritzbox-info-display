@@ -1,5 +1,7 @@
 package cmuche.fritzbox_info_display.enums;
 
+import cmuche.fritzbox_info_display.interfaces.NamedEnum;
+
 public enum FbService implements NamedEnum
 {
   OnTel("X_AVM-DE_OnTel:1"),
