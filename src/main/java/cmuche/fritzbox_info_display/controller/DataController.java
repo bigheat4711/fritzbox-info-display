@@ -8,6 +8,7 @@ import cmuche.fritzbox_info_display.tools.XmlTool;
 import org.w3c.dom.Document;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class DataController
 {
@@ -79,7 +80,7 @@ public class DataController
 
     Map<String, String> dectIdsResult = fritzBoxController.doRequest(FbService.OnTel, FbAction.GetDectHandsetList);
     String dectIdList = dectIdsResult.get("NewDectIDList");
-    String[] dectIds = dectIdList.split(",");
+    List<String> dectIds = Arrays.asList(dectIdList.split(",")).stream().filter(x -> !x.isEmpty()).collect(Collectors.toList());
 
     for (String id : dectIds)
     {
