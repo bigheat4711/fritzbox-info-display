@@ -57,40 +57,40 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "deviceListType", propOrder = {
-    "device"
+		"device"
 })
 public class DeviceListType {
 
-    @XmlElement(namespace = "urn:dslforum-org:device-1-0")
-    protected List<DeviceType> device;
+	@XmlElement(namespace = "urn:dslforum-org:device-1-0")
+	protected List<DeviceType> device;
 
-    /**
-     * Gets the value of the device property.
-     *
-     * <p>
-     * This accessor method returns a reference to the live list, not a
-     * snapshot. Therefore any modification you make to the returned list will
-     * be present inside the JAXB object. This is why there is not a
-     * <CODE>set</CODE> method for the device property.
-     *
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getDevice().add(newItem);
-     * </pre>
-     *
-     *
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link DeviceType }
-     *
-     *
-     */
-    public List<DeviceType> getDevice() {
-        if (device == null) {
-            device = new ArrayList<DeviceType>();
-        }
-        return this.device;
-    }
+	/**
+	 * Gets the value of the device property.
+	 *
+	 * <p>
+	 * This accessor method returns a reference to the live list, not a
+	 * snapshot. Therefore any modification you make to the returned list will
+	 * be present inside the JAXB object. This is why there is not a
+	 * <CODE>set</CODE> method for the device property.
+	 *
+	 * <p>
+	 * For example, to add a new item, do as follows:
+	 * <pre>
+	 *    getDevice().add(newItem);
+	 * </pre>
+	 *
+	 *
+	 * <p>
+	 * Objects of the following type(s) are allowed in the list
+	 * {@link DeviceType }
+	 *
+	 *
+	 */
+	public List<DeviceType> getDevice() {
+		if (device == null) {
+			device = new ArrayList<DeviceType>();
+		}
+		return this.device;
+	}
 
 }

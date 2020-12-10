@@ -59,123 +59,123 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "serviceType", propOrder = {
-    "serviceType",
-    "serviceId",
-    "controlURL",
-    "eventSubURL",
-    "scpdurl"
+		"serviceType",
+		"serviceId",
+		"controlURL",
+		"eventSubURL",
+		"scpdurl"
 })
 public class ServiceType {
 
-    @XmlElement(required = true, namespace = "urn:dslforum-org:device-1-0")
-    protected String serviceType;
-    @XmlElement(required = true, namespace = "urn:dslforum-org:device-1-0")
-    protected String serviceId;
-    @XmlElement(required = true, namespace = "urn:dslforum-org:device-1-0")
-    protected String controlURL;
-    @XmlElement(required = true, namespace = "urn:dslforum-org:device-1-0")
-    protected String eventSubURL;
-    @XmlElement(name = "SCPDURL", required = true, namespace = "urn:dslforum-org:device-1-0")
-    protected String scpdurl;
+	@XmlElement(required = true, namespace = "urn:dslforum-org:device-1-0")
+	protected String serviceType;
+	@XmlElement(required = true, namespace = "urn:dslforum-org:device-1-0")
+	protected String serviceId;
+	@XmlElement(required = true, namespace = "urn:dslforum-org:device-1-0")
+	protected String controlURL;
+	@XmlElement(required = true, namespace = "urn:dslforum-org:device-1-0")
+	protected String eventSubURL;
+	@XmlElement(name = "SCPDURL", required = true, namespace = "urn:dslforum-org:device-1-0")
+	protected String scpdurl;
 
-    /**
-     * Ruft den Wert der serviceType-Eigenschaft ab.
-     *
-     * @return possible object is {@link String }
-     *
-     */
-    public String getServiceType() {
-        return serviceType;
-    }
+	/**
+	 * Ruft den Wert der serviceType-Eigenschaft ab.
+	 *
+	 * @return possible object is {@link String }
+	 *
+	 */
+	public String getServiceType() {
+		return serviceType;
+	}
 
-    /**
-     * Legt den Wert der serviceType-Eigenschaft fest.
-     *
-     * @param value allowed object is {@link String }
-     *
-     */
-    public void setServiceType(String value) {
-        this.serviceType = value;
-    }
+	/**
+	 * Legt den Wert der serviceType-Eigenschaft fest.
+	 *
+	 * @param value allowed object is {@link String }
+	 *
+	 */
+	public void setServiceType(String value) {
+		this.serviceType = value;
+	}
 
-    /**
-     * Ruft den Wert der serviceId-Eigenschaft ab.
-     *
-     * @return possible object is {@link String }
-     *
-     */
-    public String getServiceId() {
-        return serviceId;
-    }
+	/**
+	 * Ruft den Wert der serviceId-Eigenschaft ab.
+	 *
+	 * @return possible object is {@link String }
+	 *
+	 */
+	public String getServiceId() {
+		return serviceId;
+	}
 
-    /**
-     * Legt den Wert der serviceId-Eigenschaft fest.
-     *
-     * @param value allowed object is {@link String }
-     *
-     */
-    public void setServiceId(String value) {
-        this.serviceId = value;
-    }
+	/**
+	 * Legt den Wert der serviceId-Eigenschaft fest.
+	 *
+	 * @param value allowed object is {@link String }
+	 *
+	 */
+	public void setServiceId(String value) {
+		this.serviceId = value;
+	}
 
-    /**
-     * Ruft den Wert der controlURL-Eigenschaft ab.
-     *
-     * @return possible object is {@link String }
-     *
-     */
-    public String getControlURL() {
-        return controlURL;
-    }
+	/**
+	 * Ruft den Wert der controlURL-Eigenschaft ab.
+	 *
+	 * @return possible object is {@link String }
+	 *
+	 */
+	public String getControlURL() {
+		return controlURL;
+	}
 
-    /**
-     * Legt den Wert der controlURL-Eigenschaft fest.
-     *
-     * @param value allowed object is {@link String }
-     *
-     */
-    public void setControlURL(String value) {
-        this.controlURL = value;
-    }
+	/**
+	 * Legt den Wert der controlURL-Eigenschaft fest.
+	 *
+	 * @param value allowed object is {@link String }
+	 *
+	 */
+	public void setControlURL(String value) {
+		this.controlURL = value;
+	}
 
-    /**
-     * Ruft den Wert der eventSubURL-Eigenschaft ab.
-     *
-     * @return possible object is {@link String }
-     *
-     */
-    public String getEventSubURL() {
-        return eventSubURL;
-    }
+	/**
+	 * Ruft den Wert der eventSubURL-Eigenschaft ab.
+	 *
+	 * @return possible object is {@link String }
+	 *
+	 */
+	public String getEventSubURL() {
+		return eventSubURL;
+	}
 
-    /**
-     * Legt den Wert der eventSubURL-Eigenschaft fest.
-     *
-     * @param value allowed object is {@link String }
-     *
-     */
-    public void setEventSubURL(String value) {
-        this.eventSubURL = value;
-    }
+	/**
+	 * Legt den Wert der eventSubURL-Eigenschaft fest.
+	 *
+	 * @param value allowed object is {@link String }
+	 *
+	 */
+	public void setEventSubURL(String value) {
+		this.eventSubURL = value;
+	}
 
-    /**
-     * Ruft den Wert der scpdurl-Eigenschaft ab.
-     *
-     * @return possible object is {@link String }
-     *
-     */
-    public String getSCPDURL() {
-        return scpdurl;
-    }
+	/**
+	 * Ruft den Wert der scpdurl-Eigenschaft ab.
+	 *
+	 * @return possible object is {@link String }
+	 *
+	 */
+	public String getSCPDURL() {
+		return scpdurl;
+	}
 
-    /**
-     * Legt den Wert der scpdurl-Eigenschaft fest.
-     *
-     * @param value allowed object is {@link String }
-     *
-     */
-    public void setSCPDURL(String value) {
-        this.scpdurl = value;
-    }
+	/**
+	 * Legt den Wert der scpdurl-Eigenschaft fest.
+	 *
+	 * @param value allowed object is {@link String }
+	 *
+	 */
+	public void setSCPDURL(String value) {
+		this.scpdurl = value;
+	}
 
 }

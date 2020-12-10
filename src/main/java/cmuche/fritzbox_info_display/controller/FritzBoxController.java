@@ -10,27 +10,23 @@ import de.mapoll.javaAVMTR064.Service;
 
 import java.util.Map;
 
-public class FritzBoxController
-{
-  private FritzConnection connection;
+public class FritzBoxController {
+	private FritzConnection connection;
 
-  public FritzBoxController(Credentials credentials) throws Exception
-  {
-    connection = new FritzConnection(credentials.getIp(), credentials.getUsername(), credentials.getPassword());
-    connection.init();
-  }
+	public FritzBoxController(Credentials credentials) throws Exception {
+		connection = new FritzConnection(credentials.getIp(), credentials.getUsername(), credentials.getPassword());
+		connection.init();
+	}
 
-  public Map<String, String> doRequest(FbService fbService, FbAction fbAction) throws Exception
-  {
-    return doRequest(fbService, fbAction, null);
-  }
+	public Map<String, String> doRequest(FbService fbService, FbAction fbAction) throws Exception {
+		return doRequest(fbService, fbAction, null);
+	}
 
-  public Map<String, String> doRequest(FbService fbService, FbAction fbAction, Map<String, Object> args) throws Exception
-  {
-    Service service = connection.getService(fbService.getId());
-    Action action = service.getAction(fbAction.getId());
-    Response response = action.execute(args);
+	public Map<String, String> doRequest(FbService fbService, FbAction fbAction, Map<String, Object> args) throws Exception {
+		Service service = connection.getService(fbService.getId());
+		Action action = service.getAction(fbAction.getId());
+		Response response = action.execute(args);
 
-    return response.getData();
-  }
+		return response.getData();
+	}
 }

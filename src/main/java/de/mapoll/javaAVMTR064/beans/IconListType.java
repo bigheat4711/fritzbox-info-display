@@ -55,31 +55,31 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "iconListType", propOrder = {
-    "icon"
+		"icon"
 })
 public class IconListType {
 
-    @XmlElement(required = true, namespace = "urn:dslforum-org:device-1-0")
-    protected IconType icon;
+	@XmlElement(required = true, namespace = "urn:dslforum-org:device-1-0")
+	protected IconType icon;
 
-    /**
-     * Ruft den Wert der icon-Eigenschaft ab.
-     *
-     * @return possible object is {@link IconType }
-     *
-     */
-    public IconType getIcon() {
-        return icon;
-    }
+	/**
+	 * Ruft den Wert der icon-Eigenschaft ab.
+	 *
+	 * @return possible object is {@link IconType }
+	 *
+	 */
+	public IconType getIcon() {
+		return icon;
+	}
 
-    /**
-     * Legt den Wert der icon-Eigenschaft fest.
-     *
-     * @param value allowed object is {@link IconType }
-     *
-     */
-    public void setIcon(IconType value) {
-        this.icon = value;
-    }
+	/**
+	 * Legt den Wert der icon-Eigenschaft fest.
+	 *
+	 * @param value allowed object is {@link IconType }
+	 *
+	 */
+	public void setIcon(IconType value) {
+		this.icon = value;
+	}
 
 }

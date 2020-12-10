@@ -56,46 +56,46 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "specVersionType", propOrder = {
-    "major",
-    "minor"
+		"major",
+		"minor"
 })
 public class ServiceSpecVersionType {
 
-    @XmlElement(namespace = "urn:dslforum-org:service-1-0")
-    protected byte major;
-    @XmlElement(namespace = "urn:dslforum-org:service-1-0")
-    protected byte minor;
+	@XmlElement(namespace = "urn:dslforum-org:service-1-0")
+	protected byte major;
+	@XmlElement(namespace = "urn:dslforum-org:service-1-0")
+	protected byte minor;
 
-    /**
-     * Ruft den Wert der major-Eigenschaft ab.
-     *
-     */
-    public byte getMajor() {
-        return major;
-    }
+	/**
+	 * Ruft den Wert der major-Eigenschaft ab.
+	 *
+	 */
+	public byte getMajor() {
+		return major;
+	}
 
-    /**
-     * Legt den Wert der major-Eigenschaft fest.
-     *
-     */
-    public void setMajor(byte value) {
-        this.major = value;
-    }
+	/**
+	 * Legt den Wert der major-Eigenschaft fest.
+	 *
+	 */
+	public void setMajor(byte value) {
+		this.major = value;
+	}
 
-    /**
-     * Ruft den Wert der minor-Eigenschaft ab.
-     *
-     */
-    public byte getMinor() {
-        return minor;
-    }
+	/**
+	 * Ruft den Wert der minor-Eigenschaft ab.
+	 *
+	 */
+	public byte getMinor() {
+		return minor;
+	}
 
-    /**
-     * Legt den Wert der minor-Eigenschaft fest.
-     *
-     */
-    public void setMinor(byte value) {
-        this.minor = value;
-    }
+	/**
+	 * Legt den Wert der minor-Eigenschaft fest.
+	 *
+	 */
+	public void setMinor(byte value) {
+		this.minor = value;
+	}
 
 }

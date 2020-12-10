@@ -11,60 +11,53 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class App extends Application
-{
-  private static ViewController viewController;
-  private static AppController appController;
+public class App extends Application {
+	private static ViewController viewController;
+	private static AppController appController;
 
-  private static boolean isLive;
+	private static boolean isLive;
 
-  public static void main(String[] args) throws Exception
-  {
-    isLive = args.length >= 4 && args[3].equals("live");
+	public static void main(String[] args) throws Exception {
+		isLive = args.length >= 4 && args[3].equals("live");
 
-    Credentials credentials = Credentials.fromParameters(args);
-    appController = new AppController(credentials);
+		Credentials credentials = Credentials.fromParameters(args);
+		appController = new AppController(credentials);
 
-    launch();
-  }
+		launch();
+	}
 
-  public static AppController getAppController()
-  {
-    return appController;
-  }
+	public static AppController getAppController() {
+		return appController;
+	}
 
-  public static boolean isLive()
-  {
-    return isLive;
-  }
+	public static boolean isLive() {
+		return isLive;
+	}
 
-  @Override
-  public void stop()
-  {
-    appController.stop();
-    Platform.exit();
-  }
+	@Override
+	public void stop() {
+		appController.stop();
+		Platform.exit();
+	}
 
-  @Override
-  public void start(Stage primaryStage) throws Exception
-  {
-    FXMLLoader loader = new FXMLLoader(ViewController.class.getClassLoader().getResource("fx/Main.fxml"));
-    Parent root = loader.load();
+	@Override
+	public void start(Stage primaryStage) throws Exception {
+		FXMLLoader loader = new FXMLLoader(ViewController.class.getClassLoader().getResource("fx/Main.fxml"));
+		Parent root = loader.load();
 
-    viewController = loader.getController();
-    appController.start(viewController);
+		viewController = loader.getController();
+		appController.start(viewController);
 
-    Stage stg = new Stage();
-    stg.setTitle("FRITZ!Box Info Display");
-    Scene scn = new Scene(root);
+		Stage stg = new Stage();
+		stg.setTitle("FRITZ!Box Info Display");
+		Scene scn = new Scene(root);
 
-    if (isLive)
-    {
-      scn.setCursor(Cursor.NONE);
-      stg.setFullScreen(true);
-    }
+		if (isLive) {
+			scn.setCursor(Cursor.NONE);
+			stg.setFullScreen(true);
+		}
 
-    stg.setScene(scn);
-    stg.show();
-  }
+		stg.setScene(scn);
+		stg.show();
+	}
 }

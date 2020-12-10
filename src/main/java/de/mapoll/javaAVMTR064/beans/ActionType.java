@@ -56,54 +56,54 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "actionType", propOrder = {
-    "name",
-    "argumentList"
+		"name",
+		"argumentList"
 })
 public class ActionType {
 
-    @XmlElement(required = true, namespace = "urn:dslforum-org:service-1-0")
-    protected String name;
-    @XmlElement(namespace = "urn:dslforum-org:service-1-0")
-    protected ArgumentListType argumentList;
+	@XmlElement(required = true, namespace = "urn:dslforum-org:service-1-0")
+	protected String name;
+	@XmlElement(namespace = "urn:dslforum-org:service-1-0")
+	protected ArgumentListType argumentList;
 
-    /**
-     * Ruft den Wert der name-Eigenschaft ab.
-     *
-     * @return possible object is {@link String }
-     *
-     */
-    public String getName() {
-        return name;
-    }
+	/**
+	 * Ruft den Wert der name-Eigenschaft ab.
+	 *
+	 * @return possible object is {@link String }
+	 *
+	 */
+	public String getName() {
+		return name;
+	}
 
-    /**
-     * Legt den Wert der name-Eigenschaft fest.
-     *
-     * @param value allowed object is {@link String }
-     *
-     */
-    public void setName(String value) {
-        this.name = value;
-    }
+	/**
+	 * Legt den Wert der name-Eigenschaft fest.
+	 *
+	 * @param value allowed object is {@link String }
+	 *
+	 */
+	public void setName(String value) {
+		this.name = value;
+	}
 
-    /**
-     * Ruft den Wert der argumentList-Eigenschaft ab.
-     *
-     * @return possible object is {@link ArgumentListType }
-     *
-     */
-    public ArgumentListType getArgumentList() {
-        return argumentList;
-    }
+	/**
+	 * Ruft den Wert der argumentList-Eigenschaft ab.
+	 *
+	 * @return possible object is {@link ArgumentListType }
+	 *
+	 */
+	public ArgumentListType getArgumentList() {
+		return argumentList;
+	}
 
-    /**
-     * Legt den Wert der argumentList-Eigenschaft fest.
-     *
-     * @param value allowed object is {@link ArgumentListType }
-     *
-     */
-    public void setArgumentList(ArgumentListType value) {
-        this.argumentList = value;
-    }
+	/**
+	 * Legt den Wert der argumentList-Eigenschaft fest.
+	 *
+	 * @param value allowed object is {@link ArgumentListType }
+	 *
+	 */
+	public void setArgumentList(ArgumentListType value) {
+		this.argumentList = value;
+	}
 
 }

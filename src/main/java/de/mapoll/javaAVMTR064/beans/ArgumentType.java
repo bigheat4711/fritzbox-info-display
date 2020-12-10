@@ -57,77 +57,77 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "argumentType", propOrder = {
-    "name",
-    "direction",
-    "relatedStateVariable"
+		"name",
+		"direction",
+		"relatedStateVariable"
 })
 public class ArgumentType {
 
-    @XmlElement(required = true, namespace = "urn:dslforum-org:service-1-0")
-    protected String name;
-    @XmlElement(required = true, namespace = "urn:dslforum-org:service-1-0")
-    protected String direction;
-    @XmlElement(required = true, namespace = "urn:dslforum-org:service-1-0")
-    protected String relatedStateVariable;
+	@XmlElement(required = true, namespace = "urn:dslforum-org:service-1-0")
+	protected String name;
+	@XmlElement(required = true, namespace = "urn:dslforum-org:service-1-0")
+	protected String direction;
+	@XmlElement(required = true, namespace = "urn:dslforum-org:service-1-0")
+	protected String relatedStateVariable;
 
-    /**
-     * Ruft den Wert der name-Eigenschaft ab.
-     *
-     * @return possible object is {@link String }
-     *
-     */
-    public String getName() {
-        return name;
-    }
+	/**
+	 * Ruft den Wert der name-Eigenschaft ab.
+	 *
+	 * @return possible object is {@link String }
+	 *
+	 */
+	public String getName() {
+		return name;
+	}
 
-    /**
-     * Legt den Wert der name-Eigenschaft fest.
-     *
-     * @param value allowed object is {@link String }
-     *
-     */
-    public void setName(String value) {
-        this.name = value;
-    }
+	/**
+	 * Legt den Wert der name-Eigenschaft fest.
+	 *
+	 * @param value allowed object is {@link String }
+	 *
+	 */
+	public void setName(String value) {
+		this.name = value;
+	}
 
-    /**
-     * Ruft den Wert der direction-Eigenschaft ab.
-     *
-     * @return possible object is {@link String }
-     *
-     */
-    public String getDirection() {
-        return direction;
-    }
+	/**
+	 * Ruft den Wert der direction-Eigenschaft ab.
+	 *
+	 * @return possible object is {@link String }
+	 *
+	 */
+	public String getDirection() {
+		return direction;
+	}
 
-    /**
-     * Legt den Wert der direction-Eigenschaft fest.
-     *
-     * @param value allowed object is {@link String }
-     *
-     */
-    public void setDirection(String value) {
-        this.direction = value;
-    }
+	/**
+	 * Legt den Wert der direction-Eigenschaft fest.
+	 *
+	 * @param value allowed object is {@link String }
+	 *
+	 */
+	public void setDirection(String value) {
+		this.direction = value;
+	}
 
-    /**
-     * Ruft den Wert der relatedStateVariable-Eigenschaft ab.
-     *
-     * @return possible object is {@link String }
-     *
-     */
-    public String getRelatedStateVariable() {
-        return relatedStateVariable;
-    }
+	/**
+	 * Ruft den Wert der relatedStateVariable-Eigenschaft ab.
+	 *
+	 * @return possible object is {@link String }
+	 *
+	 */
+	public String getRelatedStateVariable() {
+		return relatedStateVariable;
+	}
 
-    /**
-     * Legt den Wert der relatedStateVariable-Eigenschaft fest.
-     *
-     * @param value allowed object is {@link String }
-     *
-     */
-    public void setRelatedStateVariable(String value) {
-        this.relatedStateVariable = value;
-    }
+	/**
+	 * Legt den Wert der relatedStateVariable-Eigenschaft fest.
+	 *
+	 * @param value allowed object is {@link String }
+	 *
+	 */
+	public void setRelatedStateVariable(String value) {
+		this.relatedStateVariable = value;
+	}
 
 }

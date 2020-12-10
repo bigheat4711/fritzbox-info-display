@@ -58,76 +58,76 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "stateVariableType", propOrder = {
-    "name",
-    "dataType"
+		"name",
+		"dataType"
 })
 public class StateVariableType {
 
-    @XmlElement(required = true, namespace = "urn:dslforum-org:service-1-0")
-    protected String name;
-    @XmlElement(required = true, namespace = "urn:dslforum-org:service-1-0")
-    protected String dataType;
-    @XmlAttribute(name = "sendEvents", namespace = "urn:dslforum-org:service-1-0")
-    protected String sendEvents;
+	@XmlElement(required = true, namespace = "urn:dslforum-org:service-1-0")
+	protected String name;
+	@XmlElement(required = true, namespace = "urn:dslforum-org:service-1-0")
+	protected String dataType;
+	@XmlAttribute(name = "sendEvents", namespace = "urn:dslforum-org:service-1-0")
+	protected String sendEvents;
 
-    /**
-     * Ruft den Wert der name-Eigenschaft ab.
-     *
-     * @return possible object is {@link String }
-     *
-     */
-    public String getName() {
-        return name;
-    }
+	/**
+	 * Ruft den Wert der name-Eigenschaft ab.
+	 *
+	 * @return possible object is {@link String }
+	 *
+	 */
+	public String getName() {
+		return name;
+	}
 
-    /**
-     * Legt den Wert der name-Eigenschaft fest.
-     *
-     * @param value allowed object is {@link String }
-     *
-     */
-    public void setName(String value) {
-        this.name = value;
-    }
+	/**
+	 * Legt den Wert der name-Eigenschaft fest.
+	 *
+	 * @param value allowed object is {@link String }
+	 *
+	 */
+	public void setName(String value) {
+		this.name = value;
+	}
 
-    /**
-     * Ruft den Wert der dataType-Eigenschaft ab.
-     *
-     * @return possible object is {@link String }
-     *
-     */
-    public String getDataType() {
-        return dataType;
-    }
+	/**
+	 * Ruft den Wert der dataType-Eigenschaft ab.
+	 *
+	 * @return possible object is {@link String }
+	 *
+	 */
+	public String getDataType() {
+		return dataType;
+	}
 
-    /**
-     * Legt den Wert der dataType-Eigenschaft fest.
-     *
-     * @param value allowed object is {@link String }
-     *
-     */
-    public void setDataType(String value) {
-        this.dataType = value;
-    }
+	/**
+	 * Legt den Wert der dataType-Eigenschaft fest.
+	 *
+	 * @param value allowed object is {@link String }
+	 *
+	 */
+	public void setDataType(String value) {
+		this.dataType = value;
+	}
 
-    /**
-     * Ruft den Wert der sendEvents-Eigenschaft ab.
-     *
-     * @return possible object is {@link String }
-     *
-     */
-    public String getSendEvents() {
-        return sendEvents;
-    }
+	/**
+	 * Ruft den Wert der sendEvents-Eigenschaft ab.
+	 *
+	 * @return possible object is {@link String }
+	 *
+	 */
+	public String getSendEvents() {
+		return sendEvents;
+	}
 
-    /**
-     * Legt den Wert der sendEvents-Eigenschaft fest.
-     *
-     * @param value allowed object is {@link String }
-     *
-     */
-    public void setSendEvents(String value) {
-        this.sendEvents = value;
-    }
+	/**
+	 * Legt den Wert der sendEvents-Eigenschaft fest.
+	 *
+	 * @param value allowed object is {@link String }
+	 *
+	 */
+	public void setSendEvents(String value) {
+		this.sendEvents = value;
+	}
 
 }

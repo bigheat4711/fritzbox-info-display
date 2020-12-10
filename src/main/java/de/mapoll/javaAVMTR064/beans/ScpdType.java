@@ -59,77 +59,77 @@ import javax.xml.bind.annotation.XmlType;
 @XmlRootElement(name = "scpd", namespace = "urn:dslforum-org:service-1-0")
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "scpdType", propOrder = {
-    "specVersion",
-    "actionList",
-    "serviceStateTable"
+		"specVersion",
+		"actionList",
+		"serviceStateTable"
 })
 public class ScpdType {
 
-    @XmlElement(required = true, namespace = "urn:dslforum-org:service-1-0")
-    protected ServiceSpecVersionType specVersion;
-    @XmlElement(required = true, namespace = "urn:dslforum-org:service-1-0")
-    protected ActionListType actionList;
-    @XmlElement(required = true, namespace = "urn:dslforum-org:service-1-0")
-    protected ServiceStateTableType serviceStateTable;
+	@XmlElement(required = true, namespace = "urn:dslforum-org:service-1-0")
+	protected ServiceSpecVersionType specVersion;
+	@XmlElement(required = true, namespace = "urn:dslforum-org:service-1-0")
+	protected ActionListType actionList;
+	@XmlElement(required = true, namespace = "urn:dslforum-org:service-1-0")
+	protected ServiceStateTableType serviceStateTable;
 
-    /**
-     * Ruft den Wert der specVersion-Eigenschaft ab.
-     *
-     * @return possible object is {@link DeviceSpecVersionType }
-     *
-     */
-    public ServiceSpecVersionType getSpecVersion() {
-        return specVersion;
-    }
+	/**
+	 * Ruft den Wert der specVersion-Eigenschaft ab.
+	 *
+	 * @return possible object is {@link DeviceSpecVersionType }
+	 *
+	 */
+	public ServiceSpecVersionType getSpecVersion() {
+		return specVersion;
+	}
 
-    /**
-     * Legt den Wert der specVersion-Eigenschaft fest.
-     *
-     * @param value allowed object is {@link DeviceSpecVersionType }
-     *
-     */
-    public void setSpecVersion(ServiceSpecVersionType value) {
-        this.specVersion = value;
-    }
+	/**
+	 * Legt den Wert der specVersion-Eigenschaft fest.
+	 *
+	 * @param value allowed object is {@link DeviceSpecVersionType }
+	 *
+	 */
+	public void setSpecVersion(ServiceSpecVersionType value) {
+		this.specVersion = value;
+	}
 
-    /**
-     * Ruft den Wert der actionList-Eigenschaft ab.
-     *
-     * @return possible object is {@link ActionListType }
-     *
-     */
-    public ActionListType getActionList() {
-        return actionList;
-    }
+	/**
+	 * Ruft den Wert der actionList-Eigenschaft ab.
+	 *
+	 * @return possible object is {@link ActionListType }
+	 *
+	 */
+	public ActionListType getActionList() {
+		return actionList;
+	}
 
-    /**
-     * Legt den Wert der actionList-Eigenschaft fest.
-     *
-     * @param value allowed object is {@link ActionListType }
-     *
-     */
-    public void setActionList(ActionListType value) {
-        this.actionList = value;
-    }
+	/**
+	 * Legt den Wert der actionList-Eigenschaft fest.
+	 *
+	 * @param value allowed object is {@link ActionListType }
+	 *
+	 */
+	public void setActionList(ActionListType value) {
+		this.actionList = value;
+	}
 
-    /**
-     * Ruft den Wert der serviceStateTable-Eigenschaft ab.
-     *
-     * @return possible object is {@link ServiceStateTableType }
-     *
-     */
-    public ServiceStateTableType getServiceStateTable() {
-        return serviceStateTable;
-    }
+	/**
+	 * Ruft den Wert der serviceStateTable-Eigenschaft ab.
+	 *
+	 * @return possible object is {@link ServiceStateTableType }
+	 *
+	 */
+	public ServiceStateTableType getServiceStateTable() {
+		return serviceStateTable;
+	}
 
-    /**
-     * Legt den Wert der serviceStateTable-Eigenschaft fest.
-     *
-     * @param value allowed object is {@link ServiceStateTableType }
-     *
-     */
-    public void setServiceStateTable(ServiceStateTableType value) {
-        this.serviceStateTable = value;
-    }
+	/**
+	 * Legt den Wert der serviceStateTable-Eigenschaft fest.
+	 *
+	 * @param value allowed object is {@link ServiceStateTableType }
+	 *
+	 */
+	public void setServiceStateTable(ServiceStateTableType value) {
+		this.serviceStateTable = value;
+	}
 
 }

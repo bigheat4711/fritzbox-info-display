@@ -57,40 +57,40 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "serviceListType", propOrder = {
-    "service"
+		"service"
 })
 public class ServiceListType {
 
-    @XmlElement(namespace = "urn:dslforum-org:device-1-0")
-    protected List<ServiceType> service;
+	@XmlElement(namespace = "urn:dslforum-org:device-1-0")
+	protected List<ServiceType> service;
 
-    /**
-     * Gets the value of the service property.
-     *
-     * <p>
-     * This accessor method returns a reference to the live list, not a
-     * snapshot. Therefore any modification you make to the returned list will
-     * be present inside the JAXB object. This is why there is not a
-     * <CODE>set</CODE> method for the service property.
-     *
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getService().add(newItem);
-     * </pre>
-     *
-     *
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link ServiceType }
-     *
-     *
-     */
-    public List<ServiceType> getService() {
-        if (service == null) {
-            service = new ArrayList<ServiceType>();
-        }
-        return this.service;
-    }
+	/**
+	 * Gets the value of the service property.
+	 *
+	 * <p>
+	 * This accessor method returns a reference to the live list, not a
+	 * snapshot. Therefore any modification you make to the returned list will
+	 * be present inside the JAXB object. This is why there is not a
+	 * <CODE>set</CODE> method for the service property.
+	 *
+	 * <p>
+	 * For example, to add a new item, do as follows:
+	 * <pre>
+	 *    getService().add(newItem);
+	 * </pre>
+	 *
+	 *
+	 * <p>
+	 * Objects of the following type(s) are allowed in the list
+	 * {@link ServiceType }
+	 *
+	 *
+	 */
+	public List<ServiceType> getService() {
+		if (service == null) {
+			service = new ArrayList<ServiceType>();
+		}
+		return this.service;
+	}
 
 }

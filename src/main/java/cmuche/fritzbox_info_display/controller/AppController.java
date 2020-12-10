@@ -10,118 +10,94 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-public class AppController
-{
-  private final int INTERVAL_DATA = 10 * 60 * 1000;
-  private final int INTERVAL_TIME = 60 * 1000;
-  
-  private Credentials credentials;
-  private FritzBoxController fritzBoxController;
+public class AppController {
+	private final int INTERVAL_DATA = 10 * 60 * 1000;
+	private final int INTERVAL_TIME = 60 * 1000;
 
-  private ViewController viewController;
+	private Credentials credentials;
+	private FritzBoxController fritzBoxController;
 
-  private boolean isRunning = false;
-  private Thread updateDataThread;
-  private Thread updateTimeThread;
+	private ViewController viewController;
 
-  public AppController(Credentials credentials) throws Exception
-  {
-    this.credentials = credentials;
-    fritzBoxController = new FritzBoxController(credentials);
-    setupThreads();
-  }
+	private boolean isRunning = false;
+	private Thread updateDataThread;
+	private Thread updateTimeThread;
 
-  private void setupThreads()
-  {
-    updateDataThread = new Thread(() ->
-    {
-      while (isRunning)
-      {
-        try
-        {
-          viewController.displayLoading(true);
-          updateData();
-        }
-        catch (Exception ex)
-        {
-          viewController.diplayError(ex);
-          ex.printStackTrace();
-        }
-        finally
-        {
-          viewController.displayLoading(false);
-          try
-          {
-            Thread.sleep(INTERVAL_DATA);
-          }
-          catch (InterruptedException e)
-          {
-            return;
-          }
-        }
-      }
-    });
+	public AppController(Credentials credentials) throws Exception {
+		this.credentials = credentials;
+		fritzBoxController = new FritzBoxController(credentials);
+		setupThreads();
+	}
 
-    updateTimeThread = new Thread(() ->
-    {
-      try
-      {
-        while (isRunning)
-        {
-          updateTime();
-          Thread.sleep(INTERVAL_TIME);
-        }
-      }
-      catch (InterruptedException ex)
-      {
-        //okay
-      }
-      catch (Exception ex)
-      {
-        ex.printStackTrace();
-      }
-    });
+	private void setupThreads() {
+		updateDataThread = new Thread(() ->
+		{
+			while (isRunning) {
+				try {
+					viewController.displayLoading(true);
+					updateData();
+				} catch (Exception ex) {
+					viewController.diplayError(ex);
+					ex.printStackTrace();
+				} finally {
+					viewController.displayLoading(false);
+					try {
+						Thread.sleep(INTERVAL_DATA);
+					} catch (InterruptedException e) {
+						return;
+					}
+				}
+			}
+		});
 
-  }
+		updateTimeThread = new Thread(() ->
+		{
+			try {
+				while (isRunning) {
+					updateTime();
+					Thread.sleep(INTERVAL_TIME);
+				}
+			} catch (InterruptedException ex) {
+				//okay
+			} catch (Exception ex) {
+				ex.printStackTrace();
+			}
+		});
 
-  private void updateTime()
-  {
-    Date thisDate = new Date();
-    viewController.displayTime(thisDate);
-  }
+	}
 
-  private void updateData() throws Exception
-  {
-    DataController dataController = new DataController(fritzBoxController);
-    DataResponse data = dataController.collectData();
-    viewController.displayData(data);
-  }
+	private void updateTime() {
+		Date thisDate = new Date();
+		viewController.displayTime(thisDate);
+	}
 
-  public void redial(Call call) throws Exception
-  {
-    Map<String, Object> args = new HashMap<>();
-    args.put("NewX_AVM-DE_PhoneNumber", call.getExternal().getNumber());
-    fritzBoxController.doRequest(FbService.Voip, FbAction.DialNumber, args);
-  }
+	private void updateData() throws Exception {
+		DataController dataController = new DataController(fritzBoxController);
+		DataResponse data = dataController.collectData();
+		viewController.displayData(data);
+	}
 
-  public void cancelRedial() throws Exception
-  {
-    fritzBoxController.doRequest(FbService.Voip, FbAction.DialHangup);
-  }
+	public void redial(Call call) throws Exception {
+		Map<String, Object> args = new HashMap<>();
+		args.put("NewX_AVM-DE_PhoneNumber", call.getExternal().getNumber());
+		fritzBoxController.doRequest(FbService.Voip, FbAction.DialNumber, args);
+	}
 
-  public void start(ViewController viewController)
-  {
-    this.viewController = viewController;
+	public void cancelRedial() throws Exception {
+		fritzBoxController.doRequest(FbService.Voip, FbAction.DialHangup);
+	}
 
-    isRunning = true;
-    updateTimeThread.start();
-    updateDataThread.start();
-  }
+	public void start(ViewController viewController) {
+		this.viewController = viewController;
 
-  public void stop()
-  {
-    isRunning = false;
-    updateTimeThread.interrupt();
-    updateDataThread.interrupt();
-  }
+		isRunning = true;
+		updateTimeThread.start();
+		updateDataThread.start();
+	}
+
+	public void stop() {
+		isRunning = false;
+		updateTimeThread.interrupt();
+		updateDataThread.interrupt();
+	}
 }

@@ -57,40 +57,40 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "serviceStateTableType", propOrder = {
-    "stateVariable"
+		"stateVariable"
 })
 public class ServiceStateTableType {
 
-    @XmlElement(namespace = "urn:dslforum-org:service-1-0")
-    protected List<StateVariableType> stateVariable;
+	@XmlElement(namespace = "urn:dslforum-org:service-1-0")
+	protected List<StateVariableType> stateVariable;
 
-    /**
-     * Gets the value of the stateVariable property.
-     *
-     * <p>
-     * This accessor method returns a reference to the live list, not a
-     * snapshot. Therefore any modification you make to the returned list will
-     * be present inside the JAXB object. This is why there is not a
-     * <CODE>set</CODE> method for the stateVariable property.
-     *
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getStateVariable().add(newItem);
-     * </pre>
-     *
-     *
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link StateVariableType }
-     *
-     *
-     */
-    public List<StateVariableType> getStateVariable() {
-        if (stateVariable == null) {
-            stateVariable = new ArrayList<StateVariableType>();
-        }
-        return this.stateVariable;
-    }
+	/**
+	 * Gets the value of the stateVariable property.
+	 *
+	 * <p>
+	 * This accessor method returns a reference to the live list, not a
+	 * snapshot. Therefore any modification you make to the returned list will
+	 * be present inside the JAXB object. This is why there is not a
+	 * <CODE>set</CODE> method for the stateVariable property.
+	 *
+	 * <p>
+	 * For example, to add a new item, do as follows:
+	 * <pre>
+	 *    getStateVariable().add(newItem);
+	 * </pre>
+	 *
+	 *
+	 * <p>
+	 * Objects of the following type(s) are allowed in the list
+	 * {@link StateVariableType }
+	 *
+	 *
+	 */
+	public List<StateVariableType> getStateVariable() {
+		if (stateVariable == null) {
+			stateVariable = new ArrayList<StateVariableType>();
+		}
+		return this.stateVariable;
+	}
 
 }

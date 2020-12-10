@@ -44,88 +44,88 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _Scpd_QNAME = new QName("urn:dslforum-org:service-1-0", "scpd");
+	private final static QName _Scpd_QNAME = new QName("urn:dslforum-org:service-1-0", "scpd");
 
-    /**
-     * Create a new ObjectFactory that can be used to create new instances of
-     * schema derived classes for package: de.mapoll.javaAVMTR064.beans
-     *
-     */
-    public ObjectFactory() {
-    }
+	/**
+	 * Create a new ObjectFactory that can be used to create new instances of
+	 * schema derived classes for package: de.mapoll.javaAVMTR064.beans
+	 *
+	 */
+	public ObjectFactory() {
+	}
 
-    /**
-     * Create an instance of {@link ScpdType }
-     *
-     */
-    public ScpdType createScpdType() {
-        return new ScpdType();
-    }
+	/**
+	 * Create an instance of {@link ScpdType }
+	 *
+	 */
+	public ScpdType createScpdType() {
+		return new ScpdType();
+	}
 
-    /**
-     * Create an instance of {@link DeviceSpecVersionType }
-     *
-     */
-    public DeviceSpecVersionType createSpecVersionType() {
-        return new DeviceSpecVersionType();
-    }
+	/**
+	 * Create an instance of {@link DeviceSpecVersionType }
+	 *
+	 */
+	public DeviceSpecVersionType createSpecVersionType() {
+		return new DeviceSpecVersionType();
+	}
 
-    /**
-     * Create an instance of {@link ArgumentType }
-     *
-     */
-    public ArgumentType createArgumentType() {
-        return new ArgumentType();
-    }
+	/**
+	 * Create an instance of {@link ArgumentType }
+	 *
+	 */
+	public ArgumentType createArgumentType() {
+		return new ArgumentType();
+	}
 
-    /**
-     * Create an instance of {@link ArgumentListType }
-     *
-     */
-    public ArgumentListType createArgumentListType() {
-        return new ArgumentListType();
-    }
+	/**
+	 * Create an instance of {@link ArgumentListType }
+	 *
+	 */
+	public ArgumentListType createArgumentListType() {
+		return new ArgumentListType();
+	}
 
-    /**
-     * Create an instance of {@link ActionType }
-     *
-     */
-    public ActionType createActionType() {
-        return new ActionType();
-    }
+	/**
+	 * Create an instance of {@link ActionType }
+	 *
+	 */
+	public ActionType createActionType() {
+		return new ActionType();
+	}
 
-    /**
-     * Create an instance of {@link ActionListType }
-     *
-     */
-    public ActionListType createActionListType() {
-        return new ActionListType();
-    }
+	/**
+	 * Create an instance of {@link ActionListType }
+	 *
+	 */
+	public ActionListType createActionListType() {
+		return new ActionListType();
+	}
 
-    /**
-     * Create an instance of {@link StateVariableType }
-     *
-     */
-    public StateVariableType createStateVariableType() {
-        return new StateVariableType();
-    }
+	/**
+	 * Create an instance of {@link StateVariableType }
+	 *
+	 */
+	public StateVariableType createStateVariableType() {
+		return new StateVariableType();
+	}
 
-    /**
-     * Create an instance of {@link ServiceStateTableType }
-     *
-     */
-    public ServiceStateTableType createServiceStateTableType() {
-        return new ServiceStateTableType();
-    }
+	/**
+	 * Create an instance of {@link ServiceStateTableType }
+	 *
+	 */
+	public ServiceStateTableType createServiceStateTableType() {
+		return new ServiceStateTableType();
+	}
 
-    /**
-     * Create an instance of
-     * {@link JAXBElement }{@code <}{@link ScpdType }{@code >}}
-     *
-     */
-    @XmlElementDecl(namespace = "urn:dslforum-org:service-1-0", name = "scpd")
-    public JAXBElement<ScpdType> createScpd(ScpdType value) {
-        return new JAXBElement<ScpdType>(_Scpd_QNAME, ScpdType.class, null, value);
-    }
+	/**
+	 * Create an instance of
+	 * {@link JAXBElement }{@code <}{@link ScpdType }{@code >}}
+	 *
+	 */
+	@XmlElementDecl(namespace = "urn:dslforum-org:service-1-0", name = "scpd")
+	public JAXBElement<ScpdType> createScpd(ScpdType value) {
+		return new JAXBElement<ScpdType>(_Scpd_QNAME, ScpdType.class, null, value);
+	}
 
 }

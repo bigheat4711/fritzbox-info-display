@@ -69,333 +69,333 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "deviceType", propOrder = {
-    "deviceType",
-    "friendlyName",
-    "manufacturer",
-    "manufacturerURL",
-    "modelDescription",
-    "modelName",
-    "modelNumber",
-    "modelURL",
-    "udn",
-    "upc",
-    "iconList",
-    "serviceList",
-    "deviceList",
-    "presentationURL"
+		"deviceType",
+		"friendlyName",
+		"manufacturer",
+		"manufacturerURL",
+		"modelDescription",
+		"modelName",
+		"modelNumber",
+		"modelURL",
+		"udn",
+		"upc",
+		"iconList",
+		"serviceList",
+		"deviceList",
+		"presentationURL"
 })
 public class DeviceType {
 
-    @XmlElement(required = true, namespace = "urn:dslforum-org:device-1-0")
-    protected String deviceType;
-    @XmlElement(required = true, namespace = "urn:dslforum-org:device-1-0")
-    protected String friendlyName;
-    @XmlElement(required = true, namespace = "urn:dslforum-org:device-1-0")
-    protected String manufacturer;
-    @XmlElement(required = true, namespace = "urn:dslforum-org:device-1-0")
-    @XmlSchemaType(name = "anyURI")
-    protected String manufacturerURL;
-    @XmlElement(required = true, namespace = "urn:dslforum-org:device-1-0")
-    protected String modelDescription;
-    @XmlElement(required = true, namespace = "urn:dslforum-org:device-1-0")
-    protected String modelName;
-    @XmlElement(required = true, namespace = "urn:dslforum-org:device-1-0")
-    protected String modelNumber;
-    @XmlElement(required = true, namespace = "urn:dslforum-org:device-1-0")
-    @XmlSchemaType(name = "anyURI")
-    protected String modelURL;
-    @XmlElement(name = "UDN", required = true, namespace = "urn:dslforum-org:device-1-0")
-    protected String udn;
-    @XmlElement(name = "UPC", namespace = "urn:dslforum-org:device-1-0")
-    protected String upc;
-    @XmlElement(namespace = "urn:dslforum-org:device-1-0")
-    protected IconListType iconList;
-    @XmlElement(required = true, namespace = "urn:dslforum-org:device-1-0")
-    protected ServiceListType serviceList;
-    @XmlElement(namespace = "urn:dslforum-org:device-1-0")
-    protected DeviceListType deviceList;
-    @XmlElement(namespace = "urn:dslforum-org:device-1-0")
-    @XmlSchemaType(name = "anyURI")
-    protected String presentationURL;
+	@XmlElement(required = true, namespace = "urn:dslforum-org:device-1-0")
+	protected String deviceType;
+	@XmlElement(required = true, namespace = "urn:dslforum-org:device-1-0")
+	protected String friendlyName;
+	@XmlElement(required = true, namespace = "urn:dslforum-org:device-1-0")
+	protected String manufacturer;
+	@XmlElement(required = true, namespace = "urn:dslforum-org:device-1-0")
+	@XmlSchemaType(name = "anyURI")
+	protected String manufacturerURL;
+	@XmlElement(required = true, namespace = "urn:dslforum-org:device-1-0")
+	protected String modelDescription;
+	@XmlElement(required = true, namespace = "urn:dslforum-org:device-1-0")
+	protected String modelName;
+	@XmlElement(required = true, namespace = "urn:dslforum-org:device-1-0")
+	protected String modelNumber;
+	@XmlElement(required = true, namespace = "urn:dslforum-org:device-1-0")
+	@XmlSchemaType(name = "anyURI")
+	protected String modelURL;
+	@XmlElement(name = "UDN", required = true, namespace = "urn:dslforum-org:device-1-0")
+	protected String udn;
+	@XmlElement(name = "UPC", namespace = "urn:dslforum-org:device-1-0")
+	protected String upc;
+	@XmlElement(namespace = "urn:dslforum-org:device-1-0")
+	protected IconListType iconList;
+	@XmlElement(required = true, namespace = "urn:dslforum-org:device-1-0")
+	protected ServiceListType serviceList;
+	@XmlElement(namespace = "urn:dslforum-org:device-1-0")
+	protected DeviceListType deviceList;
+	@XmlElement(namespace = "urn:dslforum-org:device-1-0")
+	@XmlSchemaType(name = "anyURI")
+	protected String presentationURL;
 
-    /**
-     * Ruft den Wert der deviceType-Eigenschaft ab.
-     *
-     * @return possible object is {@link String }
-     *
-     */
-    public String getDeviceType() {
-        return deviceType;
-    }
+	/**
+	 * Ruft den Wert der deviceType-Eigenschaft ab.
+	 *
+	 * @return possible object is {@link String }
+	 *
+	 */
+	public String getDeviceType() {
+		return deviceType;
+	}
 
-    /**
-     * Legt den Wert der deviceType-Eigenschaft fest.
-     *
-     * @param value allowed object is {@link String }
-     *
-     */
-    public void setDeviceType(String value) {
-        this.deviceType = value;
-    }
+	/**
+	 * Legt den Wert der deviceType-Eigenschaft fest.
+	 *
+	 * @param value allowed object is {@link String }
+	 *
+	 */
+	public void setDeviceType(String value) {
+		this.deviceType = value;
+	}
 
-    /**
-     * Ruft den Wert der friendlyName-Eigenschaft ab.
-     *
-     * @return possible object is {@link String }
-     *
-     */
-    public String getFriendlyName() {
-        return friendlyName;
-    }
+	/**
+	 * Ruft den Wert der friendlyName-Eigenschaft ab.
+	 *
+	 * @return possible object is {@link String }
+	 *
+	 */
+	public String getFriendlyName() {
+		return friendlyName;
+	}
 
-    /**
-     * Legt den Wert der friendlyName-Eigenschaft fest.
-     *
-     * @param value allowed object is {@link String }
-     *
-     */
-    public void setFriendlyName(String value) {
-        this.friendlyName = value;
-    }
+	/**
+	 * Legt den Wert der friendlyName-Eigenschaft fest.
+	 *
+	 * @param value allowed object is {@link String }
+	 *
+	 */
+	public void setFriendlyName(String value) {
+		this.friendlyName = value;
+	}
 
-    /**
-     * Ruft den Wert der manufacturer-Eigenschaft ab.
-     *
-     * @return possible object is {@link String }
-     *
-     */
-    public String getManufacturer() {
-        return manufacturer;
-    }
+	/**
+	 * Ruft den Wert der manufacturer-Eigenschaft ab.
+	 *
+	 * @return possible object is {@link String }
+	 *
+	 */
+	public String getManufacturer() {
+		return manufacturer;
+	}
 
-    /**
-     * Legt den Wert der manufacturer-Eigenschaft fest.
-     *
-     * @param value allowed object is {@link String }
-     *
-     */
-    public void setManufacturer(String value) {
-        this.manufacturer = value;
-    }
+	/**
+	 * Legt den Wert der manufacturer-Eigenschaft fest.
+	 *
+	 * @param value allowed object is {@link String }
+	 *
+	 */
+	public void setManufacturer(String value) {
+		this.manufacturer = value;
+	}
 
-    /**
-     * Ruft den Wert der manufacturerURL-Eigenschaft ab.
-     *
-     * @return possible object is {@link String }
-     *
-     */
-    public String getManufacturerURL() {
-        return manufacturerURL;
-    }
+	/**
+	 * Ruft den Wert der manufacturerURL-Eigenschaft ab.
+	 *
+	 * @return possible object is {@link String }
+	 *
+	 */
+	public String getManufacturerURL() {
+		return manufacturerURL;
+	}
 
-    /**
-     * Legt den Wert der manufacturerURL-Eigenschaft fest.
-     *
-     * @param value allowed object is {@link String }
-     *
-     */
-    public void setManufacturerURL(String value) {
-        this.manufacturerURL = value;
-    }
+	/**
+	 * Legt den Wert der manufacturerURL-Eigenschaft fest.
+	 *
+	 * @param value allowed object is {@link String }
+	 *
+	 */
+	public void setManufacturerURL(String value) {
+		this.manufacturerURL = value;
+	}
 
-    /**
-     * Ruft den Wert der modelDescription-Eigenschaft ab.
-     *
-     * @return possible object is {@link String }
-     *
-     */
-    public String getModelDescription() {
-        return modelDescription;
-    }
+	/**
+	 * Ruft den Wert der modelDescription-Eigenschaft ab.
+	 *
+	 * @return possible object is {@link String }
+	 *
+	 */
+	public String getModelDescription() {
+		return modelDescription;
+	}
 
-    /**
-     * Legt den Wert der modelDescription-Eigenschaft fest.
-     *
-     * @param value allowed object is {@link String }
-     *
-     */
-    public void setModelDescription(String value) {
-        this.modelDescription = value;
-    }
+	/**
+	 * Legt den Wert der modelDescription-Eigenschaft fest.
+	 *
+	 * @param value allowed object is {@link String }
+	 *
+	 */
+	public void setModelDescription(String value) {
+		this.modelDescription = value;
+	}
 
-    /**
-     * Ruft den Wert der modelName-Eigenschaft ab.
-     *
-     * @return possible object is {@link String }
-     *
-     */
-    public String getModelName() {
-        return modelName;
-    }
+	/**
+	 * Ruft den Wert der modelName-Eigenschaft ab.
+	 *
+	 * @return possible object is {@link String }
+	 *
+	 */
+	public String getModelName() {
+		return modelName;
+	}
 
-    /**
-     * Legt den Wert der modelName-Eigenschaft fest.
-     *
-     * @param value allowed object is {@link String }
-     *
-     */
-    public void setModelName(String value) {
-        this.modelName = value;
-    }
+	/**
+	 * Legt den Wert der modelName-Eigenschaft fest.
+	 *
+	 * @param value allowed object is {@link String }
+	 *
+	 */
+	public void setModelName(String value) {
+		this.modelName = value;
+	}
 
-    /**
-     * Ruft den Wert der modelNumber-Eigenschaft ab.
-     *
-     * @return possible object is {@link String }
-     *
-     */
-    public String getModelNumber() {
-        return modelNumber;
-    }
+	/**
+	 * Ruft den Wert der modelNumber-Eigenschaft ab.
+	 *
+	 * @return possible object is {@link String }
+	 *
+	 */
+	public String getModelNumber() {
+		return modelNumber;
+	}
 
-    /**
-     * Legt den Wert der modelNumber-Eigenschaft fest.
-     *
-     * @param value allowed object is {@link String }
-     *
-     */
-    public void setModelNumber(String value) {
-        this.modelNumber = value;
-    }
+	/**
+	 * Legt den Wert der modelNumber-Eigenschaft fest.
+	 *
+	 * @param value allowed object is {@link String }
+	 *
+	 */
+	public void setModelNumber(String value) {
+		this.modelNumber = value;
+	}
 
-    /**
-     * Ruft den Wert der modelURL-Eigenschaft ab.
-     *
-     * @return possible object is {@link String }
-     *
-     */
-    public String getModelURL() {
-        return modelURL;
-    }
+	/**
+	 * Ruft den Wert der modelURL-Eigenschaft ab.
+	 *
+	 * @return possible object is {@link String }
+	 *
+	 */
+	public String getModelURL() {
+		return modelURL;
+	}
 
-    /**
-     * Legt den Wert der modelURL-Eigenschaft fest.
-     *
-     * @param value allowed object is {@link String }
-     *
-     */
-    public void setModelURL(String value) {
-        this.modelURL = value;
-    }
+	/**
+	 * Legt den Wert der modelURL-Eigenschaft fest.
+	 *
+	 * @param value allowed object is {@link String }
+	 *
+	 */
+	public void setModelURL(String value) {
+		this.modelURL = value;
+	}
 
-    /**
-     * Ruft den Wert der udn-Eigenschaft ab.
-     *
-     * @return possible object is {@link String }
-     *
-     */
-    public String getUDN() {
-        return udn;
-    }
+	/**
+	 * Ruft den Wert der udn-Eigenschaft ab.
+	 *
+	 * @return possible object is {@link String }
+	 *
+	 */
+	public String getUDN() {
+		return udn;
+	}
 
-    /**
-     * Legt den Wert der udn-Eigenschaft fest.
-     *
-     * @param value allowed object is {@link String }
-     *
-     */
-    public void setUDN(String value) {
-        this.udn = value;
-    }
+	/**
+	 * Legt den Wert der udn-Eigenschaft fest.
+	 *
+	 * @param value allowed object is {@link String }
+	 *
+	 */
+	public void setUDN(String value) {
+		this.udn = value;
+	}
 
-    /**
-     * Ruft den Wert der upc-Eigenschaft ab.
-     *
-     * @return possible object is {@link String }
-     *
-     */
-    public String getUPC() {
-        return upc;
-    }
+	/**
+	 * Ruft den Wert der upc-Eigenschaft ab.
+	 *
+	 * @return possible object is {@link String }
+	 *
+	 */
+	public String getUPC() {
+		return upc;
+	}
 
-    /**
-     * Legt den Wert der upc-Eigenschaft fest.
-     *
-     * @param value allowed object is {@link String }
-     *
-     */
-    public void setUPC(String value) {
-        this.upc = value;
-    }
+	/**
+	 * Legt den Wert der upc-Eigenschaft fest.
+	 *
+	 * @param value allowed object is {@link String }
+	 *
+	 */
+	public void setUPC(String value) {
+		this.upc = value;
+	}
 
-    /**
-     * Ruft den Wert der iconList-Eigenschaft ab.
-     *
-     * @return possible object is {@link IconListType }
-     *
-     */
-    public IconListType getIconList() {
-        return iconList;
-    }
+	/**
+	 * Ruft den Wert der iconList-Eigenschaft ab.
+	 *
+	 * @return possible object is {@link IconListType }
+	 *
+	 */
+	public IconListType getIconList() {
+		return iconList;
+	}
 
-    /**
-     * Legt den Wert der iconList-Eigenschaft fest.
-     *
-     * @param value allowed object is {@link IconListType }
-     *
-     */
-    public void setIconList(IconListType value) {
-        this.iconList = value;
-    }
+	/**
+	 * Legt den Wert der iconList-Eigenschaft fest.
+	 *
+	 * @param value allowed object is {@link IconListType }
+	 *
+	 */
+	public void setIconList(IconListType value) {
+		this.iconList = value;
+	}
 
-    /**
-     * Ruft den Wert der serviceList-Eigenschaft ab.
-     *
-     * @return possible object is {@link ServiceListType }
-     *
-     */
-    public ServiceListType getServiceList() {
-        return serviceList;
-    }
+	/**
+	 * Ruft den Wert der serviceList-Eigenschaft ab.
+	 *
+	 * @return possible object is {@link ServiceListType }
+	 *
+	 */
+	public ServiceListType getServiceList() {
+		return serviceList;
+	}
 
-    /**
-     * Legt den Wert der serviceList-Eigenschaft fest.
-     *
-     * @param value allowed object is {@link ServiceListType }
-     *
-     */
-    public void setServiceList(ServiceListType value) {
-        this.serviceList = value;
-    }
+	/**
+	 * Legt den Wert der serviceList-Eigenschaft fest.
+	 *
+	 * @param value allowed object is {@link ServiceListType }
+	 *
+	 */
+	public void setServiceList(ServiceListType value) {
+		this.serviceList = value;
+	}
 
-    /**
-     * Ruft den Wert der deviceList-Eigenschaft ab.
-     *
-     * @return possible object is {@link DeviceListType }
-     *
-     */
-    public DeviceListType getDeviceList() {
-        return deviceList;
-    }
+	/**
+	 * Ruft den Wert der deviceList-Eigenschaft ab.
+	 *
+	 * @return possible object is {@link DeviceListType }
+	 *
+	 */
+	public DeviceListType getDeviceList() {
+		return deviceList;
+	}
 
-    /**
-     * Legt den Wert der deviceList-Eigenschaft fest.
-     *
-     * @param value allowed object is {@link DeviceListType }
-     *
-     */
-    public void setDeviceList(DeviceListType value) {
-        this.deviceList = value;
-    }
+	/**
+	 * Legt den Wert der deviceList-Eigenschaft fest.
+	 *
+	 * @param value allowed object is {@link DeviceListType }
+	 *
+	 */
+	public void setDeviceList(DeviceListType value) {
+		this.deviceList = value;
+	}
 
-    /**
-     * Ruft den Wert der presentationURL-Eigenschaft ab.
-     *
-     * @return possible object is {@link String }
-     *
-     */
-    public String getPresentationURL() {
-        return presentationURL;
-    }
+	/**
+	 * Ruft den Wert der presentationURL-Eigenschaft ab.
+	 *
+	 * @return possible object is {@link String }
+	 *
+	 */
+	public String getPresentationURL() {
+		return presentationURL;
+	}
 
-    /**
-     * Legt den Wert der presentationURL-Eigenschaft fest.
-     *
-     * @param value allowed object is {@link String }
-     *
-     */
-    public void setPresentationURL(String value) {
-        this.presentationURL = value;
-    }
+	/**
+	 * Legt den Wert der presentationURL-Eigenschaft fest.
+	 *
+	 * @param value allowed object is {@link String }
+	 *
+	 */
+	public void setPresentationURL(String value) {
+		this.presentationURL = value;
+	}
 
 }

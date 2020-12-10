@@ -59,111 +59,111 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "iconType", propOrder = {
-    "mimetype",
-    "width",
-    "height",
-    "depth",
-    "url"
+		"mimetype",
+		"width",
+		"height",
+		"depth",
+		"url"
 })
 public class IconType {
 
-    @XmlElement(required = true, namespace = "urn:dslforum-org:device-1-0")
-    protected String mimetype;
-    @XmlElement(namespace = "urn:dslforum-org:device-1-0")
-    protected byte width;
-    @XmlElement(namespace = "urn:dslforum-org:device-1-0")
-    protected byte height;
-    @XmlElement(namespace = "urn:dslforum-org:device-1-0")
-    protected byte depth;
-    @XmlElement(required = true, namespace = "urn:dslforum-org:device-1-0")
-    protected String url;
+	@XmlElement(required = true, namespace = "urn:dslforum-org:device-1-0")
+	protected String mimetype;
+	@XmlElement(namespace = "urn:dslforum-org:device-1-0")
+	protected byte width;
+	@XmlElement(namespace = "urn:dslforum-org:device-1-0")
+	protected byte height;
+	@XmlElement(namespace = "urn:dslforum-org:device-1-0")
+	protected byte depth;
+	@XmlElement(required = true, namespace = "urn:dslforum-org:device-1-0")
+	protected String url;
 
-    /**
-     * Ruft den Wert der mimetype-Eigenschaft ab.
-     *
-     * @return possible object is {@link String }
-     *
-     */
-    public String getMimetype() {
-        return mimetype;
-    }
+	/**
+	 * Ruft den Wert der mimetype-Eigenschaft ab.
+	 *
+	 * @return possible object is {@link String }
+	 *
+	 */
+	public String getMimetype() {
+		return mimetype;
+	}
 
-    /**
-     * Legt den Wert der mimetype-Eigenschaft fest.
-     *
-     * @param value allowed object is {@link String }
-     *
-     */
-    public void setMimetype(String value) {
-        this.mimetype = value;
-    }
+	/**
+	 * Legt den Wert der mimetype-Eigenschaft fest.
+	 *
+	 * @param value allowed object is {@link String }
+	 *
+	 */
+	public void setMimetype(String value) {
+		this.mimetype = value;
+	}
 
-    /**
-     * Ruft den Wert der width-Eigenschaft ab.
-     *
-     */
-    public byte getWidth() {
-        return width;
-    }
+	/**
+	 * Ruft den Wert der width-Eigenschaft ab.
+	 *
+	 */
+	public byte getWidth() {
+		return width;
+	}
 
-    /**
-     * Legt den Wert der width-Eigenschaft fest.
-     *
-     */
-    public void setWidth(byte value) {
-        this.width = value;
-    }
+	/**
+	 * Legt den Wert der width-Eigenschaft fest.
+	 *
+	 */
+	public void setWidth(byte value) {
+		this.width = value;
+	}
 
-    /**
-     * Ruft den Wert der height-Eigenschaft ab.
-     *
-     */
-    public byte getHeight() {
-        return height;
-    }
+	/**
+	 * Ruft den Wert der height-Eigenschaft ab.
+	 *
+	 */
+	public byte getHeight() {
+		return height;
+	}
 
-    /**
-     * Legt den Wert der height-Eigenschaft fest.
-     *
-     */
-    public void setHeight(byte value) {
-        this.height = value;
-    }
+	/**
+	 * Legt den Wert der height-Eigenschaft fest.
+	 *
+	 */
+	public void setHeight(byte value) {
+		this.height = value;
+	}
 
-    /**
-     * Ruft den Wert der depth-Eigenschaft ab.
-     *
-     */
-    public byte getDepth() {
-        return depth;
-    }
+	/**
+	 * Ruft den Wert der depth-Eigenschaft ab.
+	 *
+	 */
+	public byte getDepth() {
+		return depth;
+	}
 
-    /**
-     * Legt den Wert der depth-Eigenschaft fest.
-     *
-     */
-    public void setDepth(byte value) {
-        this.depth = value;
-    }
+	/**
+	 * Legt den Wert der depth-Eigenschaft fest.
+	 *
+	 */
+	public void setDepth(byte value) {
+		this.depth = value;
+	}
 
-    /**
-     * Ruft den Wert der url-Eigenschaft ab.
-     *
-     * @return possible object is {@link String }
-     *
-     */
-    public String getUrl() {
-        return url;
-    }
+	/**
+	 * Ruft den Wert der url-Eigenschaft ab.
+	 *
+	 * @return possible object is {@link String }
+	 *
+	 */
+	public String getUrl() {
+		return url;
+	}
 
-    /**
-     * Legt den Wert der url-Eigenschaft fest.
-     *
-     * @param value allowed object is {@link String }
-     *
-     */
-    public void setUrl(String value) {
-        this.url = value;
-    }
+	/**
+	 * Legt den Wert der url-Eigenschaft fest.
+	 *
+	 * @param value allowed object is {@link String }
+	 *
+	 */
+	public void setUrl(String value) {
+		this.url = value;
+	}
 
 }

@@ -57,40 +57,40 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "actionListType", propOrder = {
-    "action"
+		"action"
 })
 public class ActionListType {
 
-    @XmlElement(namespace = "urn:dslforum-org:service-1-0")
-    protected List<ActionType> action;
+	@XmlElement(namespace = "urn:dslforum-org:service-1-0")
+	protected List<ActionType> action;
 
-    /**
-     * Gets the value of the action property.
-     *
-     * <p>
-     * This accessor method returns a reference to the live list, not a
-     * snapshot. Therefore any modification you make to the returned list will
-     * be present inside the JAXB object. This is why there is not a
-     * <CODE>set</CODE> method for the action property.
-     *
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getAction().add(newItem);
-     * </pre>
-     *
-     *
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link ActionType }
-     *
-     *
-     */
-    public List<ActionType> getAction() {
-        if (action == null) {
-            action = new ArrayList<ActionType>();
-        }
-        return this.action;
-    }
+	/**
+	 * Gets the value of the action property.
+	 *
+	 * <p>
+	 * This accessor method returns a reference to the live list, not a
+	 * snapshot. Therefore any modification you make to the returned list will
+	 * be present inside the JAXB object. This is why there is not a
+	 * <CODE>set</CODE> method for the action property.
+	 *
+	 * <p>
+	 * For example, to add a new item, do as follows:
+	 * <pre>
+	 *    getAction().add(newItem);
+	 * </pre>
+	 *
+	 *
+	 * <p>
+	 * Objects of the following type(s) are allowed in the list
+	 * {@link ActionType }
+	 *
+	 *
+	 */
+	public List<ActionType> getAction() {
+		if (action == null) {
+			action = new ArrayList<ActionType>();
+		}
+		return this.action;
+	}
 
 }

@@ -58,54 +58,54 @@ import javax.xml.bind.annotation.XmlType;
 @XmlRootElement(name = "root", namespace = "urn:dslforum-org:device-1-0")
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "rootType", propOrder = {
-    "specVersion",
-    "device"
+		"specVersion",
+		"device"
 })
 public class RootType {
 
-    @XmlElement(required = true, namespace = "urn:dslforum-org:device-1-0")
-    protected DeviceSpecVersionType specVersion;
-    @XmlElement(required = true, namespace = "urn:dslforum-org:device-1-0")
-    protected DeviceType device;
+	@XmlElement(required = true, namespace = "urn:dslforum-org:device-1-0")
+	protected DeviceSpecVersionType specVersion;
+	@XmlElement(required = true, namespace = "urn:dslforum-org:device-1-0")
+	protected DeviceType device;
 
-    /**
-     * Ruft den Wert der specVersion-Eigenschaft ab.
-     *
-     * @return possible object is {@link DeviceSpecVersionType }
-     *
-     */
-    public DeviceSpecVersionType getSpecVersion() {
-        return specVersion;
-    }
+	/**
+	 * Ruft den Wert der specVersion-Eigenschaft ab.
+	 *
+	 * @return possible object is {@link DeviceSpecVersionType }
+	 *
+	 */
+	public DeviceSpecVersionType getSpecVersion() {
+		return specVersion;
+	}
 
-    /**
-     * Legt den Wert der specVersion-Eigenschaft fest.
-     *
-     * @param value allowed object is {@link DeviceSpecVersionType }
-     *
-     */
-    public void setSpecVersion(DeviceSpecVersionType value) {
-        this.specVersion = value;
-    }
+	/**
+	 * Legt den Wert der specVersion-Eigenschaft fest.
+	 *
+	 * @param value allowed object is {@link DeviceSpecVersionType }
+	 *
+	 */
+	public void setSpecVersion(DeviceSpecVersionType value) {
+		this.specVersion = value;
+	}
 
-    /**
-     * Ruft den Wert der device-Eigenschaft ab.
-     *
-     * @return possible object is {@link DeviceType }
-     *
-     */
-    public DeviceType getDevice() {
-        return device;
-    }
+	/**
+	 * Ruft den Wert der device-Eigenschaft ab.
+	 *
+	 * @return possible object is {@link DeviceType }
+	 *
+	 */
+	public DeviceType getDevice() {
+		return device;
+	}
 
-    /**
-     * Legt den Wert der device-Eigenschaft fest.
-     *
-     * @param value allowed object is {@link DeviceType }
-     *
-     */
-    public void setDevice(DeviceType value) {
-        this.device = value;
-    }
+	/**
+	 * Legt den Wert der device-Eigenschaft fest.
+	 *
+	 * @param value allowed object is {@link DeviceType }
+	 *
+	 */
+	public void setDevice(DeviceType value) {
+		this.device = value;
+	}
 
 }

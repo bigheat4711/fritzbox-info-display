@@ -57,40 +57,40 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "argumentListType", propOrder = {
-    "argument"
+		"argument"
 })
 public class ArgumentListType {
 
-    @XmlElement(namespace = "urn:dslforum-org:service-1-0")
-    protected List<ArgumentType> argument;
+	@XmlElement(namespace = "urn:dslforum-org:service-1-0")
+	protected List<ArgumentType> argument;
 
-    /**
-     * Gets the value of the argument property.
-     *
-     * <p>
-     * This accessor method returns a reference to the live list, not a
-     * snapshot. Therefore any modification you make to the returned list will
-     * be present inside the JAXB object. This is why there is not a
-     * <CODE>set</CODE> method for the argument property.
-     *
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getArgument().add(newItem);
-     * </pre>
-     *
-     *
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link ArgumentType }
-     *
-     *
-     */
-    public List<ArgumentType> getArgument() {
-        if (argument == null) {
-            argument = new ArrayList<ArgumentType>();
-        }
-        return this.argument;
-    }
+	/**
+	 * Gets the value of the argument property.
+	 *
+	 * <p>
+	 * This accessor method returns a reference to the live list, not a
+	 * snapshot. Therefore any modification you make to the returned list will
+	 * be present inside the JAXB object. This is why there is not a
+	 * <CODE>set</CODE> method for the argument property.
+	 *
+	 * <p>
+	 * For example, to add a new item, do as follows:
+	 * <pre>
+	 *    getArgument().add(newItem);
+	 * </pre>
+	 *
+	 *
+	 * <p>
+	 * Objects of the following type(s) are allowed in the list
+	 * {@link ArgumentType }
+	 *
+	 *
+	 */
+	public List<ArgumentType> getArgument() {
+		if (argument == null) {
+			argument = new ArrayList<ArgumentType>();
+		}
+		return this.argument;
+	}
 
 }
