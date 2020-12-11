@@ -18,12 +18,12 @@
  * specific language governing permissions and limitations under the License.
  *
  ***********************************************************************************************************************/
-package de.mapoll.javaAVMTR064;
+package cmuche.fritzbox_info_display.tr064;
 
-import de.mapoll.javaAVMTR064.beans.ActionType;
-import de.mapoll.javaAVMTR064.beans.ArgumentType;
-import de.mapoll.javaAVMTR064.beans.ServiceType;
-import de.mapoll.javaAVMTR064.beans.StateVariableType;
+import cmuche.fritzbox_info_display.beans.ActionType;
+import cmuche.fritzbox_info_display.beans.ArgumentType;
+import cmuche.fritzbox_info_display.beans.ServiceType;
+import cmuche.fritzbox_info_display.beans.StateVariableType;
 import org.apache.http.HttpEntity;
 import org.apache.http.entity.StringEntity;
 

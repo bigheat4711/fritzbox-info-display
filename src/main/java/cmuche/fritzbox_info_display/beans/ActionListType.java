@@ -24,7 +24,7 @@
  *
  **********************************************************************************************************************
  */
-package de.mapoll.javaAVMTR064.beans;
+package cmuche.fritzbox_info_display.beans;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -35,19 +35,19 @@ import java.util.List;
 
 /**
  * <p>
- * Java-Klasse für serviceStateTableType complex type.
+ * Java-Klasse for actionListType complex type.
  *
  * <p>
  * Das folgende Schemafragment gibt den erwarteten Content an, der in dieser
  * Klasse enthalten ist.
  *
  * <pre>
- * &lt;complexType name="serviceStateTableType"&gt;
+ * &lt;complexType name="actionListType"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;choice maxOccurs="unbounded" minOccurs="0"&gt;
- *         &lt;element name="stateVariable" type="{urn:dslforum-org:service-1-0}stateVariableType"/&gt;
- *       &lt;/choice&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="action" type="{urn:dslforum-org:service-1-0}actionType" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
@@ -56,41 +56,41 @@ import java.util.List;
  *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "serviceStateTableType", propOrder = {
-		"stateVariable"
+@XmlType(name = "actionListType", propOrder = {
+		"action"
 })
-public class ServiceStateTableType {
+public class ActionListType {
 
 	@XmlElement(namespace = "urn:dslforum-org:service-1-0")
-	protected List<StateVariableType> stateVariable;
+	protected List<ActionType> action;
 
 	/**
-	 * Gets the value of the stateVariable property.
+	 * Gets the value of the action property.
 	 *
 	 * <p>
 	 * This accessor method returns a reference to the live list, not a
 	 * snapshot. Therefore any modification you make to the returned list will
 	 * be present inside the JAXB object. This is why there is not a
-	 * <CODE>set</CODE> method for the stateVariable property.
+	 * <CODE>set</CODE> method for the action property.
 	 *
 	 * <p>
 	 * For example, to add a new item, do as follows:
 	 * <pre>
-	 *    getStateVariable().add(newItem);
+	 *    getAction().add(newItem);
 	 * </pre>
 	 *
 	 *
 	 * <p>
 	 * Objects of the following type(s) are allowed in the list
-	 * {@link StateVariableType }
+	 * {@link ActionType }
 	 *
 	 *
 	 */
-	public List<StateVariableType> getStateVariable() {
-		if (stateVariable == null) {
-			stateVariable = new ArrayList<StateVariableType>();
+	public List<ActionType> getAction() {
+		if (action == null) {
+			action = new ArrayList<ActionType>();
 		}
-		return this.stateVariable;
+		return this.action;
 	}
 
 }

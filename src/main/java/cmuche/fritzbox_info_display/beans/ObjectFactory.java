@@ -23,7 +23,7 @@
  *
  **********************************************************************************************************************
  */
-package de.mapoll.javaAVMTR064.beans;
+package cmuche.fritzbox_info_display.beans;
 
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlElementDecl;

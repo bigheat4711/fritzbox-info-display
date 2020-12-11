@@ -6,13 +6,13 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
 
 @Configuration
-public class CredentialsConfiguration {
+public class ConnectionConfiguration {
 
 	@Bean
 	public Credentials credentials(Environment env) {
-		String url = env.getRequiredProperty("fritz.url");
-		String username = env.getRequiredProperty("fritz.username");
-		String password = env.getRequiredProperty("fritz.password");
-		return new Credentials(url, username, password);
+		String ip = env.getRequiredProperty("ip");
+		String username = env.getRequiredProperty("credentials.username");
+		String password = env.getRequiredProperty("credentials.password");
+		return new Credentials(ip, username, password);
 	}
 }

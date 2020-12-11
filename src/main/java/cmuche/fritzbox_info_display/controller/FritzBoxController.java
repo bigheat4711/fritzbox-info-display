@@ -2,20 +2,21 @@ package cmuche.fritzbox_info_display.controller;
 
 import cmuche.fritzbox_info_display.enums.FbAction;
 import cmuche.fritzbox_info_display.enums.FbService;
-import cmuche.fritzbox_info_display.model.Credentials;
-import de.mapoll.javaAVMTR064.Action;
-import de.mapoll.javaAVMTR064.FritzConnection;
-import de.mapoll.javaAVMTR064.Response;
-import de.mapoll.javaAVMTR064.Service;
+import cmuche.fritzbox_info_display.tr064.Action;
+import cmuche.fritzbox_info_display.tr064.FritzConnection;
+import cmuche.fritzbox_info_display.tr064.Response;
+import cmuche.fritzbox_info_display.tr064.Service;
+import org.springframework.stereotype.Component;
 
 import java.util.Map;
 
+@Component
 public class FritzBoxController {
 	private final FritzConnection connection;
 
-	public FritzBoxController(Credentials credentials) throws Exception {
-		connection = new FritzConnection(credentials.getIp(), credentials.getUsername(), credentials.getPassword());
-		connection.init();
+	public FritzBoxController(FritzConnection connection) throws Exception {
+		this.connection = connection;
+		this.connection.init();
 	}
 
 	public Map<String, String> doRequest(FbService fbService, FbAction fbAction) throws Exception {

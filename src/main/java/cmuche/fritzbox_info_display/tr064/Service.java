@@ -23,12 +23,12 @@
  *
  **********************************************************************************************************************
  */
-package de.mapoll.javaAVMTR064;
+package cmuche.fritzbox_info_display.tr064;
 
-import de.mapoll.javaAVMTR064.beans.ActionType;
-import de.mapoll.javaAVMTR064.beans.ScpdType;
-import de.mapoll.javaAVMTR064.beans.ScpdType2;
-import de.mapoll.javaAVMTR064.beans.ServiceType;
+import cmuche.fritzbox_info_display.beans.ActionType;
+import cmuche.fritzbox_info_display.beans.ScpdType;
+import cmuche.fritzbox_info_display.beans.ScpdType2;
+import cmuche.fritzbox_info_display.beans.ServiceType;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;

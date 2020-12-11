@@ -24,7 +24,7 @@
  *
  **********************************************************************************************************************
  */
-package de.mapoll.javaAVMTR064.beans;
+package cmuche.fritzbox_info_display.beans;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -35,18 +35,18 @@ import java.util.List;
 
 /**
  * <p>
- * Java-Klasse für deviceListType complex type.
+ * Java-Klasse für serviceListType complex type.
  *
  * <p>
  * Das folgende Schemafragment gibt den erwarteten Content an, der in dieser
  * Klasse enthalten ist.
  *
  * <pre>
- * &lt;complexType name="deviceListType"&gt;
+ * &lt;complexType name="serviceListType"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="device" type="{urn:dslforum-org:device-1-0}deviceType" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="service" type="{urn:dslforum-org:device-1-0}serviceType" maxOccurs="unbounded" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -56,41 +56,41 @@ import java.util.List;
  *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "deviceListType", propOrder = {
-		"device"
+@XmlType(name = "serviceListType", propOrder = {
+		"service"
 })
-public class DeviceListType {
+public class ServiceListType {
 
 	@XmlElement(namespace = "urn:dslforum-org:device-1-0")
-	protected List<DeviceType> device;
+	protected List<ServiceType> service;
 
 	/**
-	 * Gets the value of the device property.
+	 * Gets the value of the service property.
 	 *
 	 * <p>
 	 * This accessor method returns a reference to the live list, not a
 	 * snapshot. Therefore any modification you make to the returned list will
 	 * be present inside the JAXB object. This is why there is not a
-	 * <CODE>set</CODE> method for the device property.
+	 * <CODE>set</CODE> method for the service property.
 	 *
 	 * <p>
 	 * For example, to add a new item, do as follows:
 	 * <pre>
-	 *    getDevice().add(newItem);
+	 *    getService().add(newItem);
 	 * </pre>
 	 *
 	 *
 	 * <p>
 	 * Objects of the following type(s) are allowed in the list
-	 * {@link DeviceType }
+	 * {@link ServiceType }
 	 *
 	 *
 	 */
-	public List<DeviceType> getDevice() {
-		if (device == null) {
-			device = new ArrayList<DeviceType>();
+	public List<ServiceType> getService() {
+		if (service == null) {
+			service = new ArrayList<ServiceType>();
 		}
-		return this.device;
+		return this.service;
 	}
 
 }

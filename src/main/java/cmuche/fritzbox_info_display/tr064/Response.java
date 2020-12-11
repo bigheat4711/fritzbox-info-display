@@ -23,7 +23,7 @@
  *
  **********************************************************************************************************************
  */
-package de.mapoll.javaAVMTR064;
+package cmuche.fritzbox_info_display.tr064;
 
 import org.w3c.dom.NodeList;
 

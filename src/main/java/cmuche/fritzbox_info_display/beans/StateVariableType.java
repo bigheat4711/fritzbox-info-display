@@ -24,30 +24,27 @@
  *
  **********************************************************************************************************************
  */
-package de.mapoll.javaAVMTR064.beans;
+package cmuche.fritzbox_info_display.beans;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.*;
 
 /**
  * <p>
- * Java-Klasse für argumentType complex type.
+ * Java-Klasse für stateVariableType complex type.
  *
  * <p>
  * Das folgende Schemafragment gibt den erwarteten Content an, der in dieser
  * Klasse enthalten ist.
  *
  * <pre>
- * &lt;complexType name="argumentType"&gt;
+ * &lt;complexType name="stateVariableType"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
  *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="direction" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="relatedStateVariable" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="dataType" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *       &lt;/sequence&gt;
+ *       &lt;attribute name="sendEvents" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
@@ -56,19 +53,18 @@ import javax.xml.bind.annotation.XmlType;
  *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "argumentType", propOrder = {
+@XmlType(name = "stateVariableType", propOrder = {
 		"name",
-		"direction",
-		"relatedStateVariable"
+		"dataType"
 })
-public class ArgumentType {
+public class StateVariableType {
 
 	@XmlElement(required = true, namespace = "urn:dslforum-org:service-1-0")
 	protected String name;
 	@XmlElement(required = true, namespace = "urn:dslforum-org:service-1-0")
-	protected String direction;
-	@XmlElement(required = true, namespace = "urn:dslforum-org:service-1-0")
-	protected String relatedStateVariable;
+	protected String dataType;
+	@XmlAttribute(name = "sendEvents", namespace = "urn:dslforum-org:service-1-0")
+	protected String sendEvents;
 
 	/**
 	 * Ruft den Wert der name-Eigenschaft ab.
@@ -91,43 +87,43 @@ public class ArgumentType {
 	}
 
 	/**
-	 * Ruft den Wert der direction-Eigenschaft ab.
+	 * Ruft den Wert der dataType-Eigenschaft ab.
 	 *
 	 * @return possible object is {@link String }
 	 *
 	 */
-	public String getDirection() {
-		return direction;
+	public String getDataType() {
+		return dataType;
 	}
 
 	/**
-	 * Legt den Wert der direction-Eigenschaft fest.
+	 * Legt den Wert der dataType-Eigenschaft fest.
 	 *
 	 * @param value allowed object is {@link String }
 	 *
 	 */
-	public void setDirection(String value) {
-		this.direction = value;
+	public void setDataType(String value) {
+		this.dataType = value;
 	}
 
 	/**
-	 * Ruft den Wert der relatedStateVariable-Eigenschaft ab.
+	 * Ruft den Wert der sendEvents-Eigenschaft ab.
 	 *
 	 * @return possible object is {@link String }
 	 *
 	 */
-	public String getRelatedStateVariable() {
-		return relatedStateVariable;
+	public String getSendEvents() {
+		return sendEvents;
 	}
 
 	/**
-	 * Legt den Wert der relatedStateVariable-Eigenschaft fest.
+	 * Legt den Wert der sendEvents-Eigenschaft fest.
 	 *
 	 * @param value allowed object is {@link String }
 	 *
 	 */
-	public void setRelatedStateVariable(String value) {
-		this.relatedStateVariable = value;
+	public void setSendEvents(String value) {
+		this.sendEvents = value;
 	}
 
 }

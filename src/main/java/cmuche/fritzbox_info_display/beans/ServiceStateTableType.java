@@ -24,26 +24,30 @@
  *
  **********************************************************************************************************************
  */
-package de.mapoll.javaAVMTR064.beans;
+package cmuche.fritzbox_info_display.beans;
 
-import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * <p>
- * Java-Klasse für rootType complex type.
+ * Java-Klasse für serviceStateTableType complex type.
  *
  * <p>
  * Das folgende Schemafragment gibt den erwarteten Content an, der in dieser
  * Klasse enthalten ist.
  *
  * <pre>
- * &lt;complexType name="rootType"&gt;
+ * &lt;complexType name="serviceStateTableType"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="specVersion" type="{urn:dslforum-org:device-1-0}specVersionType"/&gt;
- *         &lt;element name="device" type="{urn:dslforum-org:device-1-0}deviceType"/&gt;
- *       &lt;/sequence&gt;
+ *       &lt;choice maxOccurs="unbounded" minOccurs="0"&gt;
+ *         &lt;element name="stateVariable" type="{urn:dslforum-org:service-1-0}stateVariableType"/&gt;
+ *       &lt;/choice&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
@@ -51,57 +55,42 @@ import javax.xml.bind.annotation.*;
  *
  *
  */
-@XmlRootElement(name = "root", namespace = "urn:dslforum-org:device-1-0")
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "rootType", propOrder = {
-		"specVersion",
-		"device"
+@XmlType(name = "serviceStateTableType", propOrder = {
+		"stateVariable"
 })
-public class RootType {
+public class ServiceStateTableType {
 
-	@XmlElement(required = true, namespace = "urn:dslforum-org:device-1-0")
-	protected DeviceSpecVersionType specVersion;
-	@XmlElement(required = true, namespace = "urn:dslforum-org:device-1-0")
-	protected DeviceType device;
+	@XmlElement(namespace = "urn:dslforum-org:service-1-0")
+	protected List<StateVariableType> stateVariable;
 
 	/**
-	 * Ruft den Wert der specVersion-Eigenschaft ab.
+	 * Gets the value of the stateVariable property.
 	 *
-	 * @return possible object is {@link DeviceSpecVersionType }
+	 * <p>
+	 * This accessor method returns a reference to the live list, not a
+	 * snapshot. Therefore any modification you make to the returned list will
+	 * be present inside the JAXB object. This is why there is not a
+	 * <CODE>set</CODE> method for the stateVariable property.
 	 *
-	 */
-	public DeviceSpecVersionType getSpecVersion() {
-		return specVersion;
-	}
-
-	/**
-	 * Legt den Wert der specVersion-Eigenschaft fest.
+	 * <p>
+	 * For example, to add a new item, do as follows:
+	 * <pre>
+	 *    getStateVariable().add(newItem);
+	 * </pre>
 	 *
-	 * @param value allowed object is {@link DeviceSpecVersionType }
 	 *
-	 */
-	public void setSpecVersion(DeviceSpecVersionType value) {
-		this.specVersion = value;
-	}
-
-	/**
-	 * Ruft den Wert der device-Eigenschaft ab.
+	 * <p>
+	 * Objects of the following type(s) are allowed in the list
+	 * {@link StateVariableType }
 	 *
-	 * @return possible object is {@link DeviceType }
 	 *
 	 */
-	public DeviceType getDevice() {
-		return device;
-	}
-
-	/**
-	 * Legt den Wert der device-Eigenschaft fest.
-	 *
-	 * @param value allowed object is {@link DeviceType }
-	 *
-	 */
-	public void setDevice(DeviceType value) {
-		this.device = value;
+	public List<StateVariableType> getStateVariable() {
+		if (stateVariable == null) {
+			stateVariable = new ArrayList<StateVariableType>();
+		}
+		return this.stateVariable;
 	}
 
 }

@@ -23,12 +23,13 @@
  *
  **********************************************************************************************************************
  */
-package de.mapoll.javaAVMTR064;
+package cmuche.fritzbox_info_display.tr064;
 
-import de.mapoll.javaAVMTR064.beans.DeviceType;
-import de.mapoll.javaAVMTR064.beans.RootType;
-import de.mapoll.javaAVMTR064.beans.RootType2;
-import de.mapoll.javaAVMTR064.beans.ServiceType;
+import cmuche.fritzbox_info_display.beans.DeviceType;
+import cmuche.fritzbox_info_display.beans.RootType;
+import cmuche.fritzbox_info_display.beans.RootType2;
+import cmuche.fritzbox_info_display.beans.ServiceType;
+import cmuche.fritzbox_info_display.model.Credentials;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpHost;
 import org.apache.http.HttpRequest;
@@ -47,6 +48,7 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.protocol.HttpContext;
 import org.apache.http.util.EntityUtils;
+import org.springframework.stereotype.Component;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -58,6 +60,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 
+@Component
 public class FritzConnection {
 
 	private static final int DEFAULT_PORT = 49000;
@@ -73,28 +76,14 @@ public class FritzConnection {
 
 	private String name;
 
-	FritzConnection(String address, int port) {
+	public FritzConnection(Credentials credentials) {
+		targetHost = new HttpHost(credentials.getUrl());
+		this.user = credentials.getUsername();
+		this.pwd = credentials.getPassword();
 
-		targetHost = new HttpHost(address, port);
 		httpClient = HttpClients.createDefault();
 		context = HttpClientContext.create();
-		services = new HashMap<String, Service>();
-	}
-
-	public FritzConnection(String address) {
-		this(address, DEFAULT_PORT);
-	}
-
-	public FritzConnection(String address, int port, String user, String pwd) {
-		this(address, port);
-		this.user = user;
-		this.pwd = pwd;
-	}
-
-	public FritzConnection(String address, String user, String pwd) {
-		this(address);
-		this.user = user;
-		this.pwd = pwd;
+		services = new HashMap<>();
 	}
 
 	public void init() throws IOException, JAXBException {

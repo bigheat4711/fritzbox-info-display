@@ -24,28 +24,25 @@
  *
  **********************************************************************************************************************
  */
-package de.mapoll.javaAVMTR064.beans;
+package cmuche.fritzbox_info_display.beans;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.*;
 
 /**
  * <p>
- * Java-Klasse für specVersionType complex type (device context).
+ * Java-Klasse für rootType complex type.
  *
  * <p>
  * Das folgende Schemafragment gibt den erwarteten Content an, der in dieser
  * Klasse enthalten ist.
  *
  * <pre>
- * &lt;complexType name="specVersionType"&gt;
+ * &lt;complexType name="rootType"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="major" type="{http://www.w3.org/2001/XMLSchema}byte"/&gt;
- *         &lt;element name="minor" type="{http://www.w3.org/2001/XMLSchema}byte"/&gt;
+ *         &lt;element name="specVersion" type="{urn:dslforum-org:device-1-0}specVersionType"/&gt;
+ *         &lt;element name="device" type="{urn:dslforum-org:device-1-0}deviceType"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -54,48 +51,57 @@ import javax.xml.bind.annotation.XmlType;
  *
  *
  */
+@XmlRootElement(name = "root", namespace = "urn:schemas-upnp-org:device-1-0")
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "specVersionType", propOrder = {
-		"major",
-		"minor"
+@XmlType(name = "rootType", propOrder = {
+		"specVersion",
+		"device"
 })
-public class DeviceSpecVersionType {
+public class RootType2 {
 
-	@XmlElement(namespace = "urn:dslforum-org:device-1-0")
-	protected byte major;
-	@XmlElement(namespace = "urn:dslforum-org:device-1-0")
-	protected byte minor;
+	@XmlElement(required = true, namespace = "urn:dslforum-org:device-1-0")
+	protected DeviceSpecVersionType specVersion;
+	@XmlElement(required = true, namespace = "urn:dslforum-org:device-1-0")
+	protected DeviceType device;
 
 	/**
-	 * Ruft den Wert der major-Eigenschaft ab.
+	 * Ruft den Wert der specVersion-Eigenschaft ab.
+	 *
+	 * @return possible object is {@link DeviceSpecVersionType }
 	 *
 	 */
-	public byte getMajor() {
-		return major;
+	public DeviceSpecVersionType getSpecVersion() {
+		return specVersion;
 	}
 
 	/**
-	 * Legt den Wert der major-Eigenschaft fest.
+	 * Legt den Wert der specVersion-Eigenschaft fest.
+	 *
+	 * @param value allowed object is {@link DeviceSpecVersionType }
 	 *
 	 */
-	public void setMajor(byte value) {
-		this.major = value;
+	public void setSpecVersion(DeviceSpecVersionType value) {
+		this.specVersion = value;
 	}
 
 	/**
-	 * Ruft den Wert der minor-Eigenschaft ab.
+	 * Ruft den Wert der device-Eigenschaft ab.
+	 *
+	 * @return possible object is {@link DeviceType }
 	 *
 	 */
-	public byte getMinor() {
-		return minor;
+	public DeviceType getDevice() {
+		return device;
 	}
 
 	/**
-	 * Legt den Wert der minor-Eigenschaft fest.
+	 * Legt den Wert der device-Eigenschaft fest.
+	 *
+	 * @param value allowed object is {@link DeviceType }
 	 *
 	 */
-	public void setMinor(byte value) {
-		this.minor = value;
+	public void setDevice(DeviceType value) {
+		this.device = value;
 	}
 
 }

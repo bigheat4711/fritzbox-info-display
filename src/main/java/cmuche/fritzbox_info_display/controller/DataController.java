@@ -5,11 +5,13 @@ import cmuche.fritzbox_info_display.model.*;
 import cmuche.fritzbox_info_display.tools.NetworkTool;
 import cmuche.fritzbox_info_display.tools.ParseTool;
 import cmuche.fritzbox_info_display.tools.XmlTool;
+import org.springframework.stereotype.Component;
 import org.w3c.dom.Document;
 
 import java.util.*;
 import java.util.stream.Collectors;
 
+@Component
 public class DataController {
 	private final FritzBoxController fritzBoxController;
 

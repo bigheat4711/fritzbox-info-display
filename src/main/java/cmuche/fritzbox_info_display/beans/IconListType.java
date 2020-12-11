@@ -24,29 +24,27 @@
  *
  **********************************************************************************************************************
  */
-package de.mapoll.javaAVMTR064.beans;
+package cmuche.fritzbox_info_display.beans;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * <p>
- * Java-Klasse for actionListType complex type.
+ * Java-Klasse für iconListType complex type.
  *
  * <p>
  * Das folgende Schemafragment gibt den erwarteten Content an, der in dieser
  * Klasse enthalten ist.
  *
  * <pre>
- * &lt;complexType name="actionListType"&gt;
+ * &lt;complexType name="iconListType"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="action" type="{urn:dslforum-org:service-1-0}actionType" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="icon" type="{urn:dslforum-org:device-1-0}iconType"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -56,41 +54,32 @@ import java.util.List;
  *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "actionListType", propOrder = {
-		"action"
+@XmlType(name = "iconListType", propOrder = {
+		"icon"
 })
-public class ActionListType {
+public class IconListType {
 
-	@XmlElement(namespace = "urn:dslforum-org:service-1-0")
-	protected List<ActionType> action;
+	@XmlElement(required = true, namespace = "urn:dslforum-org:device-1-0")
+	protected IconType icon;
 
 	/**
-	 * Gets the value of the action property.
+	 * Ruft den Wert der icon-Eigenschaft ab.
 	 *
-	 * <p>
-	 * This accessor method returns a reference to the live list, not a
-	 * snapshot. Therefore any modification you make to the returned list will
-	 * be present inside the JAXB object. This is why there is not a
-	 * <CODE>set</CODE> method for the action property.
-	 *
-	 * <p>
-	 * For example, to add a new item, do as follows:
-	 * <pre>
-	 *    getAction().add(newItem);
-	 * </pre>
-	 *
-	 *
-	 * <p>
-	 * Objects of the following type(s) are allowed in the list
-	 * {@link ActionType }
-	 *
+	 * @return possible object is {@link IconType }
 	 *
 	 */
-	public List<ActionType> getAction() {
-		if (action == null) {
-			action = new ArrayList<ActionType>();
-		}
-		return this.action;
+	public IconType getIcon() {
+		return icon;
+	}
+
+	/**
+	 * Legt den Wert der icon-Eigenschaft fest.
+	 *
+	 * @param value allowed object is {@link IconType }
+	 *
+	 */
+	public void setIcon(IconType value) {
+		this.icon = value;
 	}
 
 }

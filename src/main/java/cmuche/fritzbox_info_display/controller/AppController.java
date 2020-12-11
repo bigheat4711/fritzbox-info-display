@@ -3,18 +3,18 @@ package cmuche.fritzbox_info_display.controller;
 import cmuche.fritzbox_info_display.enums.FbAction;
 import cmuche.fritzbox_info_display.enums.FbService;
 import cmuche.fritzbox_info_display.model.Call;
-import cmuche.fritzbox_info_display.model.Credentials;
 import cmuche.fritzbox_info_display.model.DataResponse;
+import org.springframework.stereotype.Component;
 
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
+@Component
 public class AppController {
 	private final int INTERVAL_DATA = 10 * 60 * 1000;
 	private final int INTERVAL_TIME = 60 * 1000;
 
-	private final Credentials credentials;
 	private final FritzBoxController fritzBoxController;
 
 	//private ViewController viewController;
@@ -23,9 +23,8 @@ public class AppController {
 	private Thread updateDataThread;
 	private Thread updateTimeThread;
 
-	public AppController(Credentials credentials) throws Exception {
-		this.credentials = credentials;
-		fritzBoxController = new FritzBoxController(credentials);
+	public AppController(FritzBoxController fritzBoxController) {
+		this.fritzBoxController = fritzBoxController;
 		setupThreads();
 	}
 

@@ -24,7 +24,7 @@
  *
  **********************************************************************************************************************
  */
-package de.mapoll.javaAVMTR064.beans;
+package cmuche.fritzbox_info_display.beans;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -33,19 +33,19 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>
- * Java-Klasse für specVersionType complex type (service context).
+ * Java-Klasse für actionType complex type.
  *
  * <p>
  * Das folgende Schemafragment gibt den erwarteten Content an, der in dieser
  * Klasse enthalten ist.
  *
  * <pre>
- * &lt;complexType name="specVersionType"&gt;
+ * &lt;complexType name="actionType"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="major" type="{http://www.w3.org/2001/XMLSchema}byte"/&gt;
- *         &lt;element name="minor" type="{http://www.w3.org/2001/XMLSchema}byte"/&gt;
+ *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="argumentList" type="{urn:dslforum-org:service-1-0}argumentListType" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -55,47 +55,55 @@ import javax.xml.bind.annotation.XmlType;
  *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "specVersionType", propOrder = {
-		"major",
-		"minor"
+@XmlType(name = "actionType", propOrder = {
+		"name",
+		"argumentList"
 })
-public class ServiceSpecVersionType {
+public class ActionType {
 
+	@XmlElement(required = true, namespace = "urn:dslforum-org:service-1-0")
+	protected String name;
 	@XmlElement(namespace = "urn:dslforum-org:service-1-0")
-	protected byte major;
-	@XmlElement(namespace = "urn:dslforum-org:service-1-0")
-	protected byte minor;
+	protected ArgumentListType argumentList;
 
 	/**
-	 * Ruft den Wert der major-Eigenschaft ab.
+	 * Ruft den Wert der name-Eigenschaft ab.
+	 *
+	 * @return possible object is {@link String }
 	 *
 	 */
-	public byte getMajor() {
-		return major;
+	public String getName() {
+		return name;
 	}
 
 	/**
-	 * Legt den Wert der major-Eigenschaft fest.
+	 * Legt den Wert der name-Eigenschaft fest.
+	 *
+	 * @param value allowed object is {@link String }
 	 *
 	 */
-	public void setMajor(byte value) {
-		this.major = value;
+	public void setName(String value) {
+		this.name = value;
 	}
 
 	/**
-	 * Ruft den Wert der minor-Eigenschaft ab.
+	 * Ruft den Wert der argumentList-Eigenschaft ab.
+	 *
+	 * @return possible object is {@link ArgumentListType }
 	 *
 	 */
-	public byte getMinor() {
-		return minor;
+	public ArgumentListType getArgumentList() {
+		return argumentList;
 	}
 
 	/**
-	 * Legt den Wert der minor-Eigenschaft fest.
+	 * Legt den Wert der argumentList-Eigenschaft fest.
+	 *
+	 * @param value allowed object is {@link ArgumentListType }
 	 *
 	 */
-	public void setMinor(byte value) {
-		this.minor = value;
+	public void setArgumentList(ArgumentListType value) {
+		this.argumentList = value;
 	}
 
 }
