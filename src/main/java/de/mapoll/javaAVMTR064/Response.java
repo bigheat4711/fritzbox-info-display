@@ -25,6 +25,10 @@
  */
 package de.mapoll.javaAVMTR064;
 
+import org.w3c.dom.NodeList;
+
+import javax.xml.soap.SOAPException;
+import javax.xml.soap.SOAPMessage;
 import java.lang.reflect.Type;
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -33,17 +37,13 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
-import javax.xml.soap.SOAPException;
-import javax.xml.soap.SOAPMessage;
-
-import org.w3c.dom.NodeList;
 
 public class Response {
 
-	private SOAPMessage response;
-	private Map<String, Type> stateToType;
-	private Map<String, String> argumentState;
-	private Map<String, String> data;
+	private final SOAPMessage response;
+	private final Map<String, Type> stateToType;
+	private final Map<String, String> argumentState;
+	private final Map<String, String> data;
 
 	public Response(SOAPMessage response, Map<String, Type> stateToType, Map<String, String> argumentState)
 			throws SOAPException {

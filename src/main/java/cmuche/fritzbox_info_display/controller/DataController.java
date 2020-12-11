@@ -11,7 +11,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public class DataController {
-	private FritzBoxController fritzBoxController;
+	private final FritzBoxController fritzBoxController;
 
 	public DataController(FritzBoxController fritzBoxController) {
 		this.fritzBoxController = fritzBoxController;

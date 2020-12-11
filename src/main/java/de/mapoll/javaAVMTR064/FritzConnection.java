@@ -25,24 +25,16 @@
  */
 package de.mapoll.javaAVMTR064;
 
-import java.io.ByteArrayInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Random;
-
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBException;
-import javax.xml.bind.Unmarshaller;
-
+import de.mapoll.javaAVMTR064.beans.DeviceType;
+import de.mapoll.javaAVMTR064.beans.RootType;
+import de.mapoll.javaAVMTR064.beans.RootType2;
+import de.mapoll.javaAVMTR064.beans.ServiceType;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpHost;
 import org.apache.http.HttpRequest;
 import org.apache.http.auth.AuthScope;
 import org.apache.http.auth.UsernamePasswordCredentials;
 import org.apache.http.client.AuthCache;
-import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.CredentialsProvider;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
@@ -56,23 +48,28 @@ import org.apache.http.impl.client.HttpClients;
 import org.apache.http.protocol.HttpContext;
 import org.apache.http.util.EntityUtils;
 
-import de.mapoll.javaAVMTR064.beans.DeviceType;
-import de.mapoll.javaAVMTR064.beans.RootType;
-import de.mapoll.javaAVMTR064.beans.RootType2;
-import de.mapoll.javaAVMTR064.beans.ServiceType;
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Unmarshaller;
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Random;
 
 public class FritzConnection {
 
-	private static int DEFAULT_PORT = 49000;
-	private static String FRITZ_IGD_DESC_FILE = "igddesc.xml";
-	private static String FRITZ_TR64_DESC_FILE = "tr64desc.xml";
+	private static final int DEFAULT_PORT = 49000;
+	private static final String FRITZ_IGD_DESC_FILE = "igddesc.xml";
+	private static final String FRITZ_TR64_DESC_FILE = "tr64desc.xml";
 
-	private Map<String, Service> services;
+	private final Map<String, Service> services;
 	private String user = null;
 	private String pwd = null;
-	private HttpHost targetHost;
-	private CloseableHttpClient httpClient;
-	private HttpClientContext context;
+	private final HttpHost targetHost;
+	private final CloseableHttpClient httpClient;
+	private final HttpClientContext context;
 
 	private String name;
 

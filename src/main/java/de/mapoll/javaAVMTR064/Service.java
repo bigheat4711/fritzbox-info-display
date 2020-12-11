@@ -25,26 +25,24 @@
  */
 package de.mapoll.javaAVMTR064;
 
-import java.io.IOException;
-
-import java.io.InputStream;
-import java.util.HashMap;
-import java.util.Map;
-
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBException;
-import javax.xml.bind.UnmarshalException;
-import javax.xml.bind.Unmarshaller;
-
 import de.mapoll.javaAVMTR064.beans.ActionType;
 import de.mapoll.javaAVMTR064.beans.ScpdType;
 import de.mapoll.javaAVMTR064.beans.ScpdType2;
 import de.mapoll.javaAVMTR064.beans.ServiceType;
 
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.UnmarshalException;
+import javax.xml.bind.Unmarshaller;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.HashMap;
+import java.util.Map;
+
 public class Service {
 
-	private ServiceType serviceXML;
-	private Map<String, Action> actions;
+	private final ServiceType serviceXML;
+	private final Map<String, Action> actions;
 
 	public Service(ServiceType serviceXML, FritzConnection connection) throws IOException, JAXBException {
 		this.serviceXML = serviceXML;

@@ -20,45 +20,33 @@
  ***********************************************************************************************************************/
 package de.mapoll.javaAVMTR064;
 
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.lang.reflect.Type;
-import java.sql.Date;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.UUID;
-
-import javax.xml.soap.MessageFactory;
-import javax.xml.soap.SOAPBody;
-import javax.xml.soap.SOAPBodyElement;
-import javax.xml.soap.SOAPEnvelope;
-import javax.xml.soap.SOAPException;
-import javax.xml.soap.SOAPMessage;
-import javax.xml.soap.SOAPPart;
-
-import org.apache.http.HttpEntity;
-import org.apache.http.entity.StringEntity;
-
 import de.mapoll.javaAVMTR064.beans.ActionType;
 import de.mapoll.javaAVMTR064.beans.ArgumentType;
 import de.mapoll.javaAVMTR064.beans.ServiceType;
 import de.mapoll.javaAVMTR064.beans.StateVariableType;
+import org.apache.http.HttpEntity;
+import org.apache.http.entity.StringEntity;
+
+import javax.xml.soap.*;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.lang.reflect.Type;
+import java.nio.charset.StandardCharsets;
+import java.sql.Date;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 public class Action {
 
-	private Map<String, Type> stateToType;
-	private Map<String, Boolean> argumentOut;
-	private Map<String, String> argumentState;
-	private String name;
-	private ActionType actionXML;
-	private FritzConnection connection;
-	private ServiceType serviceXML;
+	private final Map<String, Type> stateToType;
+	private final Map<String, Boolean> argumentOut;
+	private final Map<String, String> argumentState;
+	private final String name;
+	private final ActionType actionXML;
+	private final FritzConnection connection;
+	private final ServiceType serviceXML;
 
 	public Action(ActionType action, List<StateVariableType> stateVariableList, FritzConnection connection,
 			ServiceType serviceXML) {
@@ -185,7 +173,7 @@ public class Action {
 			}
 			ByteArrayOutputStream stream = new ByteArrayOutputStream();
 			soapMsg.writeTo(stream);
-			message = new String(stream.toByteArray(), "utf-8");
+			message = stream.toString(StandardCharsets.UTF_8);
 		} catch (SOAPException e) {
 			e.printStackTrace();
 		}

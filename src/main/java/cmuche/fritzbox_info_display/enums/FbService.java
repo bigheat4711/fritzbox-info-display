@@ -8,7 +8,7 @@ public enum FbService implements NamedEnum {
 	IpConnection("WANPPPConnection:1"),
 	Hosts("Hosts:1");
 
-	private String id;
+	private final String id;
 
 	FbService(String id) {
 		this.id = id;

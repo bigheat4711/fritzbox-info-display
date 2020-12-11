@@ -5,14 +5,10 @@ public enum HostInterface {
 	WiFi("802.11"),
 	HomePlug("HomePlug");
 
-	private String id;
+	private final String id;
 
 	HostInterface(String id) {
 		this.id = id;
-	}
-
-	public String getId() {
-		return id;
 	}
 
 	public static HostInterface getById(String id) {
@@ -21,6 +17,10 @@ public enum HostInterface {
 		}
 
 		return null;
+	}
+
+	public String getId() {
+		return id;
 	}
 
 }

@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ParseTool {
-	private static Map<String, CallType> callTypeMap;
+	private static final Map<String, CallType> callTypeMap;
 
 	static {
 		callTypeMap = new HashMap<>();

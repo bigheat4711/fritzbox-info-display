@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CityCodeTool {
-	private static List<CityCode> codes;
+	private static final List<CityCode> codes;
 
 	static {
 		codes = new ArrayList<>();

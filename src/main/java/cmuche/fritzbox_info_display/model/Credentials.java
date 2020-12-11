@@ -1,9 +1,9 @@
 package cmuche.fritzbox_info_display.model;
 
 public class Credentials {
-	private String ip;
-	private String username;
-	private String password;
+	private final String ip;
+	private final String username;
+	private final String password;
 
 	public Credentials(String ip, String username, String password) {
 		this.ip = ip;

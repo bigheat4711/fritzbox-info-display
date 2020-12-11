@@ -5,12 +5,12 @@ import cmuche.fritzbox_info_display.enums.CallType;
 import java.util.Date;
 
 public class Call {
-	private CallType type;
-	private PhoneNumber internal;
-	private PhoneNumber external;
-	private int duration;
-	private String device;
-	private Date date;
+	private final CallType type;
+	private final PhoneNumber internal;
+	private final PhoneNumber external;
+	private final int duration;
+	private final String device;
+	private final Date date;
 
 	public Call(CallType type, PhoneNumber internal, PhoneNumber external, int duration, String device, Date date) {
 		this.type = type;

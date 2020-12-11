@@ -9,7 +9,7 @@ public enum ConnectionStatus {
 	Disconnected("Nicht verbunden"),
 	Connected("Verbunden");
 
-	private String display;
+	private final String display;
 
 	ConnectionStatus(String display) {
 		this.display = display;

@@ -1,8 +1,8 @@
 package cmuche.fritzbox_info_display.model;
 
 public class CityCode {
-	private String code;
-	private String city;
+	private final String code;
+	private final String city;
 
 	public CityCode(String code, String city) {
 		this.code = code;

@@ -13,7 +13,7 @@ public enum FbAction implements NamedEnum {
 	GetDectHandsetInfo("GetDECTHandsetInfo"),
 	GetNumberOfEntries("GetNumberOfEntries");
 
-	private String id;
+	private final String id;
 
 	FbAction(String id) {
 		this.id = id;

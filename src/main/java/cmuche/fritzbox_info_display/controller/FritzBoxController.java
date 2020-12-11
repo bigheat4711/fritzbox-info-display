@@ -11,7 +11,7 @@ import de.mapoll.javaAVMTR064.Service;
 import java.util.Map;
 
 public class FritzBoxController {
-	private FritzConnection connection;
+	private final FritzConnection connection;
 
 	public FritzBoxController(Credentials credentials) throws Exception {
 		connection = new FritzConnection(credentials.getIp(), credentials.getUsername(), credentials.getPassword());

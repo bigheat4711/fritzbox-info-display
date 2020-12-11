@@ -3,10 +3,10 @@ package cmuche.fritzbox_info_display.model;
 import cmuche.fritzbox_info_display.enums.HostInterface;
 
 public class Host {
-	private String name;
-	private String ip;
-	private String mac;
-	private HostInterface iface;
+	private final String name;
+	private final String ip;
+	private final String mac;
+	private final HostInterface iface;
 
 	public Host(String name, String ip, String mac, HostInterface iface) {
 		this.name = name;

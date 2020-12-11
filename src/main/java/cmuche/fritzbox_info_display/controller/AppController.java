@@ -14,8 +14,8 @@ public class AppController {
 	private final int INTERVAL_DATA = 10 * 60 * 1000;
 	private final int INTERVAL_TIME = 60 * 1000;
 
-	private Credentials credentials;
-	private FritzBoxController fritzBoxController;
+	private final Credentials credentials;
+	private final FritzBoxController fritzBoxController;
 
 	//private ViewController viewController;
 
