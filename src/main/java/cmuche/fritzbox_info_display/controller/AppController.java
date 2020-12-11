@@ -17,7 +17,7 @@ public class AppController {
 	private Credentials credentials;
 	private FritzBoxController fritzBoxController;
 
-	private ViewController viewController;
+	//private ViewController viewController;
 
 	private boolean isRunning = false;
 	private Thread updateDataThread;
@@ -34,13 +34,13 @@ public class AppController {
 		{
 			while (isRunning) {
 				try {
-					viewController.displayLoading(true);
+					//viewController.displayLoading(true);
 					updateData();
 				} catch (Exception ex) {
-					viewController.diplayError(ex);
+					//viewController.diplayError(ex);
 					ex.printStackTrace();
 				} finally {
-					viewController.displayLoading(false);
+					//viewController.displayLoading(false);
 					try {
 						Thread.sleep(INTERVAL_DATA);
 					} catch (InterruptedException e) {
@@ -68,13 +68,13 @@ public class AppController {
 
 	private void updateTime() {
 		Date thisDate = new Date();
-		viewController.displayTime(thisDate);
+		//viewController.displayTime(thisDate);
 	}
 
 	private void updateData() throws Exception {
 		DataController dataController = new DataController(fritzBoxController);
 		DataResponse data = dataController.collectData();
-		viewController.displayData(data);
+		//viewController.displayData(data);
 	}
 
 	public void redial(Call call) throws Exception {
@@ -87,8 +87,8 @@ public class AppController {
 		fritzBoxController.doRequest(FbService.Voip, FbAction.DialHangup);
 	}
 
-	public void start(ViewController viewController) {
-		this.viewController = viewController;
+	public void start(Object viewController) {
+		//this.viewController = viewController;
 
 		isRunning = true;
 		updateTimeThread.start();

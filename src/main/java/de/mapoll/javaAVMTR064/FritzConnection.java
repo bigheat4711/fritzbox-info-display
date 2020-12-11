@@ -100,7 +100,7 @@ public class FritzConnection {
 		this.pwd = pwd;
 	}
 
-	public void init() throws ClientProtocolException, IOException, JAXBException {
+	public void init() throws IOException, JAXBException {
 		if (user != null && pwd != null) {
 			CredentialsProvider credsProvider = new BasicCredentialsProvider();
 			credsProvider.setCredentials(AuthScope.ANY,
@@ -122,7 +122,7 @@ public class FritzConnection {
 
 	}
 
-	private void readTR64() throws ClientProtocolException, IOException, JAXBException {
+	private void readTR64() throws IOException, JAXBException {
 		InputStream xml = getXMLIS("/" + FRITZ_TR64_DESC_FILE);
 		JAXBContext jaxbContext = JAXBContext.newInstance(RootType.class);
 		Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
@@ -132,7 +132,7 @@ public class FritzConnection {
 		getServicesFromDevice(device);
 	}
 
-	private void readIGDDESC() throws ClientProtocolException, IOException, JAXBException {
+	private void readIGDDESC() throws IOException, JAXBException {
 		InputStream xml = getXMLIS("/" + FRITZ_IGD_DESC_FILE);
 		JAXBContext jaxbContext = JAXBContext.newInstance(RootType2.class);
 		Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
