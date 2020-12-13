@@ -39,6 +39,8 @@ import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
 
+import static cmuche.fritzbox_info_display.tr064.FritzConnection.namespaceHack;
+
 public class Service {
 
 	private final ServiceType serviceXML;
