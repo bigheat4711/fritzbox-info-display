@@ -119,13 +119,19 @@ public class FritzConnection {
 	}
 
 	private void readIGDDESC() throws IOException, JAXBException {
-		InputStream xml = getXMLIS("/" + FRITZ_IGD_DESC_FILE);
-		JAXBContext jaxbContext = JAXBContext.newInstance(RootType2.class);
+		InputStream xml = namespaceHack(getXMLIS("/" + FRITZ_IGD_DESC_FILE));
+		JAXBContext jaxbContext = JAXBContext.newInstance(RootType.class);
 		Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
-		RootType2 root = (RootType2) jaxbUnmarshaller.unmarshal(xml);
+		RootType root = (RootType) jaxbUnmarshaller.unmarshal(xml);
 		DeviceType device = root.getDevice();
 		name = device.getFriendlyName();
 		getServicesFromDevice(device);
+	}
+
+	public static ByteArrayInputStream namespaceHack(InputStream xml) throws IOException {
+		String xmlContent = new String(xml.readAllBytes());
+		xmlContent = xmlContent.replaceAll("urn:schemas-upnp-org:", "urn:dslforum-org:");
+		return new ByteArrayInputStream(xmlContent.getBytes(StandardCharsets.UTF_8));
 	}
 
 	private void getServicesFromDevice(DeviceType device) throws IOException, JAXBException {
