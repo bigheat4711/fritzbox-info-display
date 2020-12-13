@@ -1,25 +1,21 @@
 package cmuche.fritzbox_info_display;
 
-import cmuche.fritzbox_info_display.controller.AppController;
-import cmuche.fritzbox_info_display.model.Credentials;
+import cmuche.fritzbox_info_display.controller.FritzBoxController;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
 @Component
 public class Runner implements ApplicationRunner {
-	private final Credentials credentials;
-	private final AppController appController;
+	private final FritzBoxController fritzBoxController;
 
-	public Runner(Credentials credentials, AppController appController) {
-		this.credentials = credentials;
-		this.appController = appController;
+	public Runner(FritzBoxController fritzBoxController) {
+		this.fritzBoxController = fritzBoxController;
 	}
 
 	@Override
 	public void run(ApplicationArguments args) {
-		//DeviceInfo_Service deviceInfo_service = new DeviceInfo_Service();
-		//DeviceInfo getInfo = deviceInfo_service.getGetInfo();
-		//System.out.println(getInfo.getDeviceLog());
+		//fritzBoxController.authStuff();
+		fritzBoxController.bytesStuff();
 	}
 }

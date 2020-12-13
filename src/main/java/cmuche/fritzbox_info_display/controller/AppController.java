@@ -25,7 +25,7 @@ public class AppController {
 
 	public AppController(FritzBoxController fritzBoxController) {
 		this.fritzBoxController = fritzBoxController;
-		setupThreads();
+		//setupThreads();
 	}
 
 	private void setupThreads() {
