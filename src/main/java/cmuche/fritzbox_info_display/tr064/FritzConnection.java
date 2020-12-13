@@ -27,7 +27,6 @@ package cmuche.fritzbox_info_display.tr064;
 
 import cmuche.fritzbox_info_display.beans.DeviceType;
 import cmuche.fritzbox_info_display.beans.RootType;
-import cmuche.fritzbox_info_display.beans.RootType2;
 import cmuche.fritzbox_info_display.beans.ServiceType;
 import cmuche.fritzbox_info_display.model.Credentials;
 import org.apache.http.HttpEntity;
@@ -56,6 +55,7 @@ import javax.xml.bind.Unmarshaller;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
@@ -77,7 +77,7 @@ public class FritzConnection {
 	private String name;
 
 	public FritzConnection(Credentials credentials) {
-		targetHost = new HttpHost(credentials.getUrl());
+		targetHost = new HttpHost(credentials.getUrl(), DEFAULT_PORT);
 		this.user = credentials.getUsername();
 		this.pwd = credentials.getPassword();
 
