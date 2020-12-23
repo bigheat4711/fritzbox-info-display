@@ -5,6 +5,9 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
+import java.io.IOException;
+import java.util.Optional;
+
 @Component
 public class Runner implements ApplicationRunner {
 	private final FritzBoxController fritzBoxController;
@@ -14,8 +17,11 @@ public class Runner implements ApplicationRunner {
 	}
 
 	@Override
-	public void run(ApplicationArguments args) {
+	public void run(ApplicationArguments args) throws IOException {
 		//fritzBoxController.authStuff();
-		fritzBoxController.bytesStuff();
+		Optional<Integer> securityPort = fritzBoxController.securityPort();
+		securityPort.ifPresent(e -> System.out.println("securityPort: " + e));
+		Optional<String> s = fritzBoxController.internalUser();
+		System.out.println("Done");
 	}
 }

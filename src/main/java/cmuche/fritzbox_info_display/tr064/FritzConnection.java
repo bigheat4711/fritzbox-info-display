@@ -35,20 +35,33 @@ import org.apache.http.HttpRequest;
 import org.apache.http.auth.AuthScope;
 import org.apache.http.auth.UsernamePasswordCredentials;
 import org.apache.http.client.AuthCache;
+import org.apache.http.client.AuthenticationStrategy;
 import org.apache.http.client.CredentialsProvider;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.protocol.HttpClientContext;
+import org.apache.http.config.Registry;
+import org.apache.http.config.RegistryBuilder;
+import org.apache.http.conn.socket.ConnectionSocketFactory;
+import org.apache.http.conn.socket.PlainConnectionSocketFactory;
+import org.apache.http.conn.ssl.NoopHostnameVerifier;
+import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
 import org.apache.http.impl.auth.DigestScheme;
 import org.apache.http.impl.client.BasicAuthCache;
 import org.apache.http.impl.client.BasicCredentialsProvider;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
+import org.apache.http.impl.conn.BasicHttpClientConnectionManager;
 import org.apache.http.protocol.HttpContext;
+import org.apache.http.ssl.SSLContexts;
+import org.apache.http.ssl.TrustStrategy;
 import org.apache.http.util.EntityUtils;
+import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
 import org.springframework.stereotype.Component;
+import org.springframework.web.client.RestTemplate;
 
+import javax.net.ssl.SSLContext;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
@@ -56,51 +69,92 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
+import java.security.KeyManagementException;
+import java.security.KeyStoreException;
+import java.security.NoSuchAlgorithmException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 
 @Component
 public class FritzConnection {
-
-	private static final int DEFAULT_PORT = 49000;
+	private static final int DEFAULT_HTTP_PORT = 49000;
+	private static final int DEFAULT_HTTPS_PORT = 49000;
 	private static final String FRITZ_IGD_DESC_FILE = "igddesc.xml";
 	private static final String FRITZ_TR64_DESC_FILE = "tr64desc.xml";
 
 	private final Map<String, Service> services;
 	private String user = null;
 	private String pwd = null;
-	private final HttpHost targetHost;
-	private final CloseableHttpClient httpClient;
-	private final HttpClientContext context;
+	private final String targetHost;
+	private final RestTemplate restTemplate;
+	//private final HttpClientContext context;
 
 	private String name;
 
-	public FritzConnection(Credentials credentials) {
-		targetHost = new HttpHost(credentials.getUrl(), DEFAULT_PORT);
+	public FritzConnection(Credentials credentials) throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
+		TrustStrategy trustStrategy = (cert, authType) -> true;
+		SSLContext sslContext = SSLContexts.custom()
+				.loadTrustMaterial(null, trustStrategy)
+				.build();
+		SSLConnectionSocketFactory socketFactory = new SSLConnectionSocketFactory(sslContext, NoopHostnameVerifier.INSTANCE);
+
+		Registry<ConnectionSocketFactory> registry = RegistryBuilder.<ConnectionSocketFactory>create()
+				.register("https", socketFactory)
+				.register("http", new PlainConnectionSocketFactory())
+				.build();
+
+		BasicHttpClientConnectionManager connectionManager = new BasicHttpClientConnectionManager(registry);
+
+		CloseableHttpClient httpClient = HttpClients.custom()
+				.setSSLSocketFactory(socketFactory)
+				.setDefaultCredentialsProvider(provider())
+				.setConnectionManager(connectionManager)
+				.build();
+
+		//https://www.baeldung.com/httpclient-ssl
+		//der obige code geht auch kürzer. allerdings ist die frage, ob die trustStragegy -> true gebraucht wird, weil das fritz.box zertifikat nicht offiziell ist.
+
+				//nächstes Problem: der obige code macht kein digest
+				//das ist hier erklärt:
+				//https://www.baeldung.com/resttemplate-digest-authentication
+				//allerdings ist hier wiederum keine spur von trustStrategy und glaub noch irgendwas ....
+
+
+
+		HttpComponentsClientHttpRequestFactory requestFactory = new HttpComponentsClientHttpRequestFactory(httpClient);
+		this.restTemplate = new RestTemplate(requestFactory);
+
+		targetHost = credentials.getUrl() + ":" + DEFAULT_HTTP_PORT;
 		this.user = credentials.getUsername();
 		this.pwd = credentials.getPassword();
 
-		httpClient = HttpClients.createDefault();
-		context = HttpClientContext.create();
+		//this.httpClient = HttpClients.createDefault();
+		//context = HttpClientContext.create();
 		services = new HashMap<>();
+	}
+
+	private CredentialsProvider provider() {
+		CredentialsProvider provider = new BasicCredentialsProvider();
+		provider.setCredentials(AuthScope.ANY, new UsernamePasswordCredentials(user, pwd));
+		return provider;
+	}
+
+	private void createHttpContext(){
+		AuthCache authCache = new BasicAuthCache();
+		DigestScheme digestScheme = new DigestScheme();
+		digestScheme.overrideParamter("realm", "F!Box SOAP-Auth");
+		digestScheme.overrideParamter("nonce", Long.toString(new Random().nextLong(), 36));
+		digestScheme.overrideParamter("qop", "auth");
+		digestScheme.overrideParamter("nc", "0");
+		digestScheme.overrideParamter("cnonce", DigestScheme.createCnonce());
+		authCache.put(targetHost, digestScheme);
+		//context.setCredentialsProvider(provider);
+		//context.setAuthCache(authCache);
 	}
 
 	public void init() throws IOException, JAXBException {
 		if (user != null && pwd != null) {
-			CredentialsProvider credsProvider = new BasicCredentialsProvider();
-			credsProvider.setCredentials(AuthScope.ANY,
-					new UsernamePasswordCredentials(user, pwd));
-			AuthCache authCache = new BasicAuthCache();
-			DigestScheme digestScheme = new DigestScheme();
-			digestScheme.overrideParamter("realm", "F!Box SOAP-Auth");
-			digestScheme.overrideParamter("nonce", Long.toString(new Random().nextLong(), 36));
-			digestScheme.overrideParamter("qop", "auth");
-			digestScheme.overrideParamter("nc", "0");
-			digestScheme.overrideParamter("cnonce", DigestScheme.createCnonce());
-			authCache.put(targetHost, digestScheme);
-			context.setCredentialsProvider(credsProvider);
-			context.setAuthCache(authCache);
 			readTR64();
 		} else {
 			readIGDDESC();
@@ -153,6 +207,7 @@ public class FritzConnection {
 		byte[] content = null;
 		try {
 			response = httpClient.execute(target, request, context);
+			restTemplate.exchange(target, )
 			content = EntityUtils.toByteArray(response.getEntity());
 		} catch (IOException e) {
 			throw e;
