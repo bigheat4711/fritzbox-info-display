@@ -6,7 +6,6 @@ import cmuche.fritzbox_info_display.tr064.Action;
 import cmuche.fritzbox_info_display.tr064.FritzConnection;
 import cmuche.fritzbox_info_display.tr064.Response;
 import cmuche.fritzbox_info_display.tr064.Service;
-import org.checkerframework.checker.nullness.Opt;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
